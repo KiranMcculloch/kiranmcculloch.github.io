@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+    <?php
+        function display($path){
+            $file = fopen($path,"r");
+            while (!feof($file)){
+                $line = fgets($file);
+                echo $line;
+            }
+            fclose($file);
+        }        
+    ?>
+    
+    <head>
+        <title>Kiran</title>
+    </head>
+    <body>
+        <?php
+            // --------- ROUTING WEBPAGE BODY -----------
+            if (sizeof($_GET)==0 || $_GET["Page"]=="Home") { 
+                // Home Page
+                display("/home.html");
+            } else if ($_GET["Page"]=="About") {
+                // Hobbies Page
+                display("/about.html");
+            } else {
+                // Error Page
+                echo "404: Invalid Page!";
+            }
+        ?>
+    </body>
+</html>
