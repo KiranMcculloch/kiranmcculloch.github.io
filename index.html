@@ -2,33 +2,326 @@
 
 <html>
     <style>
-
-
-            /* ------- MOBILE ------- */
-        @media screen and (max-width: 500px) {
-
+        body {
+            background-image: url("./img/bg.png");
+            background-size: 6px;
+            image-rendering: crisp-edges;
         }
+
+        .ui-resizable {
+            position: fixed !important
+        }
+
+        .popup-window{
+            display: none;
+            flex-direction: column; 
+            overflow: hidden;
+        }
+
+        #about-popup{
+            left: 2vw;
+            top: 5vh;
+        }
+
+        #education-popup{
+            left: 13vw;
+            top: 15vh;
+        }
+
+        #experience-popup{
+            left: 31vw;
+            top: 10vh;
+        }
+
+        #projects-popup{
+            left: 45vw;
+            top: 18vh;
+        }
+
+        #credits-popup{
+            left: 25vw;
+            top: 12vh;
+        }
+
+        .flex{
+            display: flex;
+        }
+
+        .second-row { 
+            flex-grow: 1; 
+            border: none; 
+            margin: 0; 
+            padding: 0; 
+        }
+        
     </style>
 
     <head>
-        <link type="text/css" rel="stylesheet" href="./style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Kiran Home</title>
+        <link type="text/css" rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css"/>
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+        <script src="./scripts.js"></script>
+        <title>Kiran McCulloch</title>
+        <link rel="icon" href="./img/favicon.ico">
     </head>
 
-    <body>
-        <div class="topnav" id="myTopnav">
-            <a id="homeMenu" href="./index.html" class="active">Home</a>
-            <a id="aboutMenu" href="./about/index.html" class="none">About</a>
-            <a id="educationMenu" href="./education/index.html" class="none">Education</a>
-            <a id="experienceMenu" href="./experience/index.html" class="none">Experience</a>
-            <a id="projectsMenu" href="./projects/index.html" class="none">Projects</a>
-            <a href="javascript:void(0);" class="icon" onclick="hamburger()">≡</a>
-        </div>
-        <br>
-        <p>Home Page</p>
-        <a >About Page</a>
-    </body>
+    <script>  
+        $(function() {  
+          $( ".draggable" ).draggable({
+            //brings current window to forefront
+            stack: ".popup-window",
+            //changes current window on click
+            distance: 0,
+            iFrameFix: true
+          });  
 
-    <script src="./scripts.js"></script>
+          $( ".resizable" ).resizable({
+            //resizable on all sides
+            handles: "all",
+            //fix for choppy resizing
+            start: function(event, ui) {
+                $('iframe').css('pointer-events','none');
+            },
+            stop: function(event, ui) {
+                $('iframe').css('pointer-events','auto');
+            }
+          });  
+        });  
+        
+        $(document).ready(
+            function() {
+                $("#top-left-logo").hover(function(){  
+                    $(this).attr('src','./img/logo-hover.png');  
+                    }, function(){  
+                    $(this).attr('src','./img/logo.png');  
+                }); 
+
+                //shows and hides windows from bottom menu
+                $("#aboutMenu").click(function() {
+                    $("#about-popup").toggleClass("flex");
+                    $("#aboutMenu").toggleClass("active");
+                });
+                $("#educationMenu").click(function() {
+                    $("#education-popup").toggleClass("flex");
+                    $("#educationMenu").toggleClass("active");
+                });
+                $("#experienceMenu").click(function() {
+                    $("#experience-popup").toggleClass("flex");
+                    $("#experienceMenu").toggleClass("active");
+                });
+                $("#projectsMenu").click(function() {
+                    $("#projects-popup").toggleClass("flex");
+                    $("#projectsMenu").toggleClass("active");
+                });
+                $("#top-left-logo").click(function() {
+                    $("#credits-popup").toggleClass("flex");
+                });
+
+                //closes windows when close button clicked
+                $("#aboutClose").click(function() {
+                    $("#about-popup").toggleClass("flex");
+                    $("#aboutMenu").toggleClass("active");
+                });
+                $("#educationClose").click(function() {
+                    $("#education-popup").toggleClass("flex");
+                    $("#educationMenu").toggleClass("active");
+                });
+                $("#experienceClose").click(function() {
+                    $("#experience-popup").toggleClass("flex");
+                    $("#experienceMenu").toggleClass("active");
+                });
+                $("#projectsClose").click(function() {
+                    $("#projects-popup").toggleClass("flex");
+                    $("#projectsMenu").toggleClass("active");
+                });
+                $("#creditsClose").click(function() {
+                    $("#credits-popup").toggleClass("flex");
+                });
+
+                //adds border when icons single clicked
+                $('.icon-wrapper').click(function () {
+                    $('.icon-wrapper').not(this).removeClass('icon-border');  
+                    $(this).toggleClass('icon-border');
+                });
+                $('.icon-wrapper').on('click', function(e) {
+                    e.stopPropagation();
+                });
+                $(document).on('click', function (e) {
+                    $('.icon-wrapper').removeClass('icon-border');  
+                });
+
+                //opens pages fullscreen when icons double clicked
+                $('#about-icon').dblclick(function () {
+                    window.location.href = "./subpages/about.html";
+                });
+                $('#education-icon').dblclick(function () {
+                    window.location.href = "./subpages/education.html";
+                });
+                $('#experience-icon').dblclick(function () {
+                    window.location.href = "./subpages/experience.html";
+                });
+                $('#projects-icon').dblclick(function () {
+                    window.location.href = "./subpages/projects.html";
+                });
+
+                //animates icons on hover
+                $("#about-icon-img").hover(
+                    function() {
+                        $(this).attr("src", "./img/about-icon.gif");
+                    },
+                    function() {
+                        $(this).attr("src", "./img/about-icon.png");
+                    }                         
+                );    
+                $("#education-icon-img").hover(
+                    function() {
+                        $(this).attr("src", "./img/education-icon.gif");
+                    },
+                    function() {
+                        $(this).attr("src", "./img/education-icon.png");
+                    }                         
+                );   
+                $("#experience-icon-img").hover(
+                    function() {
+                        $(this).attr("src", "./img/experience-icon.gif");
+                    },
+                    function() {
+                        $(this).attr("src", "./img/experience-icon.png");
+                    }                         
+                ); 
+                $("#projects-icon-img").hover(
+                    function() {
+                        $(this).attr("src", "./img/projects-icon.gif");
+                    },
+                    function() {
+                        $(this).attr("src", "./img/projects-icon.png");
+                    }                         
+                ); 
+                              
+            }
+        );
+    </script>
+
+
+    <body>
+        <div id="new-div"></div>
+        <div class="icon-wrapper" id="about-icon">
+            <img class="shortcut-icon" id="about-icon-img" src="./img/about-icon.png">
+            <p style="margin-top: 0;">About.txt</p>
+        </div>
+        <div class="icon-wrapper" id="education-icon">
+            <img class="shortcut-icon" id="education-icon-img" src="./img/education-icon.png">
+            <p style="margin-top: 0;">Education.csv</p>
+        </div>
+        <div class="icon-wrapper" id="experience-icon">
+            <img class="shortcut-icon" id="experience-icon-img" src="./img/experience-icon.png">
+            <p style="margin-top: 0;">Experience.py</p>
+        </div>
+        <div class="icon-wrapper" id="projects-icon">
+            <img class="shortcut-icon" id="projects-icon-img" src="./img/projects-icon.png">
+            <p style="margin-top: 0;">Projects.exe</p>
+        </div>
+        <img id="kiran-photo" class="bounce" src="./img/k-dog.png">
+        <div class="bottomnav" id="main-bottomnav">
+            <div>
+                <img id="top-left-logo" src="./img/logo.png" alt="">
+            </div>
+            <p id="aboutMenu">About</p>
+            <p id="educationMenu">Education</p>
+            <p id="experienceMenu">Experience</p>
+            <p id="projectsMenu">Projects</p>
+            <div class="clock">00:00:00</div>
+        </div>
+        <div id="center-text">
+            <p class="sub-heading">welcome to</p>
+            <p id="main-title">Kiran McCulloch
+            <p class="sub-heading" style="text-align: right;">dot github dot io</p>
+            <div id="center-list">
+                <div class="list-row">
+                    <p class="center-list-item" id="list-item-1">Programmer</p>
+                    <p class="hidden-skills">Java, Python,<br>C, C++</p> 
+                </div>
+                <div class="flex-break"></div>
+
+                <div class="list-row">
+                    <p class="center-list-item" id="list-item-2">Graphic Designer</p>
+                    <p class="hidden-skills">Adobe Photoshop,<br>Adobe Illustrator</p>
+                </div>
+                <div class="flex-break"></div>
+                
+                <div class="list-row">
+                    <p class="center-list-item" id="list-item-3">Front End Developer</p>
+                <p class="hidden-skills">HTML, CSS,<br>Javascript, JQuery</p>
+                </div>
+                <div class="flex-break"></div>
+                
+                <div class="list-row">
+                    <p class="center-list-item" id="list-item-4">Video Editor</p>
+                    <p class="hidden-skills">Adobe Premiere Pro,<br>Final Cut Pro X</p>
+                </div>
+                <div class="flex-break"></div>
+                
+                <div class="list-row">
+                    <p class="center-list-item" id="list-item-5">Computer Scientist</p>
+                    <p class="hidden-skills">Visual Studio, IDLE,<br>Jetbrains, Excel</p>
+                </div>
+                <div class="flex-break"></div>
+                
+                <div class="list-row">
+                    <div class="center-list-item" id="list-item-6">Click a tab at the bottom to learn more<br>or double-click a shortcut on the right for fullscreen</div>
+                </div>
+            </div>
+        </div>
+        
+
+
+        <div id ="about-popup" class="popup-window draggable resizable row-container">
+            <div class="popup-menu-bar">
+                <p class="popup-title">About</p>
+                <p class="popup-close-button" id="aboutClose">x</p>
+            </div>
+            <iframe src="./subpages/about.html" width="100%" height="100%" class="second-row"></iframe>
+        </div>
+
+        <div id ="education-popup" class="popup-window draggable resizable">
+            <div class="popup-menu-bar" style="background-color: darkblue;">
+                <p class="popup-title">Education</p>
+                <p class="popup-close-button" id="educationClose">x</p>
+            </div>
+            <iframe src="./subpages/education.html" width="100%" height="100%"></iframe>
+        </div>
+
+        <div id ="experience-popup" class="popup-window draggable resizable">
+            <div class="popup-menu-bar" style="background-color: dodgerblue;">
+                <p class="popup-title">Experience</p>
+                <p class="popup-close-button" id="experienceClose">x</p>
+            </div>
+            <iframe src="./subpages/experience.html" width="100%" height="100%"></iframe>
+        </div>
+
+        <div id ="projects-popup" class="popup-window draggable resizable">
+            <div class="popup-menu-bar" style="background-color: royalblue;">
+                <p class="popup-title">Projects</p>
+                <p class="popup-close-button" id="projectsClose">x</p>
+            </div>
+            <iframe src="./subpages/projects.html" width="100%" height="100%"></iframe>
+        </div>
+
+        <div id ="credits-popup" class="popup-window draggable resizable">
+            <div class="popup-menu-bar" style="background-color: cyan;">
+                <p class="popup-title" style="color: black;">Credits</p>
+                <p class="popup-close-button" id="creditsClose">x</p>
+            </div>
+            <div style="overflow-y: auto; padding-left: 5%; padding-right: 3%;">
+                <p>Static versions of desktop icons based on those made by Microsoft</p>
+                <p>Font from themesberg.com</p>
+                <p>Code for clock closely followed from tutorial by Martynas Linkevicius</p>
+                <p>Photo of Kiran taken by Deni Stoimenov</p>
+                <p>All art, animations, and code not listed above made by Kiran McCulloch</p>
+                <p>My best wishes and sincerest apologies to Windows 95, Wikipedia, and more</p>
+            </div>
+        </div>
+    </body>
 </html>
