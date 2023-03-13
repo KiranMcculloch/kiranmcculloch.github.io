@@ -1,0 +1,82 @@
+@keyframes marker-bounce {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-1vh); }
+    100% { transform: translateY(0); }
+}
+
+#world-map{
+    margin: 0 auto;
+    width: 90%;
+    height: 90%; 
+    object-fit: cover;
+    pointer-events: none;
+    -ms-interpolation-mode: nearest-neighbor;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -o-pixelated;
+    image-rendering: pixelated;
+    
+}
+
+#map-content {
+    width: 2000px; 
+    height: 1200px;
+    text-align: center; 
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+#map-sub-container{
+    margin: 0 auto;
+    width: 2000px; 
+    height: 1200px;
+    overflow: hidden;
+    position: absolute; 
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-40%);
+}
+
+.map-marker{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    margin: 0 auto;
+}
+
+.map-marker img{
+    width: 100%;
+    pointer-events: none;
+    -ms-interpolation-mode: nearest-neighbor;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -o-pixelated;
+    image-rendering: pixelated;
+}
+
+.map-marker:hover{
+    animation-name: marker-bounce;
+    animation-timing-function: ease-in-out;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    transform-origin: bottom;
+}
+
+@media screen and (max-width: 900px){
+    .map-marker{
+        width: 60px;
+        height: 60px;
+    }
+    #map-content {
+        width: 1200px; 
+        height: 900px;
+    }
+    #map-sub-container{
+        width: 1200px; 
+        height: 900px;
+        left: 50%;
+        top: 32%;
+        transform: translate(-50%,-32%);
+    }
+
+}

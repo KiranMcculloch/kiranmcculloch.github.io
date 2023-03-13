@@ -3,18 +3,138 @@
     <style>
         body{
             background-color: green;
+            overflow: hidden;
+        }
+
+        .red{
+            background-color: red;
+        }
+
+        .map-text-box{
+            background-color: #cfd4e8;
+  border-right: 0.4vw solid #7d808c;
+  border-bottom: 0.4vw solid #7d808c;
+  border-left: 0.4vw solid #f5f7ff;
+  border-top: 0.4vw solid #f5f7ff;
+            position: absolute;
+            font-size:1.3vw;
+            width: 38vw;
+        }
+
+        #mtl-text-box{
+            top: 22%;
+            right: 54%;
+        }
+
+        #phl-text-box{
+            bottom: 37%;
+            left: 56%;
+        }
+
+        #marker-mtl{
+            top: 26.5%;
+            left: 49.5%;
+        }
+
+        #marker-phl{
+            top: 50.5%;
+            left: 47.5%;
+        } 
+
+        #maps-logo{
+            position: fixed;
+            z-index: 1200;
+            bottom: 1%;
+            right: 1%;
+            width: 12vw;
+        }
+        
+        @media screen and (max-width: 900px){
+            #marker-mtl{
+                top: 27.75%;
+                left: 49.5%;
+            }
+
+            #marker-phl{
+                top: 51.5%;
+                left: 48%;
+            }
+
+            .map-text-box{
+                font-size: 2vw;
+                width: 35vw;
+            }
         }
     </style>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link type="text/css" rel="stylesheet" href="./style.css">
+        <link type="text/css" rel="stylesheet" href="../style.css">
+        <link type="text/css" rel="stylesheet" href="../crt.css">
+        <link type="text/css" rel="stylesheet" href="../map.css">
         <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css"/>
         <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
         <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-        <script src="./scripts.js"></script>
+        <script src="../crt.js"></script>
         <title>Education - Kiran McCulloch</title>
     </head>
-    <body>
+
+    <script>
+        $(document).ready(
+        function() {
+            if (inIframe()) {
+                $("#crt-overlay").hide()
+            } 
+            $(".map-text-box").hide();
+            $("#marker-mtl").hover(
+                function(){
+                    $("#mtl-text-box").toggle(200);
+                }
+            ); 
+            $("#marker-phl").hover(
+                function(){
+                    $("#phl-text-box").toggle(200);
+                }
+            ); 
+        });
+
+    </script>
+
+    <body class="crt-text">
+        <div class="crt-overlay" id="crt-overlay"></div>
+        <div id="map-content">
+            <div id="map-sub-container">
+                <img id="world-map" src="../img/map-test.png">
+                <div class = "map-marker" id="marker-mtl">
+                    <img src="../img/mcgill-pixel.png">
+                </div>
+                <div class = "map-marker" id="marker-phl">
+                    <img src="../img/gfs-pixel.png">
+                </div>
+
+                <div class="map-text-box" id="mtl-text-box">
+                    <div style="margin: 3vh;">
+                        <p>McGill University</p>
+                        <p>Montreal, Quebec</p>
+                        <p>2018 - 2022</p>
+                        <p>B.Sc. Computer Science, Minor Geography</p>
+                    </div>
+                    
+                </div>
+
+                <div class="map-text-box" id="phl-text-box">
+                    <div style="margin: 3vh;">
+                        <p>Germantown Friends School</p>
+                        <p>Philadelphia, Pennsylvania</p>
+                        <p>2014 - 2018</p>
+                        <p>High School</p>
+                    </div>
+                </div>
+            </div>
+            <img id="maps-logo" src="../img/maps-logo.png">
+        </div>
+
+
         
+
     </body>
 </html>

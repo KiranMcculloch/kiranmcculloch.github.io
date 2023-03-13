@@ -1,11 +1,17 @@
 @font-face {
   font-family: "Windows 95";
-  src: url(./fonts/w-95-sans-serif.woff);
+  src: url(./fonts/w-95-sans-serif.woff) format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-  font-family: "Digital Drip";
-  src: url(./fonts/bold_dot_digital-7-webfont.woff);
+  font-family: 'BP Squares';
+  src: url('./fonts/bpdots.squares-bold-webfont.woff2') format('woff2'),
+       url('./fonts/bpdots.squares-bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
 }
 
 @keyframes bounce {
@@ -136,14 +142,13 @@ body {
   margin: 2px;
 }
 
-.popup-close-button{
+.popup-small-button{
   float: right;
   top: 0px;
   width: 27px;
   height: 27px;
   margin-top: 4px;
   margin-right: 4px;
-  padding: auto;
   text-align: center;
   background-color: #cfd4e8;
   border-right: 0.2vw solid #7d808c;
@@ -152,9 +157,10 @@ body {
   border-top: 0.2vw solid #f5f7ff;
 }
 
-.popup-close-button:hover{
+.popup-small-button:hover{
   background-color: #e3e9ff;
 }
+
 
 .popup-title{
   margin: 0;
@@ -211,11 +217,13 @@ body {
 }
 
 #main-title {
-  font-size: 5vw;
+  font-size: 5.5vw;
+  font-family: 'BP Squares';
   color: #d93609;
   flex-shrink: 0;
   width: 100%;
   text-align: center;
+  white-space: nowrap;
 }
 
 .sub-heading {
@@ -269,31 +277,6 @@ body {
   text-align: center;
   align-self: center;
   transition: opacity 0.5s ease;
-}
-
-#list-item-1{
-  transform: translateX(4.5vw);
-}
-#list-item-2{
-  animation-delay: 0.5s;
-  transform: translateX(6vw);
-}
-#list-item-3{
-  animation-delay: 1s;
-  transform: translateX(5.7vw);
-}
-#list-item-4{
-  animation-delay: 1.5s;
-  transform: translateX(6.4vw);
-}
-#list-item-5{
-  animation-delay: 2s;
-  transform: translateX(6vw);
-}
-#list-item-6{
-  animation-delay: 2.5s;
-  font-size: 1vw;
-  color: #d93609;
 }
 
 .list-row:hover > p.center-list-item{
