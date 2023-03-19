@@ -2,23 +2,14 @@
 <html>
     <style>
         body{
-            background-color: green;
+            background-image: url("../img/waves.gif");
+            background-size: auto 12%;
+            -ms-interpolation-mode: nearest-neighbor;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: -moz-crisp-edges;
+            image-rendering: -o-pixelated;
+            image-rendering: pixelated;
             overflow: hidden;
-        }
-
-        .red{
-            background-color: red;
-        }
-
-        .map-text-box{
-            background-color: #cfd4e8;
-  border-right: 0.4vw solid #7d808c;
-  border-bottom: 0.4vw solid #7d808c;
-  border-left: 0.4vw solid #f5f7ff;
-  border-top: 0.4vw solid #f5f7ff;
-            position: absolute;
-            font-size:1.3vw;
-            width: 38vw;
         }
 
         #mtl-text-box{
@@ -43,7 +34,7 @@
 
         #maps-logo{
             position: fixed;
-            z-index: 1200;
+            z-index: 2;
             bottom: 1%;
             right: 1%;
             width: 12vw;
@@ -58,11 +49,6 @@
             #marker-phl{
                 top: 51.5%;
                 left: 48%;
-            }
-
-            .map-text-box{
-                font-size: 2vw;
-                width: 35vw;
             }
         }
     </style>
@@ -82,9 +68,12 @@
         $(document).ready(
         function() {
             if (inIframe()) {
-                $("#crt-overlay").hide()
-            } 
+                $("#crt-overlay").addClass("invisible")
+            }
+
             $(".map-text-box").hide();
+
+            //shows text boxes on hover
             $("#marker-mtl").hover(
                 function(){
                     $("#mtl-text-box").toggle(200);
@@ -95,6 +84,23 @@
                     $("#phl-text-box").toggle(200);
                 }
             ); 
+
+            $("#marker-mtl").hover(
+                function () {
+                    $(this).children('img').attr("src", "../img/mcgill-spin.gif");
+                },
+                function () {
+                    $(this).children('img').attr("src", "../img/mcgill-pixel.png");
+                }
+            );
+            $("#marker-phl").hover(
+                function () {
+                    $(this).children('img').attr("src", "../img/gfs-spin.gif");
+                },
+                function () {
+                    $(this).children('img').attr("src", "../img/gfs-pixel.png");
+                }
+            );
         });
 
     </script>
@@ -113,7 +119,7 @@
 
                 <div class="map-text-box" id="mtl-text-box">
                     <div style="margin: 3vh;">
-                        <p>McGill University</p>
+                        <p class="map-text-header">McGill University</p>
                         <p>Montreal, Quebec</p>
                         <p>2018 - 2022</p>
                         <p>B.Sc. Computer Science, Minor Geography</p>
@@ -123,7 +129,7 @@
 
                 <div class="map-text-box" id="phl-text-box">
                     <div style="margin: 3vh;">
-                        <p>Germantown Friends School</p>
+                        <p class="map-text-header">Germantown Friends School</p>
                         <p>Philadelphia, Pennsylvania</p>
                         <p>2014 - 2018</p>
                         <p>High School</p>

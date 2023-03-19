@@ -2,7 +2,7 @@
     content: " ";
     display: block;
     
-    background: linear-gradient(rgba(0, 0, 0, 0.01) 50%, rgba(16, 16, 16, 0.08) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.12), rgba(0, 255, 0, 0.06), rgba(0, 0, 255, 0.12));
+    background: linear-gradient(rgba(0, 0, 0, 0.01) 50%, rgba(16, 16, 16, 0.08) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.1), rgba(0, 255, 0, 0.05), rgba(0, 0, 255, 0.1));
     /*background: linear-gradient(90deg, rgba(255, 0, 0, 0.12), rgba(0, 255, 0, 0.06), rgba(0, 0, 255, 0.12)); */
     z-index: 1000;
     background-size: 100% 2.75px, 4.13px 100%;

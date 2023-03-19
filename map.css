@@ -4,6 +4,12 @@
     100% { transform: translateY(0); }
 }
 
+@-webkit-keyframes marker-bounce {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-1vh); }
+    100% { transform: translateY(0); }
+}
+
 #world-map{
     margin: 0 auto;
     width: 90%;
@@ -15,7 +21,6 @@
     image-rendering: -moz-crisp-edges;
     image-rendering: -o-pixelated;
     image-rendering: pixelated;
-    
 }
 
 #map-content {
@@ -42,6 +47,8 @@
     height: 100px;
     position: absolute;
     margin: 0 auto;
+    animation: marker-bounce 2s ease-in-out 0s infinite;
+    -webkit-animation: marker-bounce 2s ease-in-out 0s infinite;
 }
 
 .map-marker img{
@@ -54,12 +61,20 @@
     image-rendering: pixelated;
 }
 
-.map-marker:hover{
-    animation-name: marker-bounce;
-    animation-timing-function: ease-in-out;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-    transform-origin: bottom;
+.map-text-box{
+    background-color: #cfd4e8;
+    border-right: 0.4vw solid #565861;
+    border-bottom: 0.4vw solid #565861;
+    border-left: 0.4vw solid #f5f7ff;
+    border-top: 0.4vw solid #f5f7ff;
+    position: absolute;
+    z-index: 3;
+    font-size:1.1vw;
+    width: 38vw;
+}
+
+.map-text-header{
+    font-size:1.5vw;
 }
 
 @media screen and (max-width: 900px){
@@ -67,6 +82,7 @@
         width: 60px;
         height: 60px;
     }
+
     #map-content {
         width: 1200px; 
         height: 900px;
@@ -77,6 +93,15 @@
         left: 50%;
         top: 32%;
         transform: translate(-50%,-32%);
+    }
+
+    .map-text-box{
+        font-size: 1.5vw;
+        width: 35vw;
+    }
+
+    .map-text-header{
+        font-size:2vw;
     }
 
 }

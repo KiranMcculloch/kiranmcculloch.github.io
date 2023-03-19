@@ -28,16 +28,41 @@
 /* ------- DEFAULT ------- */
 body {
   font-family: 'Windows 95';
+  margin: 0 auto;
+  padding: 0 auto;
 }
 
-#new-div{
-  position: fixed;
-  top:0px;
-  left:0px;
-  margin: 0px;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(0deg, rgba(30, 132, 120, 0.7) 0%, rgba(66, 255, 233, 0.55) 100%);
+.underline{
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-thickness: 0.1em;
+}
+
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #cfd4e8;
+  border-right: 3px solid #565861;
+  border-bottom: 3px solid #565861;
+  border-left: 3px solid #f5f7ff;
+  border-top: 3px solid #f5f7ff;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+.invisible{
+  opacity: 0;
 }
 
 .shortcut-icon{
@@ -53,6 +78,14 @@ body {
   border: 3px solid transparent;
   width: fit-content;
   height: fit-content;
+}
+
+.icon-wrapper img{
+  -ms-interpolation-mode: nearest-neighbor;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -o-pixelated;
+  image-rendering: pixelated;
 }
 
 .icon-border{
@@ -92,8 +125,8 @@ body {
   margin: 4px;
   display: block;
   box-sizing: border-box;
-  border-right: 5px solid #7d808c;
-  border-bottom: 5px solid #7d808c;
+  border-right: 5px solid #565861;
+  border-bottom: 5px solid #565861;
   border-left: 5px solid #f5f7ff;
   border-top: 5px solid #f5f7ff;
   color: #000000;
@@ -109,8 +142,8 @@ body {
 
 .bottomnav p.active {
   background-color: #a3a7b8;
-  border-left: 5px solid #7d808c;
-  border-top: 5px solid #7d808c;
+  border-left: 5px solid #565861;
+  border-top: 5px solid #565861;
   border-bottom: 5px solid #a3a7b8;
   border-right: 5px solid #a3a7b8;
 }
@@ -129,8 +162,8 @@ body {
   width: 750px; 
   height: 500px; 
   background-color: #cfd4e8;
-  border-right: 0.2vw solid #7d808c;
-  border-bottom: 0.2vw solid #7d808c;
+  border-right: 0.2vw solid #565861;
+  border-bottom: 0.2vw solid #565861;
   border-left: 0.2vw solid #f5f7ff;
   border-top: 0.2vw solid #f5f7ff;
 }
@@ -151,8 +184,8 @@ body {
   margin-right: 4px;
   text-align: center;
   background-color: #cfd4e8;
-  border-right: 0.2vw solid #7d808c;
-  border-bottom: 0.2vw solid #7d808c;
+  border-right: 0.2vw solid #565861;
+  border-bottom: 0.2vw solid #565861;
   border-left: 0.2vw solid #f5f7ff;
   border-top: 0.2vw solid #f5f7ff;
 }
@@ -345,15 +378,15 @@ body {
       padding: 1vh 1.8vw;
       font-size: 1.4vw;
       margin: 1vh 0.5vw;
-      border-right: 0.5vw solid #7d808c;
-      border-bottom: 0.5vw solid #7d808c;
+      border-right: 0.5vw solid #565861;
+      border-bottom: 0.5vw solid #565861;
       border-left: 0.5vw solid #f5f7ff;
       border-top: 0.5vw solid #f5f7ff;
   }
 
   .bottomnav p.active {
-      border-top: 0.5vw solid #7d808c;
-      border-left: 0.5vw solid #7d808c;
+      border-top: 0.5vw solid #565861;
+      border-left: 0.5vw solid #565861;
       border-bottom: 0.5vw solid #a3a7b8;
       border-right: 0.5vw solid #a3a7b8;
   }
@@ -362,8 +395,8 @@ body {
     width: 60vw; 
     height: 50vh; 
     background-color: #cfd4e8;
-    border-right: 0.2vw solid #7d808c;
-    border-bottom: 0.2vw solid #7d808c;
+    border-right: 0.2vw solid #565861;
+    border-bottom: 0.2vw solid #565861;
     border-left: 0.2vw solid #f5f7ff;
     border-top: 0.2vw solid #f5f7ff;
   }

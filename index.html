@@ -146,6 +146,11 @@
         hacker_index += 1;
     }, 40)
 
+    let browsertype=navigator.userAgent;
+    if(browsertype.includes("Safari")){
+        //alert("Hi! Looks like you're opening this website in Safari. Look, I developed this entire thing on Safari, so I get it, but there are a couple known bugs you should be aware of:\n\n1) CSS animations don't render in iFrames;\n2) background-images don't listen to image-rendering properties (so they may be rendered blurrily.)\n\nThese bugs are not present on Chrome or Firefox, so I'd recommend using one of those - but if you're like me and prefer Safari anyways, continue on, just keeping in mind you may not be getting the full experience. Thanks!");
+    }
+
     $(function () {
         $(".draggable").draggable({
             //brings current window to forefront
@@ -171,6 +176,8 @@
 
     $(document).ready(
         function () {
+            
+
             //disable hover until animation is finished
             $(".list-row").delay(2500).queue(function () {
                 $(".list-row").css("pointer-events", "auto");
@@ -236,7 +243,7 @@
                 window.location.href = "./subpages/experience.html";
             });
             $("#projectsMax").click(function () {
-                window.location.href = "./subpages/projects.html";
+                window.open('https://github.com/KiranMcculloch', '_blank'); 
             });
 
             //adds border when icons single clicked
@@ -262,7 +269,7 @@
                 window.location.href = "./subpages/experience.html";
             });
             $('#projects-icon').dblclick(function () {
-                window.location.href = "./subpages/projects.html";
+                window.open('https://github.com/KiranMcculloch', '_blank'); 
             });
 
             //animates icons on hover
@@ -307,7 +314,6 @@
 
     <div class="crt-overlay"></div>
 
-    <div id="new-div"></div>
     <div class="icon-wrapper" id="about-icon">
         <img class="shortcut-icon" id="about-icon-img" src="./img/about-icon.png">
         <p style="margin-top: 0;">About</p>
@@ -417,7 +423,8 @@
             <p class="popup-small-button" id="projectsClose">x</p>
             <p class="popup-small-button" id="projectsMax">&#9634;</p>
         </div>
-        <iframe src="./subpages/projects.html" width="100%" height="100%"></iframe>
+        <iframe src="https://github.com/KiranMcculloch" width="100%" height="100%"></iframe>
+        <!-- <iframe src="./subpages/projects.html" width="100%" height="100%"></iframe> -->
     </div>
 
     <div id="credits-popup" class="popup-window draggable resizable">
@@ -432,7 +439,8 @@
             <p>CRT-esque screendooring tweaked and followed closely from tutorial by Alec Lownes</p>
             <p>Photo of Kiran taken by Deni Stoimenov</p>
             <p>All art, animations, and code not listed above hand-made by Kiran McCulloch</p>
-            <p>My best wishes and sincerest apologies to Windows 95, Wikipedia, and more</p>
+            <p>My best wishes and sincerest apologies to Microsoft, Wikipedia, Adobe, and Google</p><br>
+            <p>Tools used to make this website include HTML, CSS, Javascript, JQuery UI, Adobe Photoshop 2020, and Piskel.com</p>
         </div>
     </div>
 </body>
