@@ -8,21 +8,34 @@
 @font-face {
   font-family: 'BP Squares';
   src: url('./fonts/bpdots.squares-bold-webfont.woff2') format('woff2'),
-       url('./fonts/bpdots.squares-bold-webfont.woff') format('woff');
+    url('./fonts/bpdots.squares-bold-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 
 }
 
 @keyframes bounce {
-  0%   { transform: translateY(0); }
-  50%  { transform: translateY(1.5vh); }
-  100% { transform: translateY(0); }
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(1.5vh);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
 }
 
-@keyframes appear{
-  from{ opacity: 0%; }
-  to{ opacity: 100%; }
+@keyframes appear {
+  from {
+    opacity: 0%;
+  }
+
+  to {
+    opacity: 100%;
+  }
 }
 
 /* ------- DEFAULT ------- */
@@ -32,7 +45,7 @@ body {
   padding: 0 auto;
 }
 
-.underline{
+.underline {
   text-decoration-line: underline;
   text-decoration-style: solid;
   text-decoration-thickness: 0.1em;
@@ -44,7 +57,7 @@ body {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1; 
+  background: #f1f1f1;
 }
 
 /* Handle */
@@ -58,402 +71,9 @@ body {
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: #555;
 }
 
-.invisible{
+.invisible {
   opacity: 0;
-}
-
-.shortcut-icon{
-  width: 108px;
-  height: 108px;
-  image-rendering: crisp-edges;
-}
-
-.icon-wrapper{
-  position: fixed;
-  padding: 10px;
-  text-align: center;
-  border: 3px solid transparent;
-  width: fit-content;
-  height: fit-content;
-}
-
-.icon-wrapper img{
-  -ms-interpolation-mode: nearest-neighbor;
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: -moz-crisp-edges;
-  image-rendering: -o-pixelated;
-  image-rendering: pixelated;
-}
-
-.icon-border{
-  border: 3px dotted black;
-}
-
-#about-icon{
-  top: 80px; right: 60px;
-}
-
-#education-icon{
-  top: 200px; right: 220px;
-}
-
-#experience-icon{
-  top: 320px; right: 40px;
-}
-
-#projects-icon{
-  top: 440px; right: 230px;
-}
-
-.bottomnav {
-  font-family: "Windows 95";
-  overflow: hidden;
-  background-color: #cfd4e8;
-  width: 100%;
-  height: 60px;
-  position: fixed;
-  bottom : 0px;
-  left: 0px;
-  border-top: 5px solid #f5f7ff;
-}
-
-.bottomnav p {
-  float: left;
-  margin: 4px;
-  display: block;
-  box-sizing: border-box;
-  border-right: 5px solid #565861;
-  border-bottom: 5px solid #565861;
-  border-left: 5px solid #f5f7ff;
-  border-top: 5px solid #f5f7ff;
-  color: #000000;
-  text-align: center;
-  padding: 9px 25px;
-  text-decoration: none;
-  font-size: 15px;
-}
-
-.bottomnav p:hover {
-  background-color: #e3e9ff;
-}
-
-.bottomnav p.active {
-  background-color: #a3a7b8;
-  border-left: 5px solid #565861;
-  border-top: 5px solid #565861;
-  border-bottom: 5px solid #a3a7b8;
-  border-right: 5px solid #a3a7b8;
-}
-
-#top-left-logo{
-  float: left;
-  width: 50px;
-  padding: 5px;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-.popup-window{
-  position: fixed;
-  z-index: 2;
-  width: 750px; 
-  height: 500px; 
-  background-color: #cfd4e8;
-  border-right: 0.2vw solid #565861;
-  border-bottom: 0.2vw solid #565861;
-  border-left: 0.2vw solid #f5f7ff;
-  border-top: 0.2vw solid #f5f7ff;
-}
-
-.popup-menu-bar{
-  width: auto;
-  height: 40px;
-  background-color: blue;
-  margin: 2px;
-}
-
-.popup-small-button{
-  float: right;
-  top: 0px;
-  width: 27px;
-  height: 27px;
-  margin-top: 4px;
-  margin-right: 4px;
-  text-align: center;
-  background-color: #cfd4e8;
-  border-right: 0.2vw solid #565861;
-  border-bottom: 0.2vw solid #565861;
-  border-left: 0.2vw solid #f5f7ff;
-  border-top: 0.2vw solid #f5f7ff;
-}
-
-.popup-small-button:hover{
-  background-color: #e3e9ff;
-}
-
-
-.popup-title{
-  margin: 0;
-  float: left;
-  font-size: 15pt;
-  color: white;
-  padding-left: 10px;
-  padding-top: 3px;
-}
-
-.clock {
-  float: right;
-  margin-top: 5px;
-  margin-right: 5px;
-  width: auto;
-  text-align: center;
-  padding: 7px;
-  border-left: 5px solid #a3a7b8;
-  border-top: 5px solid #a3a7b8;
-  border-bottom: 5px solid #ffffff;
-  border-right: 5px solid #ffffff;
-}
-
-.bounce {
-  animation-name: bounce;
-  animation-timing-function: ease-in-out;
-  animation-duration: 4s;
-  animation-iteration-count: infinite;
-  transform-origin: bottom;
-}
-
-#kiran-photo {
-  position:fixed; 
-  top: 0vh; 
-  left: 0vw; 
-  width: 30vw;
-}
-
-#center-text{
-  position: relative;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 0vh;
-  width: 50%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 5vh;
-  /* border: 1px solid red; */
-}
-
-#center-text *{
-  margin: 0px;
-}
-
-#main-title {
-  font-size: 5.5vw;
-  font-family: 'BP Squares';
-  color: #d93609;
-  flex-shrink: 0;
-  width: 100%;
-  text-align: center;
-  white-space: nowrap;
-}
-
-.sub-heading {
-  font-size: 1.1vw;
-  color: white;
-  flex-shrink: 0;
-  width: 100%;
-  height: fit-content;
-}
-
-#center-list{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.list-row{
-  display: flex;
-  justify-content: center;
-  width: fit-content;
-  height: fit-content;
-}
-
-.flex-break{
-  flex-basis: 100%;
-  height: 0;
-}
-
-.center-list-item{
-  opacity: 0;
-  z-index: 1;
-  font-size: 1.2vw;
-  padding: 2vh;
-  text-align: center;
-  color: white;
-  width: fit-content;
-  flex-shrink: 0;
-  animation: appear 1.5s;
-  animation-fill-mode: forwards;
-  transition: font-size 0.3s, transform 0.3s;
-  transition-timing-function: ease;
-}
-
-.hidden-skills{
-  opacity: 0;
-  z-index: 0;
-  font-size: 1vw;
-  display: flex;
-  width: fit-content;
-  height: fit-content;
-  text-align: center;
-  align-self: center;
-  transition: opacity 0.5s ease;
-}
-
-.list-row:hover > p.center-list-item{
-  font-size: 1.75vw;
-  transform: translateX(0vw) !important;
-}
-.list-row:hover > p.hidden-skills{
-  opacity: 100;
-}
-
-
-
-
-
-
-
-
-
-
-/* ------- TABLET ------- */
-@media screen and (max-width: 900px) and (min-width: 500px) {
-  .shortcut-icon{
-    width: 10vw;
-    height: 10vw;
-  }
-
-  .icon-wrapper{
-    padding: 1vw;
-    border: 0.5vw solid transparent;
-  }
-
-  .icon-border{
-    border: 0.5vw dotted black;
-  }
-
-  .icon-wrapper p{
-    font-size: 1.6vw;
-  }
-
-  #about-icon{
-    top: 10vh; right: 5vw;
-  }
-  
-  #education-icon{
-    top: 25vh; right: 20vw;
-  }
-  
-  #experience-icon{
-    bottom: 30vh; right: 3vw;
-  }
-  
-  #projects-icon{
-    bottom: 10vh; right: 22vw;
-  }
-
-  #top-left-logo{
-    margin-top: 0.5vh;
-    width: 5vw;
-  }
-
-  .bottomnav{
-    height: fit-content;
-  }
-
-  .bottomnav p{
-      padding: 1vh 1.8vw;
-      font-size: 1.4vw;
-      margin: 1vh 0.5vw;
-      border-right: 0.5vw solid #565861;
-      border-bottom: 0.5vw solid #565861;
-      border-left: 0.5vw solid #f5f7ff;
-      border-top: 0.5vw solid #f5f7ff;
-  }
-
-  .bottomnav p.active {
-      border-top: 0.5vw solid #565861;
-      border-left: 0.5vw solid #565861;
-      border-bottom: 0.5vw solid #a3a7b8;
-      border-right: 0.5vw solid #a3a7b8;
-  }
-
-  .popup-window{
-    width: 60vw; 
-    height: 50vh; 
-    background-color: #cfd4e8;
-    border-right: 0.2vw solid #565861;
-    border-bottom: 0.2vw solid #565861;
-    border-left: 0.2vw solid #f5f7ff;
-    border-top: 0.2vw solid #f5f7ff;
-  }
-  
-  .popup-menu-bar{
-    width: auto;
-    height: 40px;
-    background-color: blue;
-    margin: 2px;
-  }
-
-  .clock {
-    margin-top: 0.5vh;
-    margin-right: 1vw;
-    font-size: 1.6vw;
-    width: auto;
-  }
-
-  #kiran-photo {
-    top: 10%; 
-    left: 2vw; 
-    height: 70%;
-    width: auto;
-  }
-}
-
-
-
-
-
-
-
-/* ------- MOBILE ------- */
-@media screen and (max-width: 500px) {
-
-  .bottomnav p:not(:first-child) {
-      display: none;
-  }
-
-  .bottomnav p.icon {
-      float: right;
-      display: block;
-      font-size: 35px;
-      font-family: 'Times New Roman';
-      line-height: 20px;
-      height: 64px;
-  }
-
-  .clock{
-    display: none;
-  }
-
-  .list-row:active > p.center-list-item{
-    font-size: 1.75vw;
-    transform: translateX(0vw) !important;
-  }
-  .list-row:active > p.hidden-skills{
-    opacity: 100;
-  }
 }

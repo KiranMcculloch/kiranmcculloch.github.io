@@ -1,11 +1,19 @@
 <!DOCTYPE html>
+<!-- To Do:
+    Fix viewport-units with clamps (BIG TASK). will really help responsiveness
+    dedicated mobile layout
+    Projects tab:
+        Minesweeper layout, w/ click to reveal 
+        Demos of projects (?)
+    find solution somehow to map problem (edu page). this has been really bugging me and google is absolutely no help
 
+    -->
 <!-- 
     *5 pages ONLY; subpages made in single-page website format w/ anchor links
 
     |Landing Page
         |-> About Page
-            |-> Life Details not found elswhere
+            |-> Life Details not found elsewhere
             |-> Synopsis/"Cover Letter" (funny?)
         |-> Education Page 
             |-> McGill
@@ -36,8 +44,21 @@
 
     .popup-window {
         display: none;
+    }
+
+    .popup-window-wrapper{
+        display: flex;
+        position: absolute;
+        top:0;
+        left:0;
+        width: 100%;
+        height: 100%;
         flex-direction: column;
         overflow: hidden;
+    }
+
+    .popup-window-wrapper iframe{
+        flex-grow: 1;
     }
 
     #about-popup {
@@ -65,10 +86,6 @@
         top: 12vh;
     }
 
-    .flex {
-        display: flex;
-    }
-
     .list-row {
         pointer-events: none;
     }
@@ -91,12 +108,12 @@
 
     #list-item-3 {
         animation-delay: 1s;
-        transform: translateX(5.7vw);
+        transform: translateX(6.2vw);
     }
 
     #list-item-4 {
         animation-delay: 1.5s;
-        transform: translateX(6.4vw);
+        transform: translateX(7.5vw);
     }
 
     #list-item-5 {
@@ -110,12 +127,15 @@
         color: #d93609;
         text-shadow: 1px 0 1px rgba(0, 30, 255, 0.5), -2px 0 1px rgba(255, 0, 80, 0.1), 0 0 3px;
     }
+
+    
 </style>
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link type="text/css" rel="stylesheet" href="./style.css">
     <link type="text/css" rel="stylesheet" href="./crt.css">
+    <link type="text/css" rel="stylesheet" href="./index.css">
     <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
@@ -126,6 +146,7 @@
 
 <script>
 
+    //hacker text helper
     function chooseRandomWord(pString, startIndex) {
         const letters = "abcdefghijklmoqrstuvwxyz";
         return new_string = pString.split("").map(function (element, index) {
@@ -157,7 +178,9 @@
             stack: ".popup-window",
             //changes current window on click
             distance: 0,
-            iFrameFix: true
+            containment: 'window',
+            scroll: false,
+            iframeFix: true
         });
 
         $(".resizable").resizable({
@@ -174,65 +197,58 @@
 
     });
 
+    //function for opening and closing sub-windows ("popups")
+    var foldSettings = {
+        easing: 'easeInOutCubic',
+        duration: 400,
+        size: 50
+    }
+
+    function toggleWindow(windowString){
+        //if popup is closed
+        if ($("#"+windowString+"-popup").is(":hidden")) {
+            //reloads iframe
+            $("#"+windowString+"-popup .popup-window-wrapper iframe").attr( 'src', function ( i, val ) { return val; });
+        }
+        //toggles navbar button
+        $("#"+windowString+"Menu").toggleClass("active");
+        //shows/hides window
+        $("#"+windowString+"-popup").toggle("fold",foldSettings);
+    }
+
     $(document).ready(
         function () {
-            
-
             //disable hover until animation is finished
             $(".list-row").delay(2500).queue(function () {
                 $(".list-row").css("pointer-events", "auto");
                 $(".list-row").dequeue();
             });
 
+            //hover over credits button
             $("#top-left-logo").hover(function () {
                 $(this).attr('src', './img/logo-hover.png');
             }, function () {
                 $(this).attr('src', './img/logo.png');
             });
 
-            //shows and hides windows from bottom menu
-            $("#aboutMenu").click(function () {
-                $("#about-popup").toggleClass("flex");
-                $("#aboutMenu").toggleClass("active");
+            //toggles popup windows from bottom menu or close button
+            $("#aboutMenu, #aboutClose").click(function () {
+                toggleWindow("about");
             });
-            $("#educationMenu").click(function () {
-                $("#education-popup").toggleClass("flex");
-                $("#educationMenu").toggleClass("active");
+            $("#educationMenu, #educationClose").click(function () {
+                toggleWindow("education");
             });
-            $("#experienceMenu").click(function () {
-                $("#experience-popup").toggleClass("flex");
-                $("#experienceMenu").toggleClass("active");
+            $("#experienceMenu, #experienceClose").click(function () {
+                toggleWindow("experience");
             });
-            $("#projectsMenu").click(function () {
-                $("#projects-popup").toggleClass("flex");
-                $("#projectsMenu").toggleClass("active");
+            $("#projectsMenu, #projectsClose").click(function () {
+                toggleWindow("projects");
             });
-            $("#top-left-logo").click(function () {
-                $("#credits-popup").toggleClass("flex");
+            $("#top-left-logo, #creditsClose").click(function () {
+                toggleWindow("credits");
             });
 
-            //closes windows when close button clicked
-            $("#aboutClose").click(function () {
-                $("#about-popup").toggleClass("flex");
-                $("#aboutMenu").toggleClass("active");
-            });
-            $("#educationClose").click(function () {
-                $("#education-popup").toggleClass("flex");
-                $("#educationMenu").toggleClass("active");
-            });
-            $("#experienceClose").click(function () {
-                $("#experience-popup").toggleClass("flex");
-                $("#experienceMenu").toggleClass("active");
-            });
-            $("#projectsClose").click(function () {
-                $("#projects-popup").toggleClass("flex");
-                $("#projectsMenu").toggleClass("active");
-            });
-            $("#creditsClose").click(function () {
-                $("#credits-popup").toggleClass("flex");
-            });
-
-            //maximizes windows when fullscreen button clicked
+            //"maximizes" windows when fullscreen button clicked
             $("#aboutMax").click(function () {
                 window.location.href = "./subpages/about.html";
             });
@@ -243,7 +259,7 @@
                 window.location.href = "./subpages/experience.html";
             });
             $("#projectsMax").click(function () {
-                window.open('https://github.com/KiranMcculloch', '_blank'); 
+                window.location.href = "./subpages/projects.html";
             });
 
             //adds border when icons single clicked
@@ -258,7 +274,7 @@
                 $('.icon-wrapper').removeClass('icon-border');
             });
 
-            //opens pages fullscreen when icons double clicked
+            //opens pages fullscreen when shortcut icons double clicked
             $('#about-icon').dblclick(function () {
                 window.location.href = "./subpages/about.html";
             });
@@ -272,7 +288,7 @@
                 window.open('https://github.com/KiranMcculloch', '_blank'); 
             });
 
-            //animates icons on hover
+            //animates shortcut icons on hover
             $("#about-icon-img").hover(
                 function () {
                     $(this).attr("src", "./img/about-icon.gif");
@@ -365,13 +381,13 @@
 
             <div class="list-row">
                 <p class="center-list-item" id="list-item-3">Front End Developer</p>
-                <p class="hidden-skills">HTML, CSS,<br>Javascript, JQuery</p>
+                <p class="hidden-skills">HTML, CSS, Node.js,<br>React.js, JQuery</p>
             </div>
             <div class="flex-break"></div>
 
             <div class="list-row">
                 <p class="center-list-item" id="list-item-4">Video Editor</p>
-                <p class="hidden-skills">Adobe Premiere Pro,<br>Final Cut Pro X</p>
+                <p class="hidden-skills">Adobe Premiere, Davinci<br>Resolve, Final Cut Pro</p>
             </div>
             <div class="flex-break"></div>
 
@@ -388,59 +404,72 @@
         </div>
     </div>
 
-
-
     <div id="about-popup" class="popup-window draggable resizable row-container">
-        <div class="popup-menu-bar">
-            <p class="popup-title">About</p>
-            <p class="popup-small-button" id="aboutClose">x</p>
-            <p class="popup-small-button" id="aboutMax">&#9634;</p>
+        <div class="popup-window-wrapper">
+            <div class="popup-menu-bar">
+                <p class="popup-title">About</p>
+                <div class="popup-spacer"></div>
+                <p class="popup-small-button" id="aboutMax">&#9634;</p>
+                <p class="popup-small-button" id="aboutClose">x</p>
+            </div>
+            <iframe src="./subpages/about.html"></iframe>
         </div>
-        <iframe id="about-iframe" src="./subpages/about.html" width="100%" height="100%" class="second-row"></iframe>
     </div>
 
     <div id="education-popup" class="popup-window draggable resizable">
-        <div class="popup-menu-bar" style="background-color: darkblue;">
-            <p class="popup-title">Education</p>
-            <p class="popup-small-button" id="educationClose">x</p>
-            <p class="popup-small-button" id="educationMax">&#9634;</p>
+        <div class="popup-window-wrapper">
+            <div class="popup-menu-bar" style="background-color: darkblue;">
+                <p class="popup-title">Education</p>
+                <div class="popup-spacer"></div>
+                <p class="popup-small-button" id="educationMax">&#9634;</p>
+                <p class="popup-small-button" id="educationClose">x</p>
+            </div>
+            <iframe src="./subpages/education.html"></iframe>
         </div>
-        <iframe src="./subpages/education.html" width="100%" height="100%"></iframe>
     </div>
 
     <div id="experience-popup" class="popup-window draggable resizable">
-        <div class="popup-menu-bar" style="background-color: dodgerblue;">
-            <p class="popup-title">Experience</p>
-            <p class="popup-small-button" id="experienceClose">x</p>
-            <p class="popup-small-button" id="experienceMax">&#9634;</p>
+        <div class="popup-window-wrapper">
+            <div class="popup-menu-bar" style="background-color: dodgerblue;">
+                <p class="popup-title">Experience</p>
+                <div class="popup-spacer"></div>
+                <p class="popup-small-button" id="experienceMax">&#9634;</p>
+                <p class="popup-small-button" id="experienceClose">x</p>
+            </div>
+            <iframe src="./subpages/experience.html"></iframe>
         </div>
-        <iframe src="./subpages/experience.html" width="100%" height="100%"></iframe>
     </div>
 
     <div id="projects-popup" class="popup-window draggable resizable">
-        <div class="popup-menu-bar" style="background-color: royalblue;">
-            <p class="popup-title">Projects</p>
-            <p class="popup-small-button" id="projectsClose">x</p>
-            <p class="popup-small-button" id="projectsMax">&#9634;</p>
+        <div class="popup-window-wrapper">
+            <div class="popup-menu-bar" style="background-color: royalblue;">
+                <p class="popup-title">Projects</p>
+                <div class="popup-spacer"></div>
+                <p class="popup-small-button" id="projectsMax">&#9634;</p>
+                <p class="popup-small-button" id="projectsClose">x</p>
+            </div>
+            <iframe src="./subpages/projects.html"></iframe>
         </div>
-        <iframe src="https://github.com/KiranMcculloch" width="100%" height="100%"></iframe>
-        <!-- <iframe src="./subpages/projects.html" width="100%" height="100%"></iframe> -->
     </div>
 
     <div id="credits-popup" class="popup-window draggable resizable">
-        <div class="popup-menu-bar" style="background-color: cyan;">
-            <p class="popup-title" style="color: black;">Credits</p>
-            <p class="popup-small-button" id="creditsClose">x</p>
-        </div>
-        <div style="overflow-y: auto; padding-left: 5%; padding-right: 3%;">
-            <p>Static versions of desktop icons based on those made by Microsoft</p>
-            <p>Font from themesberg.com</p>
-            <p>Code for clock tweaked and followed closely from tutorial by Martynas Linkevicius</p>
-            <p>CRT-esque screendooring tweaked and followed closely from tutorial by Alec Lownes</p>
-            <p>Photo of Kiran taken by Deni Stoimenov</p>
-            <p>All art, animations, and code not listed above hand-made by Kiran McCulloch</p>
-            <p>My best wishes and sincerest apologies to Microsoft, Wikipedia, Adobe, and Google</p><br>
-            <p>Tools used to make this website include HTML, CSS, Javascript, JQuery UI, Adobe Photoshop 2020, and Piskel.com</p>
+        <div class="popup-window-wrapper">
+            <div class="popup-menu-bar" style="background-color: cyan;">
+                <p class="popup-title" style="color: black;">Credits</p>
+                <div class="popup-spacer"></div>
+                <p class="popup-small-button" id="creditsClose">x</p>
+            </div>
+            <div style="overflow-y: auto; padding-left: 5%; padding-right: 3%;">
+                <p>Static versions of desktop icons based on those made by Microsoft</p>
+                <p>Font from themesberg.com</p>
+                <p>Code for clock tweaked and followed closely from tutorial by Martynas Linkevicius</p>
+                <p>CRT-esque screendooring tweaked and followed closely from tutorial by Alec Lownes</p>
+                <p>Wikipedia parody modified from template provided by <a href="https://html5-templates.com" target="_self">html5-templates.com</a></p>
+                <p>Photo of Kiran taken by Deni Stoimenov</p>
+                <p>All art, animations, and code not listed above hand-made by Kiran McCulloch</p>
+                <p>My best wishes and sincerest apologies to Microsoft, Wikipedia, Adobe, and Google</p><br>
+                <p>Tools used to make this website include HTML, CSS, Javascript, JQuery UI, Adobe Photoshop 2020, and Piskel.com</p>
+            </div>
         </div>
     </div>
 </body>

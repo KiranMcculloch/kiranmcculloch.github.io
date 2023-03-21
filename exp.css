@@ -1,0 +1,168 @@
+#ps-overlays {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.ps-menu-bar {
+    background-color: #cfd4e8;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding-top: 1.5vh;
+    padding-bottom: 1.5vh;
+
+}
+
+.ps-menu-bar a {
+    display: inline;
+    margin-left: 1.5vw;
+    font-size: 2.2vh;
+    padding: 3px;
+    border: 5px solid #cfd4e8;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.ps-menu-bar a:hover {
+    background-color: #e3e9ff;
+}
+
+.ps-menu-bar a.active {
+    background-color: #a3a7b8;
+    border-left: 5px solid #565861;
+    border-top: 5px solid #565861;
+    border-bottom: 5px solid #a3a7b8;
+    border-right: 5px solid #a3a7b8;
+}
+
+#ps-ruler {
+    pointer-events: none;
+    position: absolute;
+    width: 150%;
+    overflow: hidden;
+}
+
+.ps-sidebar {
+    height: 80vh;
+    pointer-events: none;
+}
+
+.ps-panel {
+    height: 85vh;
+}
+
+#ps-sidebar-real {
+    position: absolute;
+    margin-top: 5vh;
+    margin-left: 3vw;
+}
+
+#ps-panel-real {
+    position: absolute;
+    margin-top: 5vh;
+    right: 0;
+    margin-right: 1vw;
+    pointer-events: none;
+}
+
+#slider-wrapper{
+    position: absolute;
+    margin-top: 5vh;
+    right: 0;
+    margin-right: 1vw;
+    width: 39.2vh;
+}
+
+#content {
+    margin-left: 3vw;
+    margin-right: 1vw;
+    display: flex;
+}
+
+ul {
+    list-style: none;
+}
+
+li:before {
+    content: '\2022';
+    padding: 1rem;
+}
+
+#canvas {
+    width: 100%;
+    margin-top: 5vh;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    background-color: white;
+    height: auto;
+}
+
+#exp-main-section {
+    padding: 1vw;
+}
+
+.exp-title {
+    font-size: clamp(0.8rem, 2vw, 1.5rem);
+    font-weight: bold;
+}
+
+.exp-subtitle {
+    font-size: clamp(0.6rem, 1vmax, 1rem);
+    font-weight: bold;
+}
+
+.exp-body {
+    font-size: clamp(0.6rem, 1vmax, 1rem);
+    list-style-position: inside;
+}
+
+.exp-body::after {
+    content: " ";
+    white-space: pre;
+}
+
+@media screen and (max-width: 900px) {
+
+    #exp-main-section {
+        font-size: 1.5vw;
+    }
+
+    .ps-panel {
+        display: none;
+    }
+
+    #content {
+        margin-left: 3vw;
+    }
+
+    #ps-sidebar-real {
+        margin-left: 3vw;
+    }
+
+    .ps-menu-bar a {
+        font-size: 2vw;
+    }
+}
+
+@media screen and (max-aspect-ratio: 1/1) {
+    .ps-panel {
+        display: none;
+    }
+
+    #content {
+        margin-left: 3vw;
+    }
+
+    #ps-sidebar-real {
+        margin-left: 3vw;
+    }
+
+    .ps-menu-bar a {
+        font-size: 2.2vw;
+    }
+
+}

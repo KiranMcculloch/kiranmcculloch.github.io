@@ -1,72 +1,61 @@
 <!DOCTYPE html>
 <html>
-    <style>
-        body{
-            background-image: url("../img/waves.gif");
-            background-size: auto 12%;
-            -ms-interpolation-mode: nearest-neighbor;
-            image-rendering: -webkit-optimize-contrast;
-            image-rendering: -moz-crisp-edges;
-            image-rendering: -o-pixelated;
-            image-rendering: pixelated;
-            overflow: hidden;
-        }
+<style>
+    body {
+        background-image: url("../img/waves.gif");
+        background-size: auto 12%;
+        -ms-interpolation-mode: nearest-neighbor;
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: -moz-crisp-edges;
+        image-rendering: -o-pixelated;
+        image-rendering: pixelated;
+        overflow: hidden;
+    }
 
-        #mtl-text-box{
-            top: 22%;
-            right: 54%;
-        }
+    #mtl-text-box {
+        top: 22%;
+        right: 54%;
+    }
 
-        #phl-text-box{
-            bottom: 37%;
-            left: 56%;
-        }
+    #phl-text-box {
+        bottom: 37%;
+        left: 56%;
+    }
 
-        #marker-mtl{
-            top: 26.5%;
-            left: 49.5%;
-        }
+    #marker-mtl {
+        top: 26.5%;
+        left: 49.5%;
+    }
 
-        #marker-phl{
-            top: 50.5%;
-            left: 47.5%;
-        } 
+    #marker-phl {
+        top: 50.5%;
+        left: 47.5%;
+    }
 
-        #maps-logo{
-            position: fixed;
-            z-index: 2;
-            bottom: 1%;
-            right: 1%;
-            width: 12vw;
-        }
-        
-        @media screen and (max-width: 900px){
-            #marker-mtl{
-                top: 27.75%;
-                left: 49.5%;
-            }
+    #maps-logo {
+        position: fixed;
+        z-index: 2;
+        bottom: 1%;
+        right: 1%;
+        width: 12vw;
+    }
+</style>
 
-            #marker-phl{
-                top: 51.5%;
-                left: 48%;
-            }
-        }
-    </style>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link type="text/css" rel="stylesheet" href="../style.css">
-        <link type="text/css" rel="stylesheet" href="../crt.css">
-        <link type="text/css" rel="stylesheet" href="../map.css">
-        <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css"/>
-        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-        <script src="../crt.js"></script>
-        <title>Education - Kiran McCulloch</title>
-    </head>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="../style.css">
+    <link type="text/css" rel="stylesheet" href="../crt.css">
+    <link type="text/css" rel="stylesheet" href="../map.css">
+    <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="../crt.js"></script>
+    <title>Education - Kiran McCulloch</title>
+</head>
 
-    <script>
-        $(document).ready(
-        function() {
+<script>
+    $(document).ready(
+        function () {
             if (inIframe()) {
                 $("#crt-overlay").addClass("invisible")
             }
@@ -75,15 +64,15 @@
 
             //shows text boxes on hover
             $("#marker-mtl").hover(
-                function(){
+                function () {
                     $("#mtl-text-box").toggle(200);
                 }
-            ); 
+            );
             $("#marker-phl").hover(
-                function(){
+                function () {
                     $("#phl-text-box").toggle(200);
                 }
-            ); 
+            );
 
             $("#marker-mtl").hover(
                 function () {
@@ -103,44 +92,45 @@
             );
         });
 
-    </script>
+</script>
 
-    <body class="crt-text">
-        <div class="crt-overlay" id="crt-overlay"></div>
-        <div id="map-content">
-            <div id="map-sub-container">
-                <img id="world-map" src="../img/map-test.png">
-                <div class = "map-marker" id="marker-mtl">
-                    <img src="../img/mcgill-pixel.png">
-                </div>
-                <div class = "map-marker" id="marker-phl">
-                    <img src="../img/gfs-pixel.png">
-                </div>
+<body class="crt-text">
+    <div class="crt-overlay" id="crt-overlay"></div>
+    <div id="map-content">
+        <div id="map-sub-container">
+            <img id="world-map" src="../img/map.png">
+            <div class="map-marker" id="marker-mtl">
+                <img src="../img/mcgill-pixel.png">
+            </div>
+            <div class="map-marker" id="marker-phl">
+                <img src="../img/gfs-pixel.png">
+            </div>
 
-                <div class="map-text-box" id="mtl-text-box">
-                    <div style="margin: 3vh;">
-                        <p class="map-text-header">McGill University</p>
-                        <p>Montreal, Quebec</p>
-                        <p>2018 - 2022</p>
-                        <p>B.Sc. Computer Science, Minor Geography</p>
-                    </div>
-                    
+            <div class="map-text-box" id="mtl-text-box">
+                <div style="margin: 3vh;">
+                    <p class="map-text-header">McGill University</p>
+                    <p>Montreal, Quebec</p>
+                    <p>2018 - 2022</p>
+                    <p>B.Sc. Computer Science, Minor Geography</p>
                 </div>
 
-                <div class="map-text-box" id="phl-text-box">
-                    <div style="margin: 3vh;">
-                        <p class="map-text-header">Germantown Friends School</p>
-                        <p>Philadelphia, Pennsylvania</p>
-                        <p>2014 - 2018</p>
-                        <p>High School</p>
-                    </div>
+            </div>
+
+            <div class="map-text-box" id="phl-text-box">
+                <div style="margin: 3vh;">
+                    <p class="map-text-header">Germantown Friends School</p>
+                    <p>Philadelphia, Pennsylvania</p>
+                    <p>2014 - 2018</p>
+                    <p>High School</p>
                 </div>
             </div>
-            <img id="maps-logo" src="../img/maps-logo.png">
         </div>
+        <img id="maps-logo" src="../img/maps-logo.png">
+    </div>
 
 
-        
 
-    </body>
+
+</body>
+
 </html>
