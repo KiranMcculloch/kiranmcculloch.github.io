@@ -17,7 +17,7 @@
   }
 
   .crt-text {
-    text-shadow: 0.1vmax 0 0.1vmax rgba(0, 30, 255, 0.3), -0.25vmax 0 0.1vmax rgba(255, 0, 80, 0.1), 0 0 0.3vmax;
+    text-shadow: 0.1vmax 0 0.1vmax rgba(0, 30, 255, 0.3), -0.25vmax 0 0.1vmax rgba(255, 0, 80, 0.1), 0 0 0.3vmax #555555;
   }
 
   @media screen and (min-width: 1600px) {

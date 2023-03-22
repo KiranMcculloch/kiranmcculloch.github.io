@@ -159,6 +159,7 @@
             $("#red-text").text(red);
             $("#green-text").text(green);
             $("#blue-text").text(blue);
+            $(".exp-title").css("color", "#" + hex);
         }
 
         $("#red, #green, #blue").slider({
@@ -169,9 +170,9 @@
             slide: refreshSwatch,
             change: refreshSwatch
         });
-        $("#red").slider("value", 47);
-        $("#green").slider("value", 194);
-        $("#blue").slider("value", 103);
+        $("#red").slider("value", 0);
+        $("#green").slider("value", 0);
+        $("#blue").slider("value", 0);
     });
 </script>
 

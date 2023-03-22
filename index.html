@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <!-- To Do:
-    Fix viewport-units with clamps (BIG TASK). will really help responsiveness
+    Fix most viewport-units with clamps (BIG TASK). will really help responsiveness
     dedicated mobile layout
     Projects tab:
         Minesweeper layout, w/ click to reveal 
         Demos of projects (?)
     find solution somehow to map problem (edu page). this has been really bugging me and google is absolutely no help
-
-    -->
+-->
 <!-- 
     *5 pages ONLY; subpages made in single-page website format w/ anchor links
 
@@ -33,7 +32,7 @@
 <style>
     body {
         background-color: rgb(var(--bg-red), var(--bg-green), var(--bg-blue));
-        animation: cycleBgColor 20s infinite ease-in-out;
+        animation: cycleBgColor 30s infinite;
     }
 
     .ui-resizable {
@@ -176,9 +175,12 @@
     }, 50)
 
 
-    // let browsertype=navigator.userAgent;
+    let browsertype=navigator.userAgent;
     // if(browsertype.includes("Safari")){
     //     alert("Hi! Looks like you're opening this website in Safari. Look, I developed this entire thing on Safari, so I get it, but there are a couple known bugs you should be aware of:\n\n1) CSS animations don't render in iFrames;\n2) background-images don't listen to image-rendering properties (so they may be rendered blurrily.)\n\nThese bugs are not present on Chrome or Firefox, so I'd recommend using one of those - but if you're like me and prefer Safari anyways, continue on, just keeping in mind you may not be getting the full experience. Thanks!");
+    // }
+    // if(browsertype.includes("Chrome")){
+        
     // }
 
     //draggable/resizable setup
@@ -225,9 +227,6 @@
         $("#" + windowString + "-popup").toggle("fold", foldSettings);
     }
 
-
-
-
     $(document).ready(
         function () {
             //disable hover until animation is finished
@@ -244,15 +243,21 @@
             });
 
             //  ;)
-            var winkEnabled = true;
-            $("#kiran-photo").click(function () {
-                if (winkEnabled) {
-                    $(this).attr('src', './img/k-dog-wink.png');
-                    setTimeout(function () { $("#kiran-photo").attr("src", "./img/k-dog.png"); }, 700);
-                    //disables ;) to prevent spamming
-                    winkEnabled = false;
-                    setTimeout(function () { winkEnabled = true }, 3000);
-                }
+            var startTime;
+            //milliseconds
+            const winkTime = 500;
+            //sets wink photo and starts timer
+            $("#kiran-photo").mousedown(function(){
+                $(this).attr('src', './img/k-dog-wink.png');
+                startTime = new Date().getTime();
+            });
+            $(document).mouseup(function(){
+                //stops timer
+                endTime = new Date().getTime();
+                //check how much time is remaining out of the allotted time, rounding negatives (more than alloted time) to 0
+                timeRemaining = Math.max(0,(winkTime-(endTime - startTime))) || 0; 
+                //shows wink for remainder of allotted time
+                setTimeout(function () {  $("#kiran-photo").attr("src", "./img/k-dog.png"); }, timeRemaining);  
             });
 
             //toggles popup windows from bottom menu or close button
@@ -404,7 +409,7 @@
             <div class="flex-break"></div>
 
             <div class="list-row">
-                <p class="center-list-item" id="list-item-3">Front End Developer</p>
+                <p class="center-list-item" id="list-item-3">Front-End Developer</p>
                 <p class="hidden-skills">HTML, CSS, Node.js,<br>React.js, JQuery</p>
             </div>
             <div class="flex-break"></div>
@@ -417,7 +422,7 @@
 
             <div class="list-row">
                 <p class="center-list-item" id="list-item-5">Computer Scientist</p>
-                <p class="hidden-skills">Visual Studio, IDLE,<br>Jetbrains, Excel</p>
+                <p class="hidden-skills">Visual Studio, IDLE,<br>JetBrains, Excel</p>
             </div>
             <div class="flex-break"></div>
 
