@@ -35,7 +35,7 @@
         /* background-image: url("./img/bg.png");
             background-size: 6px;
             image-rendering: crisp-edges; */
-        background-color: #0ee3c7;
+        background-color: green;
     }
 
     .ui-resizable {
@@ -136,7 +136,7 @@
     <link type="text/css" rel="stylesheet" href="./style.css">
     <link type="text/css" rel="stylesheet" href="./crt.css">
     <link type="text/css" rel="stylesheet" href="./index.css">
-    <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />
+    <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css"/>
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script src="./clock.js"></script>
@@ -247,18 +247,16 @@
                 $(this).attr('src', './img/logo.png');
             });
 
-            //disables ;) to prevent spamming
-            var winkEnabled = true;
-
             //  ;)
+            var winkEnabled = true;
             $("#kiran-photo").click(function(){
                 if(winkEnabled){
                     $(this).attr('src','./img/k-dog-wink.png');
-                    setTimeout(function() { $("#kiran-photo").attr("src","./img/k-dog.png"); }, 400);
+                    setTimeout(function() { $("#kiran-photo").attr("src","./img/k-dog.png"); }, 700);
+                    //disables ;) to prevent spamming
                     winkEnabled = false;
-                    setTimeout(function(){winkEnabled=true}, 2000);
+                    setTimeout(function(){winkEnabled=true}, 3000);
                 }
-                    
             });
 
             //toggles popup windows from bottom menu or close button
