@@ -1,14 +1,6 @@
-@font-face {
-	font-family: "Linux Libertine";
-	src: url("fonts/LinLibertine_RZ.woff") format('woff');
-}
-
 html {
-	font-family: sans-serif;
 	font-size: 1em;
 	line-height: 1.4;
-	-ms-text-size-adjust: 100%;
-	-webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -25,13 +17,9 @@ header {
 	display: block;
 }
 
-[hidden] {
-	display: none;
-}
-
 a {
 	background-color: transparent;
-	color: #0645ad;
+	color: blue;
 	text-decoration: none;
 }
 
@@ -40,7 +28,7 @@ a:active {
 }
 
 a:visited {
-	color: #0645ad;
+	color: blue;
 	text-decoration: none;
 }
 
@@ -49,39 +37,22 @@ a:hover {
 	text-decoration: underline;
 }
 
-b {
-	font-weight: bold;
-}
-
 img {
 	border: 0;
 	vertical-align: middle;
 	max-width: 100%;
 }
 
+::selection,
 ::-moz-selection {
 	background: #b3d4fc;
 	text-shadow: none;
 }
 
-::selection {
-	background: #b3d4fc;
-	text-shadow: none;
-}
-
-hr {
-	display: block;
-	height: 1px;
-	border: 0;
-	border-top: 1px solid #ccc;
-	margin: 1em 0;
-	padding: 0;
-}
-
 .browserupgrade {
 	margin: 0.2em 0;
-	background: #ccc;
-	color: #000;
+	background: #cccccc;
+	color: black;
 	padding: 0.2em 0;
 }
 
@@ -101,7 +72,7 @@ h3,
 h4,
 h5,
 h6 {
-	color: #000;
+	color: black;
 	background: none;
 	font-weight: normal;
 	margin: 0;
@@ -119,14 +90,14 @@ h1 {
 }
 
 .article h1 {
-	font-family: 'Linux Libertine', 'Georgia', 'Times', serif;
+	font-family: 'Georgia', 'Times', serif;
 	border-bottom: 1px solid #a2a9b1;
 }
 
 .article h2 {
 	font-size: 2.1em;
 	margin: 0.5em 0 0.5em 0;
-	font-family: 'Linux Libertine', 'Georgia', 'Times', serif;
+	font-family: 'Georgia', 'Times', serif;
 	border-bottom: 1px solid #a2a9b1;
 	line-height: 1.4em;
 	padding-bottom: 0em;
@@ -347,7 +318,7 @@ span.user {
 	line-height: 1.5em;
 	text-align: center;
 	font-weight: bold;
-	color: #0645ad;
+	color: blue;
 	font-size: 115%;
 	margin-bottom: 3px;
 }
