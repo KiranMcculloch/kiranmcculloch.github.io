@@ -35,8 +35,7 @@
         /* background-image: url("./img/bg.png");
             background-size: 6px;
             image-rendering: crisp-edges; */
-        /* background-color: #0ee3c7; */
-        background-color: #d93609;
+        background-color: #0ee3c7;
     }
 
     .ui-resizable {
@@ -187,29 +186,29 @@
     // }
 
     //draggable/resizable setup
-    // $(function () {
-    //     $(".draggable").draggable({
-    //         //brings current window to forefront
-    //         stack: ".popup-window",
-    //         //changes current window on click
-    //         distance: 0,
-    //         containment: 'window',
-    //         scroll: false,
-    //         iframeFix: true
-    //     });
+    $(function () {
+        $(".draggable").draggable({
+            //brings current window to forefront
+            stack: ".popup-window",
+            //changes current window on click
+            distance: 0,
+            containment: 'window',
+            scroll: false,
+            iframeFix: true
+        });
 
-    //     $(".resizable").resizable({
-    //         //resizable on all sides
-    //         handles: "all",
-    //         //fix for choppy resizing
-    //         start: function (event, ui) {
-    //             $('iframe').css('pointer-events', 'none');
-    //         },
-    //         stop: function (event, ui) {
-    //             $('iframe').css('pointer-events', 'auto');
-    //         }
-    //     });
-    // });
+        $(".resizable").resizable({
+            //resizable on all sides
+            handles: "all",
+            //fix for choppy resizing
+            start: function (event, ui) {
+                $('iframe').css('pointer-events', 'none');
+            },
+            stop: function (event, ui) {
+                $('iframe').css('pointer-events', 'auto');
+            }
+        });
+    });
 
     //function for opening and closing sub-windows ("popups")
     var foldSettings = {
@@ -235,28 +234,6 @@
 
     $(document).ready(
         function () {
-
-            $(".draggable").draggable({
-                //brings current window to forefront
-                stack: ".popup-window",
-                //changes current window on click
-                distance: 0,
-                containment: 'window',
-                scroll: false,
-                iframeFix: true
-            });
-
-            $(".resizable").resizable({
-                //resizable on all sides
-                handles: "all",
-                //fix for choppy resizing
-                start: function (event, ui) {
-                    $('iframe').css('pointer-events', 'none');
-                },
-                stop: function (event, ui) {
-                    $('iframe').css('pointer-events', 'auto');
-                }
-            });
             //disable hover until animation is finished
             $(".list-row").delay(2500).queue(function () {
                 $(".list-row").css("pointer-events", "auto");
