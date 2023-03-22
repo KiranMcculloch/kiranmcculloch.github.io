@@ -146,32 +146,46 @@
 
 <script>
 
-    //hacker text helper
+    //randomizes the letters in a string while keeping the first n letters the same
     function chooseRandomWord(pString, startIndex) {
-        const letters = "abcdefghijklmoqrstuvwxyz";
+        //list of allowed letters
+        const letters = "abcdefhijklmoqrstuvwxyz";
+        //splits and re-attaches string to work with individual characters
         return new_string = pString.split("").map(function (element, index) {
+            //keeps the letters before a certain point the same and doesn't randomize spaces
             if (index < startIndex || element == " ") {
                 return element;
             }
+            //chooses a random letter from the list to put in the string
             else {
-                return letters[Math.floor(Math.random() * 24)];
+                return letters[Math.floor(Math.random() * 23)];
             }
         }).join("");
     }
 
     //hacker text animation
     let hacker_index = 0;
+    //number of times to randomize letter after previous letter was set and before it itself is locked in
+    let letter_times = 2;
+    //target text
     let main_text = "Kiran McCulloch";
-    setInterval(function () {
-        $("#main-title").text(chooseRandomWord(main_text, Math.floor(hacker_index / 2)));
+    const hacker_interval = setInterval(function () {
+        //chooses a random letter for every char in the target string letter_times(hacker_index+1) times before locking in the correct letter, where n is the index of the letter 
+        $("#main-title").text(chooseRandomWord(main_text, Math.floor(hacker_index / letter_times)));
         hacker_index += 1;
-    }, 40)
+        //ends loop when word is set
+        if(hacker_index > (letter_times * main_text.length)+1){
+            clearInterval(hacker_interval);
+        }
+    }, 50)
 
-    let browsertype=navigator.userAgent;
-    if(browsertype.includes("Safari")){
-        //alert("Hi! Looks like you're opening this website in Safari. Look, I developed this entire thing on Safari, so I get it, but there are a couple known bugs you should be aware of:\n\n1) CSS animations don't render in iFrames;\n2) background-images don't listen to image-rendering properties (so they may be rendered blurrily.)\n\nThese bugs are not present on Chrome or Firefox, so I'd recommend using one of those - but if you're like me and prefer Safari anyways, continue on, just keeping in mind you may not be getting the full experience. Thanks!");
-    }
 
+    // let browsertype=navigator.userAgent;
+    // if(browsertype.includes("Safari")){
+    //     alert("Hi! Looks like you're opening this website in Safari. Look, I developed this entire thing on Safari, so I get it, but there are a couple known bugs you should be aware of:\n\n1) CSS animations don't render in iFrames;\n2) background-images don't listen to image-rendering properties (so they may be rendered blurrily.)\n\nThese bugs are not present on Chrome or Firefox, so I'd recommend using one of those - but if you're like me and prefer Safari anyways, continue on, just keeping in mind you may not be getting the full experience. Thanks!");
+    // }
+
+    //draggable/resizable setup
     $(function () {
         $(".draggable").draggable({
             //brings current window to forefront
@@ -216,6 +230,9 @@
         $("#"+windowString+"-popup").toggle("fold",foldSettings);
     }
 
+    
+    
+
     $(document).ready(
         function () {
             //disable hover until animation is finished
@@ -229,6 +246,20 @@
                 $(this).attr('src', './img/logo-hover.png');
             }, function () {
                 $(this).attr('src', './img/logo.png');
+            });
+
+            //disables ;) to prevent spamming
+            var winkEnabled = true;
+
+            //  ;)
+            $("#kiran-photo").click(function(){
+                if(winkEnabled){
+                    $(this).attr('src','./img/k-dog-wink.png');
+                    setTimeout(function() { $("#kiran-photo").attr("src","./img/k-dog.png"); }, 400);
+                    winkEnabled = false;
+                    setTimeout(function(){winkEnabled=true}, 2000);
+                }
+                    
             });
 
             //toggles popup windows from bottom menu or close button
@@ -363,7 +394,7 @@
     <div id="center-text">
         <p class="sub-heading">welcome to</p>
         <p id="main-title">
-            Kdwoi MsGefosnc
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
         </p>
         <p class="sub-heading" style="text-align: right;">dot github dot io</p>
         <div id="center-list">
