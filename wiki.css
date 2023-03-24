@@ -1,3 +1,6 @@
+:root{
+	--link-blue: #145ea8;
+}
 html {
 	font-size: 1em;
 	line-height: 1.4;
@@ -19,7 +22,7 @@ header {
 
 a {
 	background-color: transparent;
-	color: #080f99;
+	color: var(--link-blue);
 	text-decoration: none;
 }
 
@@ -28,7 +31,7 @@ a:active {
 }
 
 a:visited {
-	color: #080f99;
+	color: var(--link-blue);
 	text-decoration: none;
 }
 
@@ -261,6 +264,11 @@ div.articleRightInner {
 	margin: 0.5em 0;
 }
 
+#body-text p{
+	line-height: 2em;
+	margin-bottom: 1rem;
+}
+
 span.user {
 	background-position: left top;
 	background-repeat: no-repeat;
@@ -317,7 +325,7 @@ span.user {
 	line-height: 1.5em;
 	text-align: center;
 	font-weight: bold;
-	color: #080f99;
+	color: var(--link-blue);
 	font-size: 115%;
 	margin-bottom: 3px;
 }
@@ -337,6 +345,19 @@ span.user {
 
 .linklist a {
 	white-space: nowrap;
+}
+
+sup{
+	color: var(--link-blue);
+	top: -0.5em;
+	text-decoration: underline;
+}
+
+sub,sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
 }
 
 @media screen and (max-width: 1000px) {

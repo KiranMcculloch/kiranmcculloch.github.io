@@ -3,6 +3,7 @@
     top: 0;
     left: 0;
     width: 100%;
+    z-index: 2;
 }
 
 .ps-menu-bar {
@@ -81,6 +82,7 @@
     margin-left: 3vw;
     margin-right: 1vw;
     display: flex;
+    z-index: 0;
 }
 
 ul {
@@ -105,8 +107,13 @@ li:before {
     padding: 1vw;
 }
 
+.exp-section{
+    position: relative;
+    width:85%;
+}
+
 .exp-title {
-    font-size: clamp(0.8rem, 2vw, 1.5rem);
+    font-size: clamp(0.8rem, 1.8vw, 1.5rem);
     font-weight: bold;
 }
 
@@ -116,7 +123,7 @@ li:before {
 }
 
 .exp-body {
-    font-size: clamp(0.6rem, 1vmax, 1rem);
+    font-size: clamp(0.6rem, 0.9vmax, 1rem);
     list-style-position: inside;
 }
 

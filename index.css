@@ -18,7 +18,7 @@
     }
 
     50% {
-        background-color: rgb(calc(var(--bg-red) + 10), calc(var(--bg-green) + 20), calc(var(--bg-blue) + 20));
+        background-color: rgb(calc(var(--bg-red) + 15), calc(var(--bg-green) + 30), calc(var(--bg-blue) + 30));
         animation-timing-function: ease-out;
     }
 
@@ -40,7 +40,7 @@
     z-index: 2;
     padding: 0.5vmax;
     text-align: center;
-    border: 0.3vmax solid transparent;
+    border: 0.2vmax solid transparent;
     width: fit-content;
     height: fit-content;
 }
@@ -58,7 +58,7 @@
 }
 
 .icon-border {
-    border: 0.3vmax dotted black;
+    border: 0.2vmax dashed rgba(0,0,0,0.75);
 }
 
 #about-icon {

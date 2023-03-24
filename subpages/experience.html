@@ -4,6 +4,7 @@
     body {
         background-color: #808080;
     }
+
     #red,
     #green,
     #blue {
@@ -26,11 +27,15 @@
         background-image: none;
     }
 
-    #red .ui-slider-range, #green .ui-slider-range,  #blue .ui-slider-range{
+    #red .ui-slider-range,
+    #green .ui-slider-range,
+    #blue .ui-slider-range {
         background: none;
     }
 
-    #red .ui-state-default, #green .ui-state-default, #blue .ui-state-default{
+    #red .ui-state-default,
+    #green .ui-state-default,
+    #blue .ui-state-default {
         width: 3vh;
         height: 1.6vh;
         top: 125%;
@@ -41,19 +46,21 @@
         background-repeat: none;
     }
 
-    #red{
-        background: linear-gradient(to right,#000000, #ff0000);
+    #red {
+        background: linear-gradient(to right, #000000, #ff0000);
     }
 
-    #green{
-        background: linear-gradient(to right,#000000, #00ff00);
+    #green {
+        background: linear-gradient(to right, #000000, #00ff00);
     }
 
-    #blue{
-        background: linear-gradient(to right,#000000, #0000ff);
+    #blue {
+        background: linear-gradient(to right, #000000, #0000ff);
     }
 
-    #red-text, #green-text, #blue-text{
+    #red-text,
+    #green-text,
+    #blue-text {
         text-shadow: none;
         position: absolute;
         font-size: 1.2vh;
@@ -61,15 +68,16 @@
         pointer-events: none;
     }
 
-    #red-text{
-        top:30.5%;
+    #red-text {
+        top: 30.5%;
     }
 
-    #green-text{
-        top:35.3%;
+    #green-text {
+        top: 35.3%;
     }
-    #blue-text{
-        top:40%;
+
+    #blue-text {
+        top: 40%;
     }
 </style>
 
@@ -87,8 +95,12 @@
 
 <script>
     function toggleOdd() {
-        $(".exp-section").css("text-align", "left")
-        $(".exp-section:visible").odd().css("text-align", "right")
+        $(".exp-subtitle").css('text-align','left');
+        $(".exp-title").css('text-align','left');
+        $(".exp-section").css('left','0%');
+        $(".exp-section:visible").odd().css({'left': '15%'});
+        $(".exp-title:visible").odd().css('text-align','right');
+        $(".exp-subtitle:visible").odd().css('text-align','right');
     }
 
     $(document).ready(
@@ -198,7 +210,7 @@
             <span id="green-text">255</span>
             <span id="blue-text">255</span>
         </div>
-        
+
     </div>
     <div class="ps-menu-bar">a</div>
     <div id="content">
