@@ -2,8 +2,6 @@
 <html>
 <style>
     body {
-        background-image: url("../img/waves.gif");
-        background-size: auto 12%;
         -ms-interpolation-mode: nearest-neighbor;
         image-rendering: -webkit-optimize-contrast;
         image-rendering: -moz-crisp-edges;
@@ -12,32 +10,72 @@
         overflow: hidden;
     }
 
-    #mtl-text-box {
-        top: 22%;
-        right: 54%;
+    body *{
+        margin: 0 auto;
     }
 
-    #phl-text-box {
-        bottom: 39%;
-        left: 56%;
+    .fullscreen-menu-bar{
+        background-color: dodgerblue;
     }
 
-    #marker-mtl {
-        top: 26.5%;
-        left: 49.5%;
-    }
-
-    #marker-phl {
-        top: 50.5%;
-        left: 47.5%;
-    }
-
-    #maps-logo {
+    #water-div{
         position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-image: url("../img/waves.gif");
+        background-size: auto 12%;
+        z-index: 0;
+    }
+
+    #map-div{
+        position: absolute;
+        top: 0;
+        left: 0; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        background: none;
+        z-index: 1;
+    }
+
+    #map-div img:not(.map-marker){
+        flex-shrink: 0;
+        min-width: 100%;
+        min-height: 100%;
+        -ms-interpolation-mode: nearest-neighbor;
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: -moz-crisp-edges;
+        image-rendering: -o-pixelated;
+        image-rendering: pixelated;
+    }
+
+    #marker-phl{
+        top: 59%;
+        left: 47%;
+    }
+
+    #marker-mtl{
+        top: 23%;
+        left: 48%;
+    }
+
+    #phl-text-box{
+        bottom:15vh;
+        right: 10vw;
+    }
+    #mtl-text-box{
+        top:15vh;
+        left: 10vw;
+    }
+    #map-logo{
+        position: fixed;
+        bottom: 1vh;
+        right: 1vw;
+        width: 10vw;
         z-index: 2;
-        bottom: 1%;
-        right: 1%;
-        width: 12vw;
     }
 </style>
 
@@ -54,10 +92,46 @@
 </head>
 
 <script>
+    
+    const base_aspect_ratio = 1.5;
+    var move_by_x, move_by_y = 0;
+    var aspect_ratio = ($(window).width() / $(window).height()); 
+    $(window).on('resize', function(){
+        aspect_ratio = ($(window).width() / $(window).height());
+        if (aspect_ratio >= base_aspect_ratio){
+            $("#map-div").removeClass("full-height");
+            $("#map-div").addClass("full-width");
+            //move by is a range (0,1)
+            move_by_y = ((1-(base_aspect_ratio/aspect_ratio))/2);
+            $("#map-div").css("top",'-'+(move_by_y*100)+'%');
+        } else {
+            $("#map-div").removeClass("full-width");
+            $("#map-div").addClass("full-height");
+            //move by is a range (0,1)
+            move_by_x = (1-(aspect_ratio/base_aspect_ratio))/2;
+            $("#map-div").css("left",'-'+(move_by_x*100)+'%');
+        }
+    });
+
     $(document).ready(
         function () {
             if (inIframe()) {
-                $("#crt-overlay").addClass("invisible")
+                $("#crt-overlay, .fullscreen-menu-bar").hide()
+            }
+
+            aspect_ratio = ($(window).width() / $(window).height());
+            if (aspect_ratio >= base_aspect_ratio){
+                $("#map-div").removeClass("full-height");
+                $("#map-div").addClass("full-width");
+                //move by is a range (0,1)
+                move_by_y = ((1-(base_aspect_ratio/aspect_ratio))/2);
+                $("#map-div").css("top",'-'+(move_by_y*100)+'%');
+            } else {
+                $("#map-div").removeClass("full-width");
+                $("#map-div").addClass("full-height");
+                //move by is a range (0,1)
+                move_by_x = (1-(aspect_ratio/base_aspect_ratio))/2;
+                $("#map-div").css("left",'-'+(move_by_x*100)+'%');
             }
 
             $(".map-text-box").hide();
@@ -76,18 +150,18 @@
 
             $("#marker-mtl").hover(
                 function () {
-                    $(this).children('img').attr("src", "../img/mcgill-spin.gif");
+                    $(this).attr("src", "../img/mcgill-spin.gif");
                 },
                 function () {
-                    $(this).children('img').attr("src", "../img/mcgill-pixel.png");
+                    $(this).attr("src", "../img/mcgill-pixel.png");
                 }
             );
             $("#marker-phl").hover(
                 function () {
-                    $(this).children('img').attr("src", "../img/gfs-spin.gif");
+                    $(this).attr("src", "../img/gfs-spin.gif");
                 },
                 function () {
-                    $(this).children('img').attr("src", "../img/gfs-pixel.png");
+                    $(this).attr("src", "../img/gfs-pixel.png");
                 }
             );
         });
@@ -96,41 +170,33 @@
 
 <body class="crt-text">
     <div class="crt-overlay" id="crt-overlay"></div>
-    <div id="map-content">
-        <div id="map-sub-container">
-            <img id="world-map" src="../img/map.png">
-            <div class="map-marker" id="marker-mtl">
-                <img src="../img/mcgill-pixel.png">
-            </div>
-            <div class="map-marker" id="marker-phl">
-                <img src="../img/gfs-pixel.png">
-            </div>
-
-            <div class="map-text-box" id="mtl-text-box">
-                <div style="margin: 3vh;">
-                    <p class="map-text-header">McGill University</p>
-                    <p>Montreal, Quebec</p>
-                    <p>2018 - 2022</p>
-                    <p>B.Sc. Computer Science, Minor Geography</p>
-                </div>
-
-            </div>
-
-            <div class="map-text-box" id="phl-text-box">
-                <div style="margin: 3vh;">
-                    <p class="map-text-header">Germantown Friends School</p>
-                    <p>Philadelphia, Pennsylvania</p>
-                    <p>2014 - 2018</p>
-                    <p>High School</p>
-                </div>
-            </div>
+        <div class="fullscreen-menu-bar">
+            <p class="popup-title">Education</p>
+            <div class="popup-spacer"></div>
+            <a class="popup-small-button" href="../index.html" id="aboutFullMin">&#95;</a>
+            <a class="popup-small-button" id="aboutFullMax"><b>&#9634;</b></a>
+            <a class="popup-small-button" href="../index.html" id="aboutFullClose">x</a>
         </div>
-        <img id="maps-logo" src="../img/maps-logo.png">
+        <div class="fullscreen-menu-bar" id="fullscreen-menu-bar-spacer">
+            <p class="popup-title">Education</p>
+        </div>
+     <div id="water-div"></div>
+     <div id="map-div">
+        <img src="../img/map.png">
+        <img id="marker-phl" class="map-marker" src="../img/gfs-pixel.png">
+        <img id="marker-mtl" class="map-marker" src="../img/mcgill-pixel.png">
+     </div>
+     <div id="phl-text-box" class="text-box">
+        <p class="text-box-title">Germantown Friends School</p>
+        <p class="text-box-body">Philadelphia, Pennsylvania</p>
+        <p class="text-box-body">High School</p>
     </div>
-
-
-
-
+     <div id="mtl-text-box" class="text-box">
+        <p class="text-box-title">McGill University</p>
+        <p class="text-box-body">Montreal, Quebec</p>
+        <p class="text-box-body">B.Sc. Computer Science, Minor Geography</p>
+    </div>
+    <img id="map-logo" src="../img/maps-logo.png">
 </body>
 
 </html>

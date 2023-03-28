@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html>
 
+<style>
+    .fullscreen-menu-bar{
+        background-color: blue;
+    }
+</style>
+
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link type="text/css" rel="stylesheet" href="../style.css">
@@ -17,7 +23,7 @@
     $(document).ready(
         function () {
             if (inIframe()) {
-                $("#crt-overlay").hide()
+                $("#crt-overlay, .fullscreen-menu-bar").hide()
             }
             $(".linklist a").attr("target", "_blank");
         }
@@ -26,6 +32,16 @@
 
 <body class="crt-text">
     <div class="crt-overlay" id="crt-overlay"></div>
+    <div class="fullscreen-menu-bar">
+        <p class="popup-title">About</p>
+        <div class="popup-spacer"></div>
+        <a class="popup-small-button" href="../index.html" id="aboutFullMin">&#95;</a>
+        <a class="popup-small-button" id="aboutFullMax"><b>&#9634;</b></a>
+        <a class="popup-small-button" href="../index.html" id="aboutFullClose">x</a>
+    </div>
+    <div class="fullscreen-menu-bar" id="fullscreen-menu-bar-spacer">
+        <p class="popup-title">About</p>
+    </div>
     <div class="wrapAll clearfix">
         <div class="sidebar">
             <div class="logo">

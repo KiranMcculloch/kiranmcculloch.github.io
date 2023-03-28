@@ -11,12 +11,13 @@
     width: 100%;
     height: auto;
     margin: 0 auto;
-    padding-top: 1.5vh;
-    padding-bottom: 1.5vh;
-
+    padding-top: 0.5vh;
+    padding-bottom: 0.5vh;
+    display: flex;
+    align-items: center;
 }
 
-.ps-menu-bar a {
+.ps-menu-bar a:not(.popup-small-button) {
     display: inline;
     margin-left: 1.5vw;
     font-size: 2.2vh;
@@ -32,7 +33,7 @@
     background-color: #e3e9ff;
 }
 
-.ps-menu-bar a.active {
+.ps-menu-bar a.active:not(.popup-small-button) {
     background-color: #a3a7b8;
     border-left: 5px solid #565861;
     border-top: 5px solid #565861;
@@ -96,7 +97,7 @@ li:before {
 
 #canvas {
     width: 100%;
-    margin-top: 5vh;
+    margin-top: 7.5vh;
     margin-left: 2vw;
     margin-right: 2vw;
     background-color: white;
@@ -168,7 +169,7 @@ li:before {
         margin-left: 3vw;
     }
 
-    .ps-menu-bar a {
+    .ps-menu-bar a:not(.popup-small-button) {
         font-size: 2.2vw;
     }
 

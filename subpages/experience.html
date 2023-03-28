@@ -107,7 +107,8 @@
         function () {
             toggleOdd();
             if (inIframe()) {
-                $("#crt-overlay").addClass("invisible")
+                $("#crt-overlay, .popup-small-button").hide()
+                
             }
             $("#no-filter-button").click(function () {
                 $(this).addClass("active");
@@ -191,12 +192,23 @@
 <body class="crt-text">
     <div class="crt-overlay" id="crt-overlay"></div>
     <div id="ps-overlays">
+        <!-- <div class="fullscreen-menu-bar">
+            <p class="popup-title">Experience</p>
+            <div class="popup-spacer"></div>
+            <a class="popup-small-button" href="../index.html" id="aboutFullMin">&#95;</a>
+            <a class="popup-small-button" id="aboutFullMax"><b>&#9634;</b></a>
+            <a class="popup-small-button" href="../index.html" id="aboutFullClose">x</a>
+        </div> -->
         <div class="ps-menu-bar">
             <a id="no-filter-button" class="active"><span class="underline">A</span>ll</a>
             <a id="tech-filter-button"><span class="underline">T</span>echnology</a>
             <a id="geo-filter-button"><span class="underline">G</span>eography</a>
             <a id="video-filter-button"><span class="underline">V</span>ideo</a>
             <a id="design-filter-button"><span class="underline">D</span>esign</a>
+            <div class="popup-spacer"></div>
+            <a class="popup-small-button" href="../index.html" id="aboutFullMin">&#95;</a>
+            <a class="popup-small-button" id="aboutFullMax"><b>&#9634;</b></a>
+            <a class="popup-small-button" href="../index.html" id="aboutFullClose">x</a>
         </div>
         <img id="ps-ruler" src="../img/ps-ruler.png">
         <img class="ps-sidebar" id="ps-sidebar-real" src="../img/ps-sidebar.png">
@@ -212,6 +224,9 @@
         </div>
 
     </div>
+    <!-- <div class="fullscreen-menu-bar" id="fullscreen-menu-bar-spacer">
+        <p class="popup-title">Experience</p>
+    </div> -->
     <div class="ps-menu-bar">a</div>
     <div id="content">
         <img class="ps-sidebar" src="../img/ps-sidebar-trans.png">

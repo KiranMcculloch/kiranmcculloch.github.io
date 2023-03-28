@@ -155,27 +155,6 @@
     margin: 1vh auto;
 }
 
-.popup-spacer {
-    pointer-events: none;
-    flex-grow: 0.95;
-    opacity: 50%;
-    background-color: green;
-}
-
-.popup-small-button {
-    align-self: stretch;
-    font-size: 2.2%;
-    flex-basis: 2vw;
-    font-size: 1.1vmax;
-    text-align: center;
-    margin-right: auto;
-    background-color: #cfd4e8;
-    border-right: 0.2vw solid #565861;
-    border-bottom: 0.2vw solid #565861;
-    border-left: 0.2vw solid #f5f7ff;
-    border-top: 0.2vw solid #f5f7ff;
-}
-
 .popup-small-button:hover {
     background-color: #e3e9ff;
 }
