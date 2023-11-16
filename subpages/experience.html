@@ -5,9 +5,9 @@
         background-color: #808080;
     }
 
-    #red,
-    #green,
-    #blue {
+    #red-slider,
+    #green-slider,
+    #blue-slider {
         float: left;
         clear: left;
         width: 46%;
@@ -27,15 +27,15 @@
         background-image: none;
     }
 
-    #red .ui-slider-range,
-    #green .ui-slider-range,
-    #blue .ui-slider-range {
+    #red-slider .ui-slider-range,
+    #green-slider .ui-slider-range,
+    #blue-slider .ui-slider-range {
         background: none;
     }
 
-    #red .ui-state-default,
-    #green .ui-state-default,
-    #blue .ui-state-default {
+    #red-slider .ui-state-default,
+    #green-slider .ui-state-default,
+    #blue-slider .ui-state-default {
         width: 3vh;
         height: 1.6vh;
         top: 125%;
@@ -46,15 +46,15 @@
         background-repeat: none;
     }
 
-    #red {
+    #red-slider {
         background: linear-gradient(to right, #000000, #ff0000);
     }
 
-    #green {
+    #green-slider {
         background: linear-gradient(to right, #000000, #00ff00);
     }
 
-    #blue {
+    #blue-slider {
         background: linear-gradient(to right, #000000, #0000ff);
     }
 
@@ -164,9 +164,9 @@
         }
 
         function refreshSwatch() {
-            var red = $("#red").slider("value"),
-                green = $("#green").slider("value"),
-                blue = $("#blue").slider("value"),
+            var red = $("#red-slider").slider("value"),
+                green = $("#green-slider").slider("value"),
+                blue = $("#blue-slider").slider("value"),
                 hex = hexFromRGB(red, green, blue);
             $("#swatch").css("background-color", "#" + hex);
             $("#red-text").text(red);
@@ -175,7 +175,7 @@
             $(".exp-title").css("color", "#" + hex);
         }
 
-        $("#red, #green, #blue").slider({
+        $("#red-slider, #green-slider, #blue-slider").slider({
             orientation: "horizontal",
             range: "min",
             max: 255,
@@ -183,9 +183,9 @@
             slide: refreshSwatch,
             change: refreshSwatch
         });
-        $("#red").slider("value", 0);
-        $("#green").slider("value", 0);
-        $("#blue").slider("value", 0);
+        $("#red-slider").slider("value", 0);
+        $("#green-slider").slider("value", 0);
+        $("#blue-slider").slider("value", 0);
     });
 </script>
 
@@ -214,9 +214,9 @@
         <img class="ps-sidebar" id="ps-sidebar-real" src="../img/ps-sidebar.png">
         <img class="ps-panel" id="ps-panel-real" src="../img/ps-panel.png">
         <div class="ps-panel" id="slider-wrapper">
-            <div id="red" class="slider-bar"></div>
-            <div id="green" class="slider-bar"></div>
-            <div id="blue" class="slider-bar"></div>
+            <div id="red-slider" class="slider-bar"></div>
+            <div id="green-slider" class="slider-bar"></div>
+            <div id="blue-slider" class="slider-bar"></div>
             <div id="swatch"></div>
             <span id="red-text">255</span>
             <span id="green-text">255</span>
@@ -232,6 +232,20 @@
         <img class="ps-sidebar" src="../img/ps-sidebar-trans.png">
         <div id="canvas">
             <div id="exp-main-section">
+                <!-- THIS SOLSYS SECTION IS TEMPORARY AND SHOULD BE TREATED AS SUCH -->
+                <div class="exp-section tech-job" id="solsys">
+                    <p class="exp-title">
+                        SOLSYS, Toronto, ON
+                    </p>
+                    <p class="exp-subtitle">
+                        Software Developer, July 2023 - Present
+                    </p>
+                    <ul class="exp-body">
+                        <li>Researched, conceived, designed, developed, tested, deployed and maintained internal and external facing software applications, extending and improving on Solsys software products.</li>
+                        <li>Contributed to a wide variety of projects utilizing artificial intelligence, data compression, machine learning, and search technologies.</li>
+                        <li>Collaborated on scalability issues involving access to data and information.</li>
+                    </ul>
+                </div>
 
                 <div class="exp-section tech-job design-job video-job" id="colorkarma">
                     <p class="exp-title">
