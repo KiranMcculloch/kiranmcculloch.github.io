@@ -138,15 +138,46 @@
     <title>Kiran McCulloch</title>
     <link rel="icon" href="./img/favicon.ico">
 </head>
-
+<script async data-id="101454739" src="//static.getclicky.com/js"></script>
 <script>
+
+    function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    function chooseRandomSplashText() {
+        const splash_messages = [
+            "the official fan experience",
+            "formerly of .github.io fame",
+            "formerly of neocities fame",
+            "formerly of myspace fame",
+            "'s personal website",
+            "est. 1999",
+            "the odds of seeing this text are 1/18!",
+            "enjoy your stay!",
+            "can you find all seven easter eggs?",
+            "legally distinct from Windows 95",
+            "this website is certified pet-safe",
+            "the only website on the internet",
+            "reload this page for a new fortune",
+            "philly's response to anonymous",
+            "this domain acquired from the Swiss",
+            "flagle world champion 2023-",
+            "yet to be hacked!",
+            "",
+            "I see you reading the source code! Yeah, you! Get out of here!!"
+        ];
+        return splash_messages[getRandomInt(0,splash_messages.length-2)];
+    }
 
     //randomizes the letters in a string while keeping the first n letters the same
     function chooseRandomWord(pString, startIndex) {
         //list of allowed letters
         const letters = "abcdefhijklmoqrstuvwxyz";
         //splits and re-attaches string so as to work with individual characters
-        return new_string = pString.split("").map(function (element, index) {
+        return pString.split("").map(function (element, index) {
             //keeps the letters before a certain point the same and doesn't randomize spaces
             if (index < startIndex || element == " ") {
                 return element;
@@ -158,21 +189,17 @@
         }).join("");
     }
 
+
+
     //hacker text animation
     let hacker_index = 0;
     //number of times to randomize letter after previous letter was set and before it itself is locked in
     let letter_times = 2;
     //target text
     let main_text = "Kiran McCulloch";
-    const hacker_interval = setInterval(function () {
-        //chooses a random letter for every char in the target string letter_times(hacker_index+1) times before locking in the correct letter, where n is the index of the letter 
-        $("#main-title").text(chooseRandomWord(main_text, Math.floor(hacker_index / letter_times)));
-        hacker_index += 1;
-        //ends loop when word is set
-        if (hacker_index > (letter_times * main_text.length) + 1) {
-            clearInterval(hacker_interval);
-        }
-    }, 50)
+
+
+
 
 
     let browsertype=navigator.userAgent;
@@ -229,6 +256,18 @@
 
     $(document).ready(
         function () {
+            $("#splash-text").text(chooseRandomSplashText());    
+            $("#main-title").text(chooseRandomWord(main_text, Math.floor(hacker_index / letter_times)));
+    
+            const hacker_interval = setInterval(function () {
+                //chooses a random letter for every char in the target string letter_times(hacker_index+1) times before locking in the correct letter, where n is the index of the letter 
+                $("#main-title").text(chooseRandomWord(main_text, Math.floor(hacker_index / letter_times)));
+                hacker_index += 1;
+                //ends loop when word is set
+                if (hacker_index > (letter_times * main_text.length) + 1) {
+                    clearInterval(hacker_interval);
+                }
+            }, 50)
             //disable hover until animation is finished
             $(".list-row").delay(2500).queue(function () {
                 $(".list-row").css("pointer-events", "auto");
@@ -394,7 +433,7 @@
         <p id="main-title">
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </p>
-        <p class="sub-heading" style="text-align: right;">the official fan experience</p>
+        <p id="splash-text" class="sub-heading" style="text-align: right;"></p>
         <div id="center-list">
             <div class="list-row">
                 <p class="center-list-item" id="list-item-1">Programmer</p>
