@@ -85,6 +85,12 @@
             top: 18vh;
         }
 
+        #music-popup {
+            left: 7vw;
+            bottom: 16vh;
+            width: 70vw;
+        }
+
         #credits-popup {
             left: 25vw;
             top: 12vh;
@@ -369,6 +375,9 @@
             $("#projectsMenu, #projectsClose, #projectsMin").click(function () {
                 toggleWindow("projects");
             });
+            $("#musicMenu, #musicClose, #musicMin").click(function () {
+                toggleWindow("music");
+            });
             $("#top-left-logo, #creditsClose, #creditsMin").click(function () {
                 toggleWindow("credits");
             });
@@ -386,6 +395,9 @@
             $("#projectsMax").click(function () {
                 window.location.href = "./subpages/projects.html";
             });
+            $("#musicMax").click(function () {
+                window.location.href = "./subpages/albums.html";
+            });
 
             if (isTouchscreen){
                 //opens pages fullscreen when shortcut icons double clicked
@@ -400,6 +412,9 @@
                 });
                 $('#projects-icon').click(function () {
                     window.open('https://github.com/KiranMcculloch', '_blank');
+                });
+                $('#music-icon').click(function () {
+                    window.location.href = "./subpages/albums.html";
                 });
             } else {
                 //adds border when icons single clicked
@@ -424,11 +439,11 @@
                 $('#experience-icon').dblclick(function () {
                     window.location.href = "./subpages/experience.html";
                 });
-                $('#music-icon').dblclick(function () {
-                    window.location.href = "./subpages/albums.html";
-                });
                 $('#projects-icon').dblclick(function () {
                     window.open('https://github.com/KiranMcculloch', '_blank');
+                });
+                $('#music-icon').dblclick(function () {
+                    window.location.href = "./subpages/albums.html";
                 });
 
                 //animates shortcut icons on hover
@@ -483,6 +498,18 @@
 
     <div class="crt-overlay"></div>
 
+    <div class="bottomnav" id="main-bottomnav">
+        <div>
+            <img id="top-left-logo" src="./img/logo.png" alt="">
+        </div>
+        <p id="aboutMenu">About</p>
+        <p id="educationMenu">Education</p>
+        <p id="experienceMenu">Experience</p>
+        <p id="projectsMenu">Projects</p>
+        <p id="musicMenu">Music</p>
+        <div class="clock">00:00:00</div>
+    </div>
+
     <div class="shortcut-icons-wrapper">
         <div class="dummy-icon-wrapper"></div>
 
@@ -518,16 +545,6 @@
 
     <img id="kiran-photo" class="bounce" src="./img/k-dog.png">
 
-    <div class="bottomnav" id="main-bottomnav">
-        <div>
-            <img id="top-left-logo" src="./img/logo.png" alt="">
-        </div>
-        <p id="aboutMenu">About</p>
-        <p id="educationMenu">Education</p>
-        <p id="experienceMenu">Experience</p>
-        <p id="projectsMenu">Projects</p>
-        <div class="clock">00:00:00</div>
-    </div>
 
     <div id="center-text">
         <p class="sub-heading">welcome to</p>
@@ -622,6 +639,19 @@
                 <p class="popup-small-button" id="projectsClose">x</p>
             </div>
             <iframe src="./subpages/projects.html"></iframe>
+        </div>
+    </div>
+
+    <div id="music-popup" class="popup-window draggable resizable">
+        <div class="popup-window-wrapper">
+            <div class="popup-menu-bar" style="background-color: #77B6EA;">
+                <p class="popup-title">albums_ranked.tierlist</p>
+                <div class="popup-spacer"></div>
+                <p class="popup-small-button" id="musicMin">&#95;</p>
+                <p class="popup-small-button" id="musicMax"><b>&#9634;</b></p>
+                <p class="popup-small-button" id="musicClose">x</p>
+            </div>
+            <iframe src="./subpages/albums.html"></iframe>
         </div>
     </div>
 
