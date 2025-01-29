@@ -317,6 +317,8 @@
 
     $(document).ready(
         function () {
+            $('img').attr('draggable', false);
+
             $("#splash-text").text(chooseRandomSplashText());    
             $("#main-title").text(chooseRandomWord(main_text, Math.floor(hacker_index / letter_times)));
     

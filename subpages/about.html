@@ -21,7 +21,9 @@
 
 <script>
     $(document).ready(
+        
         function () {
+            $('img').attr('draggable', false);
             if (inIframe()) {
                 $("#crt-overlay, .fullscreen-menu-bar").hide()
             }

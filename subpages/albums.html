@@ -7,6 +7,9 @@
         --tooltip-padding: 1em;
     }
 
+    img{
+        max-width: 100%;
+    }
 
     html{
         background-color: var(--developer-black);
@@ -34,6 +37,7 @@
         justify-content: flex-start;
         gap: 2vh;
     }
+
     .tierLabel > .tierNumber{
         font-size: 6em;
     }
@@ -101,16 +105,17 @@
         position: fixed;
         display: flex;
         flex-direction: column;
-        gap: 0px;
+        gap: 1em;
         opacity: 0%;
         text-align: center;
-        padding: 1em;
         top: 10vh;
         left: 30vw;
         width: clamp(200px,40vw,1000px);
         height: 80vh;
         background-color: aliceblue;
         border-radius: 1vw;
+        overflow-y: scroll;
+        overflow-x: hidden;
     }
 
     #blurOverlay {
@@ -125,15 +130,74 @@
         filter: alpha(opacity = 70); /* required for opacity to work in IE */
     }
 
+    #dummyTopSection{
+        display: flex;
+        flex-direction: column;
+        background-size: cover;
+        background-position: center;
+        filter: blur(6px);
+        padding: 1vw;
+    }
+
+    #realTopSection{
+        padding: 1vw;
+        width: 95%;
+        z-index: 2;
+        position: absolute;
+        top:0;
+        left:0;
+    }
+
+    .heading{
+        z-index: 2;
+        font-size: clamp(2em,3vw,4em);
+    }
+
+    .subheading{
+        z-index: 2;
+        font-size: clamp(1.5em,2.5vw,3.5em);
+    }
+    
+    .artistyear,#reviewblock{
+        z-index: 2;
+        font-size: clamp(1em,2vw,3em);
+    }
+
+    .artistyear{
+        display: inline;
+        text-align: center;
+    }
+
+    #dummyTopSection > div{
+        opacity: 0;
+    }
+
+    #icon-row {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 2vw;
+    }
+
+    #icon-row > img{
+        -ms-interpolation-mode: nearest-neighbor;
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: -moz-crisp-edges;
+        image-rendering: -o-pixelated;
+        image-rendering: pixelated;
+        height: auto;
+        width: 40%;
+        flex-basis: auto;
+    }
+
     #links-row{
         display: flex; 
         flex-direction: row; 
         justify-content: center; 
-        gap: 3vw;
-        padding-top: 1vh;
+        gap: 2vw;
     }
-    #links-row > img{
-        width: clamp(48px,2vw,200px);
+
+    #links-row > a > img{
         -ms-interpolation-mode: nearest-neighbor;
         image-rendering: -webkit-optimize-contrast;
         image-rendering: -moz-crisp-edges;
@@ -141,9 +205,19 @@
         image-rendering: pixelated;
     }
 
+    #reviewblock{
+        text-align: left;
+        text-indent: 50px;
+        padding: 1em;
+    }
+
     img.linkUnavailable{
         filter: grayscale(100%);
     }
+
+
+
+
 </style>
 
 <head>
@@ -182,15 +256,19 @@
 
     //click into detailed info
     function seeMoreAlbum(element){
+        $("#moreInfo").find("#dummyTopSection").css("background-image",`url("${$(element).find("img").attr("src")}")`);
+
         var hiddenInfo = $(element).find(".hiddenInfo")
-        $("#moreInfo").find("#heading").text(hiddenInfo.find(".albumInfo").text());
+        $("#moreInfo").find(".heading").text(hiddenInfo.find(".albumInfo").text());
         if(hiddenInfo.find(".subtitleInfo").length){
-            $("#moreInfo").find("#subheading").text(hiddenInfo.find(".subtitleInfo").text());
-            $("#moreInfo").find("#subheading").show();
+            $("#moreInfo").find(".subheading").text(hiddenInfo.find(".subtitleInfo").text());
+            $("#moreInfo").find(".subheading").show();
         } else {
-            $("#moreInfo").find("#subheading").hide();
+            $("#moreInfo").find(".subheading").hide();
         }
-        $("#moreInfo").find("#artistyear").text(`${hiddenInfo.find(".artistInfo").text()} | ${hiddenInfo.find(".yearInfo").text()} `);
+        $("#moreInfo").find(".artistyear").text(`${hiddenInfo.find(".artistInfo").text()} | ${hiddenInfo.find(".yearInfo").text()}`);
+        $("#moreInfo").find("#starsimg").attr("src",`../img/stars/${$(element).parent().parent().find(".tierNumber").text()}.png`);
+        $("#moreInfo").find("#reviewblock").html(hiddenInfo.find(".reviewInfo").html());
 
         var wikilink = $("#moreInfo").find("#wikipedia-link");
         var wikiinfo = hiddenInfo.find(".wikipediaInfo").text();
@@ -226,6 +304,7 @@
             amlink.css("pointer-events","auto");
         }
 
+        $('body').css('overflow', 'hidden');
         $("#blurOverlay").show();
         $("#tierListWrapper").css("filter","blur(3px)")
         $("#moreInfo").show();
@@ -238,9 +317,11 @@
         // if the target of the click isn't the container nor a descendant of the container
         if (!container.is(e.target) && container.has(e.target).length === 0) 
         {
+            $('body').css('overflow', 'scroll');
             $("#tierListWrapper").css("filter","blur(0px)")
             $("#blurOverlay").hide();
             container.hide();
+            $("#moreInfo").find("#reviewblock").html("Lorem Ipsum");
         }
     });
 
@@ -362,6 +443,8 @@
     $(document).ready(
 
         function () {
+            $('img').attr('draggable', false);
+
             if (inIframe()) {
                 $("#crt-overlay, .fullscreen-menu-bar").hide()
             }
@@ -454,6 +537,7 @@
                         <p class="spotifyInfo">Placeholder</p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">Placeholder</p>
+                        <div class="reviewInfo"></div>
                     </div>
                 </div> 
                 -->
@@ -470,7 +554,7 @@
                     </div>
                 </div>
                 <div class="album" onClick="seeMoreAlbum(this)">
-                    <img src="../img/albums/300/thedream.jpg">
+                    <img src="../img/albums/300/dream.jpg">
                     <div class="hiddenInfo">
                         <p class="albumInfo">The Dream</p>
                         <p class="artistInfo">Alt-J</p>
@@ -515,7 +599,7 @@
                     </div>
                 </div>
                 <div class="album" onClick="seeMoreAlbum(this)">
-                    <img src="../img/albums/300/abnormal.jpg">
+                    <img src="../img/albums/300/newabnormal.jpg">
                     <div class="hiddenInfo">
                         <p class="albumInfo">The New Abnormal</p>
                         <p class="artistInfo">The Strokes</p>
@@ -526,7 +610,7 @@
                     </div>
                 </div>
                 <div class="album" onClick="seeMoreAlbum(this)">
-                    <img src="../img/albums/300/vivalavida.jpg">
+                    <img src="../img/albums/300/viva.jpg">
                     <div class="hiddenInfo">
                         <p class="albumInfo">Viva La Vida</p>
                         <p class="subtitleInfo">or Death and All His Friends</p>
@@ -622,7 +706,7 @@
                 </div>
 
                 <div class="album" onClick="seeMoreAlbum(this)">
-                    <img src="../img/albums/300/beatles.jpg">
+                    <img src="../img/albums/300/thebeatles.jpg">
                     <div class="hiddenInfo">
                         <p class="albumInfo">The Beatles</p>
                         <p class="subtitleInfo">"The White Album"</p>
@@ -655,6 +739,14 @@
                         <p class="spotifyInfo">https://open.spotify.com/album/4WnkQO4xD9ljQooB3VIxCV?si=1b072b23dbd3455e</p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Comedown_Machine</p>
+                        <div class="reviewInfo">
+                            <p>Look, Tap Out is a good song. So is the All the Time - but after that, you really think you've heard enough of this album. "I get the gist," you know? THEN that little synth riff at the beginning of One Way Trigger kicks in and you're back up again. That song makes you pick your ass up and Dance, but in a kinda melancholy way, kind of a Charlie Brown type dance. Like you're dancing and Remembering. "You asked me to stay..."</p>
+                            <p>Then, bang, we're pulled out of that moment, like snapping out of a daydream, straight into the passenger seat of a convertible doing a $dollar down the Pacific Coast Highway. Goddamn right it's Welcome to Japan. This song is refined slick oily Cool, and it makes you feel cool. Hell, it <i>makes</i> you cool all on its own. And when you hit that ending, it's like crashing out after a really good run, like sprinting and tripping on a rock. And that brief, glorious moment where you were on top of the world is over. And then - </p>
+                            <p>You open your eyes.</p>
+                            <p>Here it is, masked behind this arpeggio somewhere between a violin and a synth, this heart-monitor rhythm that makes you feel like the song is scanning you somehow: the Comedown Machine. You can practically se the title card appearing before your eyes. After such a bombastic beginning to the album, we've finally reached our limit and crumbled under the pressure - but that was just the prologue. We've reached the true heart of the story. In the life of a rockstar, we've just jumped the shark. We're crashing out. We're down.</p>
+                            <p>But we don't stay there for long.</p>
+                            TOP SONGS: Partners in Crime, Welcome to Japan, Happy Ending
+                        </div>
                     </div>
                 </div>
 
@@ -695,7 +787,7 @@
                 </div>
 
                 <div class="album" onClick="seeMoreAlbum(this)">
-                    <img src="../img/albums/300/bethecowboy.jpg">
+                    <img src="../img/albums/300/cowboy.jpg">
                     <div class="hiddenInfo">
                         <p class="albumInfo">Be the Cowboy</p>
                         <p class="artistInfo">Mitski</p>
@@ -767,7 +859,7 @@
             <div class="albumHolder">
 
                 <div class="album" onClick="seeMoreAlbum(this)">
-                    <img src="../img/albums/300/theglow.jpg">
+                    <img src="../img/albums/300/theglow2.jpg">
                     <div class="hiddenInfo">
                         <p class="albumInfo">The Glow pt. 2</p>
                         <p class="artistInfo">The Microphones</p>
@@ -921,7 +1013,7 @@
                     </div>
                 </div> 
                 <div class="album" onClick="seeMoreAlbum(this)">
-                    <img src="../img/albums/300/tkid.jpg">
+                    <img src="../img/albums/300/kingisdead.jpg">
                     <div class="hiddenInfo">
                         <p class="albumInfo">The King Is Dead</p>
                         <p class="artistInfo">The Decemberists</p>
@@ -1031,7 +1123,7 @@
                     </div>
                 </div> 
                 <div class="album" onClick="seeMoreAlbum(this)">
-                    <img src="../img/albums/300/rof.jpg">
+                    <img src="../img/albums/300/roomonfire.jpg">
                     <div class="hiddenInfo">
                         <p class="albumInfo">Room on Fire</p>
                         <p class="artistInfo">The Strokes</p>
@@ -1270,24 +1362,33 @@
     </div>
     <div id="blurOverlay"></div>
     <div id="moreInfo">
-        <div style="font-size: 3em;" id="heading">Name of Album</div>
-        <div style="font-size: 2em;" id="subheading">Subtitle</div>
-        <div style="font-size: 2em;" id="artistyear">Artist | Year</div>
-        <div id="links-row">
-            <a target="_blank" id="wikipedia-link" href="http://en.wikipedia.org">
-                <img src="../img/wiki-icon.png">
-            </a>
-            <a target="_blank" id="spotify-link" href="http://en.wikipedia.org">
-                <img target="_blank"src="../img/spotify-icon.png">
-            </a>
-            <a target="_blank" id="apple-music-link" href="http://en.wikipedia.org">
-                <img src="../img/apple-music-icon.png">
-            </a>
-            
-            
+        <div id="dummyTopSection" class="topSection">
+            <div class="heading">Name of Album</div>
+            <div class="subheading">Subtitle</div>
+            <div class="artistyear">Artist | Year</div>
+        </div>
+
+        <div id="realTopSection" class="topSection">
+            <div class="heading">Name of Album</div>
+            <div class="subheading">Subtitle</div>
+            <div class="artistyear">Artist | Year</div>
         </div>
         
-
+        <div id="icon-row">
+            <div id="links-row">
+                <a target="_blank" id="wikipedia-link" href="http://en.wikipedia.org">
+                    <img src="../img/wiki-icon.png">
+                </a>
+                <a target="_blank" id="spotify-link" href="http://en.wikipedia.org">
+                    <img target="_blank"src="../img/spotify-icon.png">
+                </a>
+                <a target="_blank" id="apple-music-link" href="http://en.wikipedia.org">
+                    <img src="../img/apple-music-icon.png">
+                </a>
+            </div>
+            <img id="starsimg" src="../img/stars/5.png">
+        </div>
+        <div style="font-size: 1em;" id="reviewblock">Lorem Ipsum</div>
     </div>
 </body>
 
