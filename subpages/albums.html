@@ -113,9 +113,9 @@
         width: clamp(200px,40vw,1000px);
         height: 80vh;
         background-color: aliceblue;
-        border-radius: 1vw;
         overflow-y: scroll;
         overflow-x: hidden;
+        overscroll-behavior: none;
     }
 
     #blurOverlay {
@@ -135,7 +135,7 @@
         flex-direction: column;
         background-size: cover;
         background-position: center;
-        filter: blur(6px);
+        filter: blur(4px);
         padding: 1vw;
     }
 
@@ -146,6 +146,9 @@
         position: absolute;
         top:0;
         left:0;
+        -webkit-text-stroke: 4px var(--developer-black);
+        paint-order: stroke fill;
+        color: white;    
     }
 
     .heading{
@@ -155,21 +158,24 @@
 
     .subheading{
         z-index: 2;
-        font-size: clamp(1.5em,2.5vw,3.5em);
+        font-size: clamp(1.5em,2.2vw,3em);
     }
     
-    .artistyear,#reviewblock{
-        z-index: 2;
-        font-size: clamp(1em,2vw,3em);
-    }
-
     .artistyear{
+        z-index: 2;
+        font-size: clamp(1em,1.8vw,2.8em);
         display: inline;
         text-align: center;
     }
 
+    #reviewblock >p {
+        z-index: 2;
+        font-size: clamp(1em,1vw,2em);
+    }
+
+
     #dummyTopSection > div{
-        opacity: 0;
+        visibility: hidden;
     }
 
     #icon-row {
@@ -504,6 +510,7 @@
     <div class="fullscreen-menu-bar" id="fullscreen-menu-bar-spacer">
         <p class="popup-title">About</p>
     </div> -->
+    <div class="crt-overlay" id="crt-overlay"></div>
     <div id="tierListWrapper" style="display: flex; flex-direction: column; width: 100; gap: 1vh; background-color: var(--developer-black);">
         <div id="albumTooltip"></div>
     <!--████████╗██╗███████╗██████╗     ████████╗ ███████╗ ███╗   ██╗
@@ -514,7 +521,7 @@
             ╚═╝   ╚═╝╚══════╝╚═╝  ╚═╝       ╚═╝    ╚══════╝ ╚═╝  ╚═══╝ -->
                                                            
         <div id="tier10" class="tier">
-            <div id="tierLabel10" style="background-color: green;" class="tierLabel">
+            <div id="tierLabel10" style="background-color: dodgerblue;" class="tierLabel">
                 <div class="tierNumber">10</div>
                 <div class="tierDescription">Perfection. Next to no 
                     skips. An absolute must-listen.</div>
@@ -551,6 +558,14 @@
                         <p class="spotifyInfo">https://open.spotify.com/album/4O1WEqjRcJqSjF0HhQPm31?si=54bbfe99b1ed4a27</p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/White_Lighter</p>
+                        <div class="reviewInfo">
+                            <p>It is no small secret that this is my favorite album of all time.</p>
+                            <p>White Lighter is a project about scope. The lo-fi Prelude and the lamentful Caesar are under a minute long, while the closer, Post-Script, meditatively glides past 6 minutes. But the real scale is found internally - each track could easily be four or five smaller ones; the effect is that you're always on the edge of your seat, never knowing what's coming next, settling into a slow moment never long enough for it to be boring before the band knocks you out of said seat with an explosion of sound, horns and strings, Kyle Morton's expressive voice and a chorus of harmonies permeating throughout.</p>
+                            <p>I mean, this album alone has some of the best single moments in Music: The fableist outro of Young Fathers, the heartbreaking, furious second verse of the Lake, the punchy Wolves section on Morton's Fork, the almost Alt-J-y end of the first verse on Dreams of Cannibalism, all come to mind. God, everything leading up to the drop on Hunger and Thirst gets me every time.</p>
+                            <p>Thing is, it's impossible to talk about these songs in terms of Verses and Choruses and Bridges, they're more like rivers; the flow can be calm and gentle or breakneck, and you're just as likely to hit some rapids or go over a waterfall as you are to float gently by. These songs are expressions of faith, of belief, of love, of loss. Morton's lyrics wash you in it, they stick to you, they come back to you months later like proverbs. He sings, he talks, he yells. When he's angry, you feel it, when he's desperate, you're just as much so. The other vocalists and the brass section and the rest of the veritable orchestra he has backing him up reinforce these emotions, and the result is, despite my best efforts, indescribable.</p>
+                            <p>Put on some headphones, and set aside ninety-three minutes of your life - you're gonna end up wanting to listen to it twice.</p>
+                            <b>TOP SONGS: Young Fathers, Dreams of Cannibalism, Post Script - but there is not a single bad moment, let alone song, on this album.</b>
+                        </div>
                     </div>
                 </div>
                 <div class="album" onClick="seeMoreAlbum(this)">
@@ -654,6 +669,56 @@
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/The_Decemberists#2008:_Always_the_Bridesmaid</p>
                     </div>
                 </div>
+                <div class="album" onClick="seeMoreAlbum(this)">
+                    <img src="../img/albums/300/fleetfoxes.jpg">
+                    <div class="hiddenInfo">
+                        <p class="albumInfo">Fleet Foxes</p>
+                        <p class="artistInfo">Fleet Foxes</p>
+                        <p class="yearInfo">2008</p>
+                        <p class="spotifyInfo">https://open.spotify.com/album/1rfgmU0AYNwWfS88pCOlX7?si=6ef-IkVnROKFjwQm0D7eCQ</p>
+                        <p class="appleMusicInfo">Placeholder</p>
+                        <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Fleet_Foxes_(album)</p>
+                        <div class="reviewInfo"></div>
+                    </div>
+                </div> 
+                <div class="album" onClick="seeMoreAlbum(this)">
+                    <img src="../img/albums/300/newmoon.jpg">
+                    <div class="hiddenInfo">
+                        <p class="albumInfo">The Twilight Saga: New Moon</p>
+                        <p class="subtitleInfo">(Original Motion Picture Soundtrack)</p>
+                        <p class="artistInfo">Various Artists</p>
+                        <p class="yearInfo">2009</p>
+                        <p class="spotifyInfo">https://open.spotify.com/album/2PDlvc7K51qC4Bkali3q0R?si=QZRHEjeBQPSoGt7EOwLOaQ</p>
+                        <p class="appleMusicInfo">Placeholder</p>
+                        <p class="wikipediaInfo">https://en.wikipedia.org/wiki/The_Twilight_Saga:_New_Moon_(soundtrack)</p>
+                        <div class="reviewInfo">
+                            <p>The Twilight Saga: New Moon (Original Motion Picture Soundtrack) surely seems like the outlier on this list, right? Thing is, this album does something very well that many other albums fail to do at all. Buoyed by its impressive array of late-2000s indie talent, this album <i>cultivates a vibe.</i></p>
+                            <p>It's impossible to put on this soundtrack and not feel like you're there, taken back to high school in the closing years of the first decade; you're Edward, trying to fit in, different somehow from your classmates, object of attention against your wishes; you're Bella, just as isolated, never fully settled down in this new place; at once at odds with your surrounding and knowing exactly how each tired day is going to play out, like you've been alive for a hundred years. </p>
+                            <p>These songs are yearning; in their most upbeat moments its feels like a rare breakthrough, a reminder to keep going. It's often slow, but always thoughtful. It feels like you've just burned a best-of CD and taken it on the bus. </p>
+                            <p>And I don't even like the Twilight movies that much!</p>
+                            <b>TOP SONGS: Shooting The Moon, Satellite Heart, Meet Me on the Equinox</b>
+                        </div>
+                    </div>
+                </div> 
+                <div class="album" onClick="seeMoreAlbum(this)">
+                    <img src="../img/albums/300/afut.jpg">
+                    <div class="hiddenInfo">
+                        <p class="albumInfo">Ants From Up There</p>
+                        <p class="artistInfo">Black Country, New Road</p>
+                        <p class="yearInfo">2022</p>
+                        <p class="spotifyInfo">https://open.spotify.com/album/21xp7NdU1ajmO1CX0w2Egd?si=e78d482a2af647e3</p>
+                        <p class="appleMusicInfo">Placeholder</p>
+                        <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Ants_from_Up_There</p>
+                        <div class="reviewInfo">
+                            <p>This album does have its issues. Haldern is a lesser son of greater sires, and if you do something more interesting with Mark's Theme and fix that godawful drumming on Snow Globes - the refrain is so good but the dissonance takes me out every time! - and you have an airtight, perfect album on your hands.</p>
+                            <p>Now, that's not what we've got. But what we do have more than makes up for it; you could put Snow Globes on the tracklist another five times and it would still be a Ten. I stumbled across this album online, and all I had to listen to was that Intro to be completely, irrevocably sold on the project.</p>
+                            <p>And it just gets better from there. Chaos Space Marine could just as easily be the opener to a goofy faux-victorian student musical, but the driving rhythm and our first - of many - taste of Isaac Wood's delicious, rich vocals keep you entirely immersed. If Intro gets you sold on the promise, this song gets you hooked on the vibe, the story, the tone. There's teases of the intensity (those drums!), the humor ("So long, chumps"), and even the story (references to Good Will Hunting's iconic Billie Eillish refrain and the ever-present Concorde.)</p>
+                            <p>Concorde, speaking of, is deceptively laid-back but has that signature bombastic buildup and ending that makes it all worth it. Bread Song is heartbreaking until it becomes heartbreaking <i>and</i> raucous. I sing Good Will Hunting to myself pretty much constantly; this is easily the catchiest song on an album that doesn't go for catchiness but has it in unbelievable abundance anyways. Actually, I take it back, The Place Where He Inserted the Blade is the catchiest, a laurel it need not rest on, since it's also perhaps the greatest song ever written. And Basketball Shoes is so ambitious, so BIG, that just thinking about it gives me chills and actually listening to it sends me into a near-catatonic state, like a musical cinder block heaved full-force at my sternum.</p>
+                            <p>With its amount of depth, clever instrumentation, huge moments, diversity of pace but consistency of tone, and just stellar lyrics, this could easily be a Typhoon album (and that's high praise) - no wonder I love it so much.</p>
+                            <b>TOP SONGS: Good Will Hunting, The Place Where He Inserted the Blade, Basketball Shoes</b>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -665,7 +730,7 @@
             ╚═╝   ╚═╝╚══════╝╚═╝  ╚═╝    ╚═╝  ╚═══╝ ╚═╝ ╚═╝  ╚═══╝ ╚══════╝ -->
                                                                        
         <div id="tier9" class="tier">
-            <div id="tierLabel9" style="background-color: greenyellow;" class="tierLabel">
+            <div id="tierLabel9" style="background-color: green;" class="tierLabel">
                 <div class="tierNumber">9</div>
                 <div class="tierDescription">Incredible album, but with 
                     something holding it back from 
@@ -745,7 +810,7 @@
                             <p>You open your eyes.</p>
                             <p>Here it is, masked behind this arpeggio somewhere between a violin and a synth, this heart-monitor rhythm that makes you feel like the song is scanning you somehow: the Comedown Machine. You can practically se the title card appearing before your eyes. After such a bombastic beginning to the album, we've finally reached our limit and crumbled under the pressure - but that was just the prologue. We've reached the true heart of the story. In the life of a rockstar, we've just jumped the shark. We're crashing out. We're down.</p>
                             <p>But we don't stay there for long.</p>
-                            TOP SONGS: Partners in Crime, Welcome to Japan, Happy Ending
+                            <b>TOP SONGS: Partners in Crime, Welcome to Japan, Happy Ending</b>
                         </div>
                     </div>
                 </div>
@@ -799,18 +864,6 @@
                 </div>
 
                 <div class="album" onClick="seeMoreAlbum(this)">
-                    <img src="../img/albums/300/afut.jpg">
-                    <div class="hiddenInfo">
-                        <p class="albumInfo">Ants From Up There</p>
-                        <p class="artistInfo">Black Country, New Road</p>
-                        <p class="yearInfo">2022</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/21xp7NdU1ajmO1CX0w2Egd?si=e78d482a2af647e3</p>
-                        <p class="appleMusicInfo">Placeholder</p>
-                        <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Ants_from_Up_There</p>
-                    </div>
-                </div>
-
-                <div class="album" onClick="seeMoreAlbum(this)">
                     <img src="../img/albums/300/carpenter.jpg">
                     <div class="hiddenInfo">
                         <p class="albumInfo">The Carpenter</p>
@@ -834,6 +887,44 @@
                     </div>
                 </div>
 
+                <div class="album" onClick="seeMoreAlbum(this)">
+                    <img src="../img/albums/300/candl.jpg">
+                    <div class="hiddenInfo">
+                        <p class="albumInfo">Carrie & Lowell</p>
+                        <p class="artistInfo">Sufjan Stevens</p>
+                        <p class="yearInfo">2015</p>
+                        <p class="spotifyInfo">https://open.spotify.com/album/64xtjfsPHNHch0CZ7fPTjS?si=wq2gd6RoSOS54P0tvcwQ1g</p>
+                        <p class="appleMusicInfo">Placeholder</p>
+                        <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Carrie_%26_Lowell</p>
+                        <div class="reviewInfo"></div>
+                    </div>
+                </div> 
+
+                <div class="album" onClick="seeMoreAlbum(this)">
+                    <img src="../img/albums/300/itaots.jpg">
+                    <div class="hiddenInfo">
+                        <p class="albumInfo">In the Aeroplane over the Sea</p>
+                        <p class="artistInfo">Neutral Milk Hotel</p>
+                        <p class="yearInfo">1998</p>
+                        <p class="spotifyInfo">https://open.spotify.com/album/0vVekV45lOaVKs6RZQQNob?si=44e93cc2c12441ba</p>
+                        <p class="appleMusicInfo">Placeholder</p>
+                        <p class="wikipediaInfo">https://en.wikipedia.org/wiki/In_the_Aeroplane_Over_the_Sea</p>
+                        <div class="reviewInfo"></div>
+                    </div>
+                </div> 
+
+                <div class="album" onClick="seeMoreAlbum(this)">
+                    <img src="../img/albums/300/xo.jpg">
+                    <div class="hiddenInfo">
+                        <p class="albumInfo">XO</p>
+                        <p class="artistInfo">Elliott Smith</p>
+                        <p class="yearInfo">1998</p>
+                        <p class="spotifyInfo">https://open.spotify.com/album/1zOxlHQGGV6EH7n4OIFTyh?si=wu27p25mQFaIjwBIb4pb3w</p>
+                        <p class="appleMusicInfo">Placeholder</p>
+                        <p class="wikipediaInfo">https://en.wikipedia.org/wiki/XO_(Elliott_Smith_album)</p>
+                        <div class="reviewInfo"></div>
+                    </div>
+                </div> 
             </div>
         </div>
 
@@ -844,12 +935,10 @@
             ██║   ██║███████╗██║  ██║    ███████╗ ██║ ╚██████╔╝ ██║  ██║    ██║   
             ╚═╝   ╚═╝╚══════╝╚═╝  ╚═╝    ╚══════╝ ╚═╝  ╚═════╝  ╚═╝  ╚═╝    ╚═╝ -->
         <div id="tier8" class="tier">
-            <div id="tierLabel8" style="background-color: yellow;" class="tierLabel">
+            <div id="tierLabel8" style="background-color: greenyellow;" class="tierLabel">
                 <div class="tierNumber">8</div>
                 <div class="tierDescription">This is a very good album. 
-                    <b>Must-listen</b> if you like 
-                    the genre or band already, 
-                    otherwise still quite good. </div>
+                    <b>Must-listen</b> if you like the genre or band already, otherwise still quite good. </div>
                 <div class="sortButtonHolder">
                     <button class="alphabeticalSortButton" onclick="sortTierAlphabetically($(this).parent().parent().parent())">Sort Alphabetically &#8645;</button>
                     <button class="yearSortButton" onclick="sortTierYearwise($(this).parent().parent().parent())">Sort by Year &#8645;</button>
@@ -1078,6 +1167,78 @@
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Modern_Vampires_of_the_City</p>
                     </div>
                 </div> 
+                <div class="album" onClick="seeMoreAlbum(this)">
+                    <img src="../img/albums/300/mbdtf.jpg">
+                    <div class="hiddenInfo">
+                        <p class="albumInfo">My Beautiful Dark Twisted Fantasy</p>
+                        <p class="artistInfo">Kanye West</p>
+                        <p class="yearInfo">2010</p>
+                        <p class="spotifyInfo">https://open.spotify.com/album/20r762YmB5HeofjMCiPMLv?si=8849903d5dee4913</p>
+                        <p class="appleMusicInfo">Placeholder</p>
+                        <p class="wikipediaInfo">https://en.wikipedia.org/wiki/My_Beautiful_Dark_Twisted_Fantasy</p>
+                        <div class="reviewInfo"></div>
+                    </div>
+                </div> 
+                <div class="album" onClick="seeMoreAlbum(this)">
+                    <img src="../img/albums/300/10000gecs.jpg">
+                    <div class="hiddenInfo">
+                        <p class="albumInfo">10,000 Gecs</p>
+                        <p class="artistInfo">100 Gecs</p>
+                        <p class="yearInfo">2023</p>
+                        <p class="spotifyInfo">https://open.spotify.com/album/2XS5McKf3zdJWpcZ4OkZPZ?si=iUQxPtylSV2B7o_yNiBNgQ</p>
+                        <p class="appleMusicInfo">Placeholder</p>
+                        <p class="wikipediaInfo">https://en.wikipedia.org/wiki/10,000_gecs</p>
+                        <div class="reviewInfo"></div>
+                    </div>
+                </div> 
+                <div class="album" onClick="seeMoreAlbum(this)">
+                    <img src="../img/albums/300/gonenow.jpg">
+                    <div class="hiddenInfo">
+                        <p class="albumInfo">Gone Now</p>
+                        <p class="artistInfo">Bleachers</p>
+                        <p class="yearInfo">2017</p>
+                        <p class="spotifyInfo">https://open.spotify.com/album/10HKbC9lKDHGQvndGck6XJ?si=a18eb02a9c9947c1</p>
+                        <p class="appleMusicInfo">Placeholder</p>
+                        <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Gone_Now</p>
+                        <div class="reviewInfo"></div>
+                    </div>
+                </div> 
+                <div class="album" onClick="seeMoreAlbum(this)">
+                    <img src="../img/albums/300/illinois.jpg">
+                    <div class="hiddenInfo">
+                        <p class="albumInfo">Illinois</p>
+                        <p class="artistInfo">Sufjan Stevens</p>
+                        <p class="yearInfo">2005</p>
+                        <p class="spotifyInfo">https://open.spotify.com/album/1pOl0KEC1iQnA6F0XxV4To?si=4f2f27e6b5434b0a</p>
+                        <p class="appleMusicInfo">Placeholder</p>
+                        <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Illinois_(Sufjan_Stevens_album)</p>
+                        <div class="reviewInfo"></div>
+                    </div>
+                </div> 
+                <div class="album" onClick="seeMoreAlbum(this)">
+                    <img src="../img/albums/300/midwestprincess.jpg">
+                    <div class="hiddenInfo">
+                        <p class="albumInfo">The Rise and Fall of a Midwest Princess</p>
+                        <p class="artistInfo">Chappell Roan</p>
+                        <p class="yearInfo">2023</p>
+                        <p class="spotifyInfo">https://open.spotify.com/album/0EiI8ylL0FmWWpgHVTsZjZ?si=rPFybARcSEyKrjKEEFfzkA</p>
+                        <p class="appleMusicInfo">Placeholder</p>
+                        <p class="wikipediaInfo">https://en.wikipedia.org/wiki/The_Rise_and_Fall_of_a_Midwest_Princess</p>
+                        <div class="reviewInfo"></div>
+                    </div>
+                </div> 
+                <div class="album" onClick="seeMoreAlbum(this)">
+                    <img src="../img/albums/300/wtt.jpg">
+                    <div class="hiddenInfo">
+                        <p class="albumInfo">Watch the Throne</p>
+                        <p class="artistInfo">Jay-Z & Kanye West</p>
+                        <p class="yearInfo">2011</p>
+                        <p class="spotifyInfo">https://open.spotify.com/album/2if1gb3t6IkhiKzrtS9Glc?si=jen7mqfLTc2WG04SSlXJSg</p>
+                        <p class="appleMusicInfo">Placeholder</p>
+                        <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Watch_the_Throne</p>
+                        <div class="reviewInfo"></div>
+                    </div>
+                </div> 
             </div>
         </div>
 
@@ -1088,7 +1249,7 @@
             ██║   ██║███████╗██║  ██║    ███████║ ███████╗ ╚████╔╝  ███████╗ ██║ ╚████║
             ╚═╝   ╚═╝╚══════╝╚═╝  ╚═╝    ╚══════╝ ╚══════╝  ╚═══╝   ╚══════╝ ╚═╝  ╚═══╝ -->                                                            
         <div id="tier7" class="tier">
-            <div id="tierLabel7" style="background-color: orange;" class="tierLabel">
+            <div id="tierLabel7" style="background-color: yellow;" class="tierLabel">
                 <div class="tierNumber">7</div>
                 <div class="tierDescription">A few real standouts, solidly
                     listenable throughout; 
@@ -1254,6 +1415,80 @@
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Vessel_(Twenty_One_Pilots_album)</p>
                     </div>
                 </div> 
+                <div class="album" onClick="seeMoreAlbum(this)">
+                    <img src="../img/albums/300/fwn.jpg">
+                    <div class="hiddenInfo">
+                        <p class="albumInfo">Favourite Worst Nightmare</p>
+                        <p class="artistInfo">Arctic Monkeys</p>
+                        <p class="yearInfo">2007</p>
+                        <p class="spotifyInfo">https://open.spotify.com/album/6rsQnwaoJHxXJRCDBPkBRw?si=tus33fQfSz2g33hjsIBfJQ</p>
+                        <p class="appleMusicInfo">Placeholder</p>
+                        <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Favourite_Worst_Nightmare</p>
+                        <div class="reviewInfo"></div>
+                    </div>
+                </div> 
+                <div class="album" onClick="seeMoreAlbum(this)">
+                    <img src="../img/albums/300/kidsseeghosts.jpg">
+                    <div class="hiddenInfo">
+                        <p class="albumInfo">Kids See Ghosts</p>
+                        <p class="artistInfo">Kids See Ghosts</p>
+                        <p class="yearInfo">2018</p>
+                        <p class="spotifyInfo">https://open.spotify.com/album/6pwuKxMUkNg673KETsXPUV?si=ECULWLviQAeQFsMEpbrvdw</p>
+                        <p class="appleMusicInfo">Placeholder</p>
+                        <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Kids_See_Ghosts_(album)</p>
+                        <div class="reviewInfo"></div>
+                    </div>
+                </div> 
+                <div class="album" onClick="seeMoreAlbum(this)">
+                    <img src="../img/albums/300/parachutes.jpg">
+                    <div class="hiddenInfo">
+                        <p class="albumInfo">Parachutes</p>
+                        <p class="artistInfo">Coldplay</p>
+                        <p class="yearInfo">2000</p>
+                        <p class="spotifyInfo">https://open.spotify.com/album/6ZG5lRT77aJ3btmArcykra?si=N_JpRj6fQCCU0hudtisU4g</p>
+                        <p class="appleMusicInfo">Placeholder</p>
+                        <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Parachutes_(Coldplay_album)</p>
+                        <div class="reviewInfo"></div>
+                    </div>
+                </div> 
+                <div class="album" onClick="seeMoreAlbum(this)">
+                    <img src="../img/albums/300/reflektor.jpg">
+                    <div class="hiddenInfo">
+                        <p class="albumInfo">Reflektor</p>
+                        <p class="artistInfo">Arcade Fire</p>
+                        <p class="yearInfo">2013</p>
+                        <p class="spotifyInfo">https://open.spotify.com/album/2brwuyGZ2lLqWnBX6U4MQT?si=pfbGsTRjRTCLmeAo25xb9A</p>
+                        <p class="appleMusicInfo">Placeholder</p>
+                        <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Reflektor</p>
+                        <div class="reviewInfo"></div>
+                    </div>
+                </div> 
+                <div class="album" onClick="seeMoreAlbum(this)">
+                    <img src="../img/albums/300/tlop.jpg">
+                    <div class="hiddenInfo">
+                        <p class="albumInfo">The Life of Pablo</p>
+                        <p class="artistInfo">Kanye West</p>
+                        <p class="yearInfo">2016</p>
+                        <p class="spotifyInfo">https://open.spotify.com/album/7gsWAHLeT0w7es6FofOXk1?si=93MMqn2dRJa3F4-usBzZ8A</p>
+                        <p class="appleMusicInfo">Placeholder</p>
+                        <p class="wikipediaInfo">https://en.wikipedia.org/wiki/The_Life_of_Pablo</p>
+                        <div class="reviewInfo"></div>
+                    </div>
+                </div> 
+                <div class="album" onClick="seeMoreAlbum(this)">
+                    <img src="../img/albums/300/eitheror.jpg">
+                    <div class="hiddenInfo">
+                        <p class="albumInfo">Either/Or</p>
+                        <p class="artistInfo">Elliott Smith</p>
+                        <p class="yearInfo">1997</p>
+                        <p class="spotifyInfo">https://open.spotify.com/album/5bmpvyP7UGqB4VuXmrJUMy?si=aUjiz_aRQZKTyfhg4h243g</p>
+                        <p class="appleMusicInfo">Placeholder</p>
+                        <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Either/Or_(album)</p>
+                        <div class="reviewInfo">                        
+                            <p>It's just not as vibrant, energetic, or catchy as XO. "Between the Bars" is no "Waltz 2." There's some slappers in here for sure, but honestly the more laid-back tone doesn't do it for me; combine that with fewer catchy melodies and a less polished sound and you have a nice, solid, very ElliottSmithy Elliott Smith album. Maybe just listen to the greatest hits and leave it at that.</p>
+                        </div>
+                    </div>
+                </div> 
             </div>
         </div>
 
@@ -1264,7 +1499,7 @@
             ██║   ██║███████╗██║  ██║    ███████║ ██║ ██╔╝ ██╗
             ╚═╝   ╚═╝╚══════╝╚═╝  ╚═╝    ╚══════╝ ╚═╝ ╚═╝  ╚═╝ -->           
         <div id="tier6" class="tier">
-            <div id="tierLabel6" style="background-color: orangered;" class="tierLabel">
+            <div id="tierLabel6" style="background-color: orange;" class="tierLabel">
                 <div class="tierNumber">6</div>
                 <div class="tierDescription">Couple of good songs, rest is 
                     anywhere from forgettable 
@@ -1333,7 +1568,7 @@
             ██║   ██║███████╗██║  ██║    ██║      ██║  ╚████╔╝  ███████╗
             ╚═╝   ╚═╝╚══════╝╚═╝  ╚═╝    ╚═╝      ╚═╝   ╚═══╝   ╚══════╝ -->                                                                              
         <div id="tier5" class="tier">
-            <div id="tierLabel5" style="background-color: red;" class="tierLabel">
+            <div id="tierLabel5" style="background-color: orangered;" class="tierLabel">
                 <div class="tierNumber">5</div>
                 <div class="tierDescription">Meh. Very average. Albums with 
                     one banger and the rest 
@@ -1369,8 +1604,8 @@
         </div>
 
         <div id="realTopSection" class="topSection">
-            <div class="heading">Name of Album</div>
-            <div class="subheading">Subtitle</div>
+            <div class="heading crt-text">Name of Album</div>
+            <div class="subheading crt-text">Subtitle</div>
             <div class="artistyear">Artist | Year</div>
         </div>
         
@@ -1388,7 +1623,7 @@
             </div>
             <img id="starsimg" src="../img/stars/5.png">
         </div>
-        <div style="font-size: 1em;" id="reviewblock">Lorem Ipsum</div>
+        <div id="reviewblock">Lorem Ipsum</div>
     </div>
 </body>
 
