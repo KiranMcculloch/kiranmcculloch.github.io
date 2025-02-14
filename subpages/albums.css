@@ -37,6 +37,10 @@ img.linkUnavailable{
 
 /* Portrait Mode */
 @media (max-aspect-ratio: 1/1){
+    .landscape{
+        display: none;
+    }
+
     .fullscreen-menu-bar{
         display: none;
     }
@@ -261,6 +265,10 @@ img.linkUnavailable{
     
 /* Landscape Mode */
 @media (min-aspect-ratio: 1/1) or (aspect-ratio: 1/1){
+    .portrait{
+        display: none;
+    }
+
     .fullscreen-menu-bar{
         font-family: 'Windows 95';
         background-color: #77B6EA;
