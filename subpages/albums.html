@@ -312,8 +312,9 @@
 
         $('body').css('overflow', 'hidden');
         $("#blurOverlay").show();
-        $("#tierListWrapper").css("filter","blur(3px)")
         $("#moreInfo").show();
+        $("#moreInfo").scrollTop(0);
+
     }
 
 
@@ -327,7 +328,7 @@
             $("#tierListWrapper").css("filter","blur(0px)")
             $("#blurOverlay").hide();
             container.hide();
-            $("#moreInfo").find("#reviewblock").html("Lorem Ipsum");
+            $("#moreInfo").find("#reviewblock").html("");
         }
     });
 
@@ -510,7 +511,7 @@
     <div class="fullscreen-menu-bar" id="fullscreen-menu-bar-spacer">
         <p class="popup-title">About</p>
     </div> -->
-    <div class="crt-overlay" id="crt-overlay"></div>
+    <div class="crt-overlay" id="crt-overlay" style="opacity: 80%;"></div>
     <div id="tierListWrapper" style="display: flex; flex-direction: column; width: 100; gap: 1vh; background-color: var(--developer-black);">
         <div id="albumTooltip"></div>
     <!--████████╗██╗███████╗██████╗     ████████╗ ███████╗ ███╗   ██╗
@@ -561,7 +562,7 @@
                         <div class="reviewInfo">
                             <p>It is no small secret that this is my favorite album of all time.</p>
                             <p>White Lighter is a project about scope. The lo-fi Prelude and the lamentful Caesar are under a minute long, while the closer, Post-Script, meditatively glides past 6 minutes. But the real scale is found internally - each track could easily be four or five smaller ones; the effect is that you're always on the edge of your seat, never knowing what's coming next, settling into a slow moment never long enough for it to be boring before the band knocks you out of said seat with an explosion of sound, horns and strings, Kyle Morton's expressive voice and a chorus of harmonies permeating throughout.</p>
-                            <p>I mean, this album alone has some of the best single moments in Music: The fableist outro of Young Fathers, the heartbreaking, furious second verse of the Lake, the punchy Wolves section on Morton's Fork, the almost Alt-J-y end of the first verse on Dreams of Cannibalism, all come to mind. God, everything leading up to the drop on Hunger and Thirst gets me every time.</p>
+                            <p>I mean, this album alone has some of the best single moments in Music: The fable-like outro of Young Fathers, the heartbreaking, furious second verse of the Lake, the punchy Wolves section on Morton's Fork, the almost Alt-J-y end of the first verse on Dreams of Cannibalism, all come to mind. God, everything leading up to the drop on Hunger and Thirst gets me every time.</p>
                             <p>Thing is, it's impossible to talk about these songs in terms of Verses and Choruses and Bridges, they're more like rivers; the flow can be calm and gentle or breakneck, and you're just as likely to hit some rapids or go over a waterfall as you are to float gently by. These songs are expressions of faith, of belief, of love, of loss. Morton's lyrics wash you in it, they stick to you, they come back to you months later like proverbs. He sings, he talks, he yells. When he's angry, you feel it, when he's desperate, you're just as much so. The other vocalists and the brass section and the rest of the veritable orchestra he has backing him up reinforce these emotions, and the result is, despite my best efforts, indescribable.</p>
                             <p>Put on some headphones, and set aside ninety-three minutes of your life - you're gonna end up wanting to listen to it twice.</p>
                             <b>TOP SONGS: Young Fathers, Dreams of Cannibalism, Post Script - but there is not a single bad moment, let alone song, on this album.</b>
@@ -710,9 +711,9 @@
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Ants_from_Up_There</p>
                         <div class="reviewInfo">
-                            <p>This album does have its issues. Haldern is a lesser son of greater sires, and if you do something more interesting with Mark's Theme and fix that godawful drumming on Snow Globes - the refrain is so good but the dissonance takes me out every time! - and you have an airtight, perfect album on your hands.</p>
+                            <p>This album does have its issues. Haldern is a lesser son of greater sires, and if you do something more interesting with Mark's Theme and fix that godawful drumming on Snow Globes - the refrain is so good but the dissonance takes me out every time! - you have an airtight, perfect album on your hands.</p>
                             <p>Now, that's not what we've got. But what we do have more than makes up for it; you could put Snow Globes on the tracklist another five times and it would still be a Ten. I stumbled across this album online, and all I had to listen to was that Intro to be completely, irrevocably sold on the project.</p>
-                            <p>And it just gets better from there. Chaos Space Marine could just as easily be the opener to a goofy faux-victorian student musical, but the driving rhythm and our first - of many - taste of Isaac Wood's delicious, rich vocals keep you entirely immersed. If Intro gets you sold on the promise, this song gets you hooked on the vibe, the story, the tone. There's teases of the intensity (those drums!), the humor ("So long, chumps"), and even the story (references to Good Will Hunting's iconic Billie Eillish refrain and the ever-present Concorde.)</p>
+                            <p>And it just gets better from there. Chaos Space Marine can just as easily be the opener to a goofy faux-victorian student musical, but the driving rhythm and our first - of many - taste of Isaac Wood's delicious, rich vocals keep you entirely immersed. If Intro gets you sold on the promise, this song gets you hooked on the vibe, the story, the tone. There's teases of the intensity (those drums!), the humor ("So long, chumps"), and even the story (references to Good Will Hunting's iconic Billie Eillish refrain and the ever-present Concorde.)</p>
                             <p>Concorde, speaking of, is deceptively laid-back but has that signature bombastic buildup and ending that makes it all worth it. Bread Song is heartbreaking until it becomes heartbreaking <i>and</i> raucous. I sing Good Will Hunting to myself pretty much constantly; this is easily the catchiest song on an album that doesn't go for catchiness but has it in unbelievable abundance anyways. Actually, I take it back, The Place Where He Inserted the Blade is the catchiest, a laurel it need not rest on, since it's also perhaps the greatest song ever written. And Basketball Shoes is so ambitious, so BIG, that just thinking about it gives me chills and actually listening to it sends me into a near-catatonic state, like a musical cinder block heaved full-force at my sternum.</p>
                             <p>With its amount of depth, clever instrumentation, huge moments, diversity of pace but consistency of tone, and just stellar lyrics, this could easily be a Typhoon album (and that's high praise) - no wonder I love it so much.</p>
                             <b>TOP SONGS: Good Will Hunting, The Place Where He Inserted the Blade, Basketball Shoes</b>
@@ -860,6 +861,12 @@
                         <p class="spotifyInfo">https://open.spotify.com/album/42cH7mrkfljkqkxA2Ip9Xq?si=46a95dc4da9847ca</p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Be_the_Cowboy</p>
+                        <div class="reviewInfo">
+                            <p>Mitski has a tendency to write the best two minutes of music you've ever heard, and instead of adding some slop to make it a nice radio-friendly 3.5 minutes like most artists would, she leaves it as-is and goes and writes <i>another</i>. What we're left with is a collection of diverse, immensely catchy, sometimes-light-sometimes-heavy-but-always-short-and-sweet, good-ass songs.</p>
+                            <p>These songs are firmly in the Mitski Tradition of, say, Francis Forever, with melancholy but realistic lyrics (I often think about "Cause nobody butters me up like you/and nobody fucks me like/me") and an often-slow start that builds to an absolute Ripper of a climax. The secret sauce on this album, though, is the prevalence of an upbeat tempo, not just within each song but <i>between</i> them, whisking us past each amazingly hand-crafted song like a whirlwind or an out-of-control carousel, enticing us, grabbing our attention, then, "Nope, time to go."</p>
+                            <p>Put it on shuffle or listen straight through, this collection of gems will sparkle just as brightly either way. You'll never want it to end.</p>
+                            <b>TOP SONGS: Why Didn't You Stop Me?, Lonesome Love, Me And My Husband</b>
+                        </div>
                     </div>
                 </div>
 
@@ -989,6 +996,12 @@
                         <p class="spotifyInfo">https://open.spotify.com/album/6Jx4cGhWHewTcfKDJKguBQ?si=DsoxiGghSwCmSph9c2JXlg</p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Angles_(The_Strokes_album)</p>
+                        <div class="reviewInfo">
+                            <p>The beginning of Macchu Pichu is sounds like going through one of those Mario pipes into Strokesland, and boy is it a welcome sight. This is the song that got me into the Strokes, full stop, and everyone who listens to it has the same reaction.</p>
+                            <p>Not all of the album is this good. You're So Right is forgettable, and Metabolism sounds kinda the same but with a knockoff Muse sound (the band does grandiose much better on other occasions); these opinions seem to be reflected by the community at large, given their lackluster Spotify play count. I have no need to listen to Call Me Back ever again. For the most part, though, the tracks found here are quite good, listenable and relistenable, even though they might entirely escape your notice on the first listen-through.</p>
+                            <p>This isn't the type of album with a consistent feel or story or anything, it's more like a  Toys'R'Us of catchy alt rock. So, points deducted, I suppose, but it's hard to be mad or disappointed in this album for longer than a couple seconds. Cause before you know it, Gratisfaction is playing, and everything is forgiven.</p>
+                            <b>TOP SONGS: Macchu Pichu, Under Cover of Darkness, Gratisfaction</b>
+                        </div>
                     </div>
                 </div> 
                 <div class="album" onClick="seeMoreAlbum(this)">
@@ -1486,6 +1499,7 @@
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Either/Or_(album)</p>
                         <div class="reviewInfo">                        
                             <p>It's just not as vibrant, energetic, or catchy as XO. "Between the Bars" is no "Waltz 2." There's some slappers in here for sure, but honestly the more laid-back tone doesn't do it for me; combine that with fewer catchy melodies and a less polished sound and you have a nice, solid, very ElliottSmithy Elliott Smith album. Maybe just listen to the greatest hits and leave it at that.</p>
+                            <b>TOP SONGS: Pictures of Me, Rose Parade, Between the Bars</b>
                         </div>
                     </div>
                 </div> 
@@ -1623,7 +1637,7 @@
             </div>
             <img id="starsimg" src="../img/stars/5.png">
         </div>
-        <div id="reviewblock">Lorem Ipsum</div>
+        <div id="reviewblock"></div>
     </div>
 </body>
 
