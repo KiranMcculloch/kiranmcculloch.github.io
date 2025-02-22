@@ -168,7 +168,6 @@ position: fixed !important
         flex-direction: column;
         gap: 0vh;
         justify-content: center;
-        border: 1px solid red;
     }
     
     #center-text * {
@@ -199,7 +198,6 @@ position: fixed !important
         flex-wrap: wrap;
         align-self: end;
         justify-content: right;
-        border: 1px solid red;
     }
     /* #center-list > * {
         border: 1px solid red;
