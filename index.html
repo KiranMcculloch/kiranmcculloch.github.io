@@ -62,13 +62,7 @@
 
     var isTouchScreen  = (('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0));
 
-    if (isTouchScreen){
-        $('#about-icon').find("img").attr("src", "./img/about-icon.gif");
-        $('#education-icon').find("img").attr("src", "./img/education-icon.gif");
-        $('#experience-icon').find("img").attr("src", "./img/experience-icon.gif");
-        $('#projects-icon').find("img").attr("src", "./img/projects-icon.gif");
-        $('#music-icon').find("img").attr("src", "./img/music-icon.gif");
-    }
+ 
 
     function isMobileBrowser() {
         let check = false;
@@ -210,6 +204,14 @@
 
     $(document).ready(
         function () {
+            if (isTouchScreen){
+                $('#about-icon').find("img").attr("src", "./img/about-icon.gif");
+                $('#education-icon').find("img").attr("src", "./img/education-icon.gif");
+                $('#experience-icon').find("img").attr("src", "./img/experience-icon.gif");
+                $('#projects-icon').find("img").attr("src", "./img/projects-icon.gif");
+                $('#music-icon').find("img").attr("src", "./img/music-icon.gif");
+            }
+
             $('img').attr('draggable', false);
 
             $("#splash-text").text(chooseRandomSplashText());    
