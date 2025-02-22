@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link type="text/css" rel="stylesheet" href="../style.css">
     <link type="text/css" rel="stylesheet" href="../crt.css">
-    <link type="text/css" rel="stylesheet" href="../wiki.css">
+    <link type="text/css" rel="stylesheet" href="./wiki.css">
     <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
@@ -44,7 +44,7 @@
     <div class="fullscreen-menu-bar" id="fullscreen-menu-bar-spacer">
         <p class="popup-title">About</p>
     </div>
-    <div class="wrapAll clearfix">
+    <div id="wrapper" class="clearfix">
         <div class="sidebar">
             <div class="logo">
                 <img src='../img/wiki-logo.png' alt="logo">
@@ -62,11 +62,11 @@
                     <li><a  href="#">Portal</a></li>
                 </ul>
             </div>
-
-
         </div>
+
         <div class="mainsection">
             <div class="headerLinks">
+                <img id="mobileLogo" src='../img/wiki-logo-mobile.png' alt="logo">
                 <span class="user">Not logged in</span> <a  href="#">Talk</a> <a  href="#">Contributions</a> <a
                     href="#">Create account</a> <a  href="#">Log in</a>
             </div>
@@ -89,11 +89,15 @@
             </div>
             <div class="article">
                 <h1>Kiran McCulloch</h1>
-                <p class="siteSub">From McIpedia, the Encyclopedia</p>
+                <div class="siteSub">
+                    <p id="subName">From McIpedia, the Encyclopedia</p>
+                    <img src="../img/stars/single.png">
+                    <img src="../img/lock.png">
+                </div>
                 <p class="roleNote">This article is about the programmer. For other uses, see <a target="_blank" href="https://en.wikipedia.org/wiki/McCulloch_(disambiguation)">McCulloch (disambiguation)</a>.</p>
                 <div class="articleRight">
                     <div class="articleRightInner">
-                        <img src="../img/wiki-kiran.png" alt="pencil" style="width: auto;" />
+                        <img src="../img/wiki-kiran.png" alt="image of Kiran McCulloch" style="width: auto;" />
                     </div>
                     Kiran McCulloch photographed at <a target="_blank" href="https://en.wikipedia.org/wiki/McGill_University">McGill University</a>, 2022
                 </div>
