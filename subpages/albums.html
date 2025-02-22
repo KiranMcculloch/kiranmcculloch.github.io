@@ -28,6 +28,7 @@
     }
 
     let browsertype=navigator.userAgent;
+
     // if(browsertype.includes("Safari")){
     //     alert("Hi! Looks like you're opening this website in Safari. Look, I developed this entire thing on Safari, so I get it, but there are a couple known bugs you should be aware of:\n\n1) CSS animations don't render in iFrames;\n2) background-images don't listen to image-rendering properties (so they may be rendered blurrily.)\n\nThese bugs are not present on Chrome or Firefox, so I'd recommend using one of those - but if you're like me and prefer Safari anyways, continue on, just keeping in mind you may not be getting the full experience. Thanks!");
     // }
@@ -108,16 +109,16 @@
     });
 
     //sorting
-    function sortTierAlphabetically(tier){
-        var sortbutton = tier.find(".alphabeticalSortButton");
+    function sortTierAlphabetically(button){
+        tier = button.parent().parent().parent()
         var sortModifier = 1;
-        if (sortbutton.hasClass("sorted-ascending")){
-            sortbutton.html("Sort Alphabetically &uarr;");
-            sortbutton.removeClass("sorted-ascending");
+        if (button.hasClass("sorted-ascending")){
+            button.find(".arrowIndicator").html("&uarr;")
+            button.removeClass("sorted-ascending");
             sortModifier = -1;
         } else {
-            sortbutton.html("Sort Alphabetically &darr;");
-            sortbutton.addClass("sorted-ascending");
+            button.find(".arrowIndicator").html("&darr;")            
+            button.addClass("sorted-ascending");
         }
 
         var tieralbums = $(tier.find(".album").toArray().sort(function (a,b){
@@ -133,19 +134,19 @@
         tier.find(".artistSortButton").removeClass("selected");
         tier.find(".yearSortButton").html("Sort by Year &udarr;");
         tier.find(".yearSortButton").removeClass("selected");
-        sortbutton.addClass("selected")
+        button.addClass("selected")
     }
 
-    function sortTierYearwise(tier){
-        var sortbutton = tier.find(".yearSortButton")
+    function sortTierYearwise(button){
+        tier = button.parent().parent().parent()
         var sortModifier = 1;
-        if (sortbutton.hasClass("sorted-ascending")){
-            sortbutton.html("Sort by Year &uarr;");
-            sortbutton.removeClass("sorted-ascending");
+        if (button.hasClass("sorted-ascending")){
+            button.html("Sort by Year &uarr;");
+            button.removeClass("sorted-ascending");
             sortModifier  =-1;
         } else {
-            sortbutton.html("Sort by Year &darr;");
-            sortbutton.addClass("sorted-ascending");
+            button.html("Sort by Year &darr;");
+            button.addClass("sorted-ascending");
         }
         
         var tieralbums = $(tier.find(".album").toArray().sort(function (a,b){
@@ -162,21 +163,21 @@
 
         tier.find(".artistSortButton").html("Sort by Artist &udarr;")
         tier.find(".artistSortButton").removeClass("selected")
-        tier.find(".alphabeticalSortButton").html("Sort Alphabetically &udarr;")
+        tier.find(".arrowIndicator").html("&udarr;")
         tier.find(".alphabeticalSortButton").removeClass("selected")
-        sortbutton.addClass("selected")
+        button.addClass("selected")
     }
 
-    function sortTierArtistwise(tier){
-        var sortbutton = tier.find(".artistSortButton")
+    function sortTierArtistwise(button){
+        tier = button.parent().parent().parent()
         var sortModifier = 1;
-        if (sortbutton.hasClass("sorted-ascending")){
-            sortbutton.html("Sort by Artist &uarr;");
-            sortbutton.removeClass("sorted-ascending");
+        if (button.hasClass("sorted-ascending")){
+            button.html("Sort by Artist &uarr;");
+            button.removeClass("sorted-ascending");
             sortModifier = -1;
         } else {
-            sortbutton.html("Sort by Artist &darr;");
-            sortbutton.addClass("sorted-ascending");
+            button.html("Sort by Artist &darr;");
+            button.addClass("sorted-ascending");
         }
 
         var tieralbums = $(tier.find(".album").toArray().sort(function (a,b){
@@ -190,9 +191,9 @@
 
         tier.find(".yearSortButton").html("Sort by Year &udarr;")
         tier.find(".yearSortButton").removeClass("selected")
-        tier.find(".alphabeticalSortButton").html("Sort Alphabetically &udarr;")
+        tier.find(".arrowIndicator").html("&udarr;")        
         tier.find(".alphabeticalSortButton").removeClass("selected")
-        sortbutton.addClass("selected")
+        button.addClass("selected")
     }
 
 
@@ -302,10 +303,13 @@
                 <div class="tierDescription">Perfection. Next to no 
                     skips. An absolute must-listen.</div>
                 <div class="sortButtonHolder">
-                    <button class="alphabeticalSortButton landscape" onclick="sortTierAlphabetically($(this).parent().parent().parent())">Sort Alphabetically &#8645;</button>
-                    <button class="alphabeticalSortButton portrait" onclick="sortTierAlphabetically($(this).parent().parent().parent())">Sort A->Z &#8645;</button>
-                    <button class="yearSortButton" onclick="sortTierYearwise($(this).parent().parent().parent())">Sort by Year &#8645;</button>
-                    <button class="artistSortButton" onclick="sortTierArtistwise($(this).parent().parent().parent())">Sort by Artist &#8645;</button>
+                    <button class="alphabeticalSortButton" onclick="sortTierAlphabetically($(this))">
+                        <span>Sort</span>
+                        <span data-alttext="A->Z"><span>Alphabetically</span></span>
+                        <span class="arrowIndicator">&#8645;</span>
+                    </button>
+                    <button class="yearSortButton" onclick="sortTierYearwise($(this))">Sort by Year &#8645;</button>
+                    <button class="artistSortButton" onclick="sortTierArtistwise($(this))">Sort by Artist &#8645;</button>
                 </div>
             </div>
             <div class="albumHolder">
@@ -489,7 +493,7 @@
                         <div class="reviewInfo">
                             <p>This album does have its issues. Haldern is a lesser son of greater sires, and if you do something more interesting with Mark's Theme and fix that godawful drumming on Snow Globes - the refrain is so good but the dissonance takes me out every time! - you have an airtight, perfect album on your hands.</p>
                             <p>Now, that's not what we've got. But what we do have more than makes up for it; you could put Snow Globes on the tracklist another five times and it would still be a Ten. I stumbled across this album online, and all I had to listen to was that Intro to be completely, irrevocably sold on the project.</p>
-                            <p>And it just gets better from there. Chaos Space Marine can just as easily be the opener to a goofy faux-victorian student musical, but the driving rhythm and our first - of many - taste of Isaac Wood's delicious, rich vocals keep you entirely immersed. If Intro gets you sold on the promise, this song gets you hooked on the vibe, the story, the tone. There's teases of the intensity (those drums!), the humor ("So long, chumps"), and even the story (references to Good Will Hunting's iconic Billie Eillish refrain and the ever-present Concorde.)</p>
+                            <p>And it just gets better from there. Chaos Space Marine can just as easily be the opener to a goofy faux-victorian student musical, but the driving rhythm and our first - of many - taste of Isaac Wood's delicious, rich vocals keep you entirely immersed. If Intro gets you sold on the promise, this song gets you hooked on the vibe, the story, the tone. There's teases of the intensity (those drums!), the humor ("So long, chumps"), and even the story (references to Good Will Hunting's iconic Billie Eillish refrain and the ever-present Concorde) that await you.</p>
                             <p>Concorde, speaking of, is deceptively laid-back but has that signature bombastic buildup and ending that makes it all worth it. Bread Song is heartbreaking until it becomes heartbreaking <i>and</i> raucous. I sing Good Will Hunting to myself pretty much constantly; this is easily the catchiest song on an album that doesn't go for catchiness but has it in unbelievable abundance anyways. Actually, I take it back, The Place Where He Inserted the Blade is the catchiest, a laurel it need not rest on, since it's also perhaps the greatest song ever written. And Basketball Shoes is so ambitious, so BIG, that just thinking about it gives me chills and actually listening to it sends me into a near-catatonic state, like a musical cinder block heaved full-force at my sternum.</p>
                             <p>With its amount of depth, clever instrumentation, huge moments, diversity of pace but consistency of tone, and just stellar lyrics, this could easily be a Typhoon album (and that's high praise) - no wonder I love it so much.</p>
                             <b>TOP SONGS: Good Will Hunting, The Place Where He Inserted the Blade, Basketball Shoes</b>
@@ -516,10 +520,13 @@
                     can be pretty interchangeable
                     from person to person. <b>Still a must-listen.</b></div>
                 <div class="sortButtonHolder">
-                    <button class="alphabeticalSortButton landscape" onclick="sortTierAlphabetically($(this).parent().parent().parent())">Sort Alphabetically &#8645;</button>
-                    <button class="alphabeticalSortButton portrait" onclick="sortTierAlphabetically($(this).parent().parent().parent())">Sort A->Z &#8645;</button>
-                    <button class="yearSortButton" onclick="sortTierYearwise($(this).parent().parent().parent())">Sort by Year &#8645;</button>
-                    <button class="artistSortButton" onclick="sortTierArtistwise($(this).parent().parent().parent())">Sort by Artist &#8645;</button>
+                    <button class="alphabeticalSortButton" onclick="sortTierAlphabetically($(this))">
+                        <span>Sort</span>
+                        <span data-alttext="A->Z"><span>Alphabetically</span></span>
+                        <span class="arrowIndicator">&#8645;</span>
+                    </button>
+                    <button class="yearSortButton" onclick="sortTierYearwise($(this))">Sort by Year &#8645;</button>
+                    <button class="artistSortButton" onclick="sortTierArtistwise($(this))">Sort by Artist &#8645;</button>
                 </div>
             </div>
             <div class="albumHolder">
@@ -724,10 +731,13 @@
                 <div class="tierDescription">This is a very good album. 
                     <b>Must-listen</b> if you like the genre or band already, otherwise still quite good. </div>
                 <div class="sortButtonHolder">
-                    <button class="alphabeticalSortButton landscape" onclick="sortTierAlphabetically($(this).parent().parent().parent())">Sort Alphabetically &#8645;</button>
-                    <button class="alphabeticalSortButton portrait" onclick="sortTierAlphabetically($(this).parent().parent().parent())">Sort A->Z &#8645;</button>
-                    <button class="yearSortButton" onclick="sortTierYearwise($(this).parent().parent().parent())">Sort by Year &#8645;</button>
-                    <button class="artistSortButton" onclick="sortTierArtistwise($(this).parent().parent().parent())">Sort by Artist &#8645;</button>
+                    <button class="alphabeticalSortButton" onclick="sortTierAlphabetically($(this))">
+                        <span>Sort</span>
+                        <span data-alttext="A->Z"><span>Alphabetically</span></span>
+                        <span class="arrowIndicator">&#8645;</span>
+                    </button>
+                    <button class="yearSortButton" onclick="sortTierYearwise($(this))">Sort by Year &#8645;</button>
+                    <button class="artistSortButton" onclick="sortTierArtistwise($(this))">Sort by Artist &#8645;</button>
                 </div>
             </div>
             <div class="albumHolder">
@@ -1046,10 +1056,13 @@
                     listenable throughout; 
                     definitely a <b>GOOD</b> album.</div>
                 <div class="sortButtonHolder">
-                    <button class="alphabeticalSortButton landscape" onclick="sortTierAlphabetically($(this).parent().parent().parent())">Sort Alphabetically &#8645;</button>
-                    <button class="alphabeticalSortButton portrait" onclick="sortTierAlphabetically($(this).parent().parent().parent())">Sort A->Z &#8645;</button>
-                    <button class="yearSortButton" onclick="sortTierYearwise($(this).parent().parent().parent())">Sort by Year &#8645;</button>
-                    <button class="artistSortButton" onclick="sortTierArtistwise($(this).parent().parent().parent())">Sort by Artist &#8645;</button>
+                    <button class="alphabeticalSortButton" onclick="sortTierAlphabetically($(this))">
+                        <span>Sort</span>
+                        <span data-alttext="A->Z"><span>Alphabetically</span></span>
+                        <span class="arrowIndicator">&#8645;</span>
+                    </button>
+                    <button class="yearSortButton" onclick="sortTierYearwise($(this))">Sort by Year &#8645;</button>
+                    <button class="artistSortButton" onclick="sortTierArtistwise($(this))">Sort by Artist &#8645;</button>
                 </div>
             </div>
             <div class="albumHolder">
@@ -1300,10 +1313,13 @@
                     variable - Still on the good
                      side of ok.</div>
                 <div class="sortButtonHolder">
-                    <button class="alphabeticalSortButton landscape" onclick="sortTierAlphabetically($(this).parent().parent().parent())">Sort Alphabetically &#8645;</button>
-                    <button class="alphabeticalSortButton portrait" onclick="sortTierAlphabetically($(this).parent().parent().parent())">Sort A->Z &#8645;</button>
-                    <button class="yearSortButton" onclick="sortTierYearwise($(this).parent().parent().parent())">Sort by Year &#8645;</button>
-                    <button class="artistSortButton" onclick="sortTierArtistwise($(this).parent().parent().parent())">Sort by Artist &#8645;</button>
+                    <button class="alphabeticalSortButton" onclick="sortTierAlphabetically($(this))">
+                        <span>Sort</span>
+                        <span data-alttext="A->Z"><span>Alphabetically</span></span>
+                        <span class="arrowIndicator">&#8645;</span>
+                    </button>
+                    <button class="yearSortButton" onclick="sortTierYearwise($(this))">Sort by Year &#8645;</button>
+                    <button class="artistSortButton" onclick="sortTierArtistwise($(this))">Sort by Artist &#8645;</button>
                 </div>
             </div>
             <div class="albumHolder">
@@ -1369,10 +1385,13 @@
                     are bad also go here. 
                     Just good enough to not be bad.</div>
                 <div class="sortButtonHolder">
-                    <button class="alphabeticalSortButton landscape" onclick="sortTierAlphabetically($(this).parent().parent().parent())">Sort Alphabetically &#8645;</button>
-                    <button class="alphabeticalSortButton portrait" onclick="sortTierAlphabetically($(this).parent().parent().parent())">Sort A->Z &#8645;</button>
-                    <button class="yearSortButton" onclick="sortTierYearwise($(this).parent().parent().parent())">Sort by Year &#8645;</button>
-                    <button class="artistSortButton" onclick="sortTierArtistwise($(this).parent().parent().parent())">Sort by Artist &#8645;</button>
+                    <button class="alphabeticalSortButton" onclick="sortTierAlphabetically($(this))">
+                        <span>Sort</span>
+                        <span data-alttext="A->Z"><span>Alphabetically</span></span>
+                        <span class="arrowIndicator">&#8645;</span>
+                    </button>
+                    <button class="yearSortButton" onclick="sortTierYearwise($(this))">Sort by Year &#8645;</button>
+                    <button class="artistSortButton" onclick="sortTierArtistwise($(this))">Sort by Artist &#8645;</button>
                 </div>
             </div>
             <div class="albumHolder">

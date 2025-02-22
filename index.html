@@ -28,117 +28,6 @@
 
 
 <html>
-<style>
-    body {
-            background-color: rgb(var(--bg-red), var(--bg-green), var(--bg-blue));
-            animation: cycleBgColor 10s infinite;
-        }
-
-    .ui-resizable {
-        position: fixed !important
-    }
-
-    .popup-window {
-            display: none;
-    }
-    /* Portrait mode */
-    @media (max-aspect-ratio: 1/1){
-
-        
-    }
-    /* Landscape mode */
-    @media (min-aspect-ratio: 1/1){
-
-        .popup-window-wrapper {
-            display: flex;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            flex-direction: column;
-            overflow: hidden;
-        }
-
-        .popup-window-wrapper iframe {
-            flex-grow: 1;
-        }
-
-        #about-popup {
-            left: 2vw;
-            top: 5vh;
-        }
-
-        #education-popup {
-            left: 13vw;
-            top: 15vh;
-        }
-
-        #experience-popup {
-            left: 25vw;
-            top: 10vh;
-            width: 70vw;
-        }
-
-        #projects-popup {
-            left: 45vw;
-            top: 18vh;
-        }
-
-        #music-popup {
-            left: 7vw;
-            bottom: 16vh;
-            width: 70vw;
-        }
-
-        #credits-popup {
-            left: 25vw;
-            top: 12vh;
-        }
-
-        .list-row {
-            pointer-events: none;
-        }
-
-        .second-row {
-            flex-grow: 1;
-            border: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        #list-item-1 {
-            transform: translateX(4.5vw);
-        }
-
-        #list-item-2 {
-            animation-delay: 0.5s;
-            transform: translateX(6vw);
-        }
-
-        #list-item-3 {
-            animation-delay: 1s;
-            transform: translateX(6.2vw);
-        }
-
-        #list-item-4 {
-            animation-delay: 1.5s;
-            transform: translateX(7.5vw);
-        }
-
-        #list-item-5 {
-            animation-delay: 2s;
-            transform: translateX(6vw);
-        }
-
-        #list-item-6 {
-            animation-delay: 2.5s;
-            font-size: 1vw;
-            color: #d93609;
-            text-shadow: 1px 0 1px rgba(0, 30, 255, 0.5), -2px 0 1px rgba(255, 0, 80, 0.1), 0 0 3px;
-        }
-    }
-</style>
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -169,6 +58,16 @@
         min = Math.ceil(min);
         max = Math.floor(max);
         return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    var isTouchScreen  = (('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0));
+
+    if (isTouchScreen){
+        $('#about-icon').find("img").attr("src", "./img/about-icon.gif");
+        $('#education-icon').find("img").attr("src", "./img/education-icon.gif");
+        $('#experience-icon').find("img").attr("src", "./img/experience-icon.gif");
+        $('#projects-icon').find("img").attr("src", "./img/projects-icon.gif");
+        $('#music-icon').find("img").attr("src", "./img/music-icon.gif");
     }
 
     function isMobileBrowser() {
@@ -256,12 +155,6 @@
     let main_text = "Kiran McCulloch";
 
 
-    function isTouchDevice() {
-        return (('ontouchstart' in window) ||
-            (navigator.maxTouchPoints > 0) ||
-            (navigator.msMaxTouchPoints > 0));
-    }
-
 
     let browsertype=navigator.userAgent;
     // if(browsertype.includes("Safari")){
@@ -337,7 +230,6 @@
                 $(".list-row").dequeue();
             });
 
-            var isTouchscreen = isTouchDevice();
 
             //hover over credits button
             $("#top-left-logo").hover(function () {
@@ -401,7 +293,7 @@
                 window.location.href = "./subpages/albums.html";
             });
 
-            if (isTouchscreen){
+            if (isTouchScreen){
                 //opens pages fullscreen when shortcut icons double clicked
                 $('#about-icon').click(function () {
                     window.location.href = "./subpages/about.html";
@@ -557,36 +449,42 @@
         <div id="center-list">
             <div class="list-row">
                 <p class="center-list-item" id="list-item-1">Programmer</p>
-                <p class="hidden-skills">Java, Python,<br>C, C++</p>
+                <p class="hidden-skills">Java, Python, PHP,<br>Swift, C, C++</p>
             </div>
             <div class="flex-break"></div>
 
             <div class="list-row">
-                <p class="center-list-item" id="list-item-2">Graphic Designer</p>
+                <p class="center-list-item" id="list-item-2">Software Engineer</p>
+                <p class="hidden-skills">Azure, Jenkins,<br>Serenity</p>
+            </div>
+            <div class="flex-break"></div>
+
+            <div class="list-row">
+                <p class="center-list-item" id="list-item-3">Graphic Designer</p>
                 <p class="hidden-skills">Adobe Photoshop,<br>Adobe Illustrator</p>
             </div>
             <div class="flex-break"></div>
 
             <div class="list-row">
-                <p class="center-list-item" id="list-item-3">Front-End Developer</p>
+                <p class="center-list-item" id="list-item-4">Front-End Developer</p>
                 <p class="hidden-skills">HTML, CSS, Node.js,<br>React.js, JQuery</p>
             </div>
             <div class="flex-break"></div>
 
             <div class="list-row">
-                <p class="center-list-item" id="list-item-4">Video Editor</p>
+                <p class="center-list-item" id="list-item-5">Video Editor</p>
                 <p class="hidden-skills">Adobe Premiere, Davinci<br>Resolve, Final Cut Pro</p>
             </div>
             <div class="flex-break"></div>
 
             <div class="list-row">
-                <p class="center-list-item" id="list-item-5">Computer Scientist</p>
-                <p class="hidden-skills">Visual Studio, IDLE,<br>JetBrains, Excel</p>
+                <p class="center-list-item" id="list-item-6">Computer Scientist</p>
+                <p class="hidden-skills">Visual Studio, XCode,<br>JetBrains, Excel</p>
             </div>
             <div class="flex-break"></div>
 
             <div class="list-row">
-                <div class="center-list-item" id="list-item-6">Click a tab at the bottom to learn more<br>or
+                <div class="center-list-item" id="list-item-7">Click a tab at the bottom to learn more<br>or
                     double-click a shortcut on the right for fullscreen</div>
             </div>
         </div>

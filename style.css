@@ -45,26 +45,29 @@
   }
 }
 
-/* Portrait mode */
-@media (max-aspect-ratio: 1/1){
 
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
 }
-/* Landscape mode */
-@media (min-aspect-ratio: 1/1) or (aspect-ratio: 1/1){
-  img{
-    -webkit-user-drag: none;
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-  }
 
-  /* ------- DEFAULT ------- */
-  body {
-    font-family: 'Windows 95';
-    margin: 0 auto;
-    padding: 0 auto;
-  }
+img {
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+/* ------- DEFAULT ------- */
+body {
+  font-family: 'Windows 95';
+  margin: 0 auto;
+  padding: 0 auto;
+}
+
+
+
 
   .underline {
     text-decoration-line: underline;
@@ -99,12 +102,12 @@
     opacity: 0;
   }
 
-  .fullscreen-menu-bar{
+  .fullscreen-menu-bar {
     position: fixed;
     display: flex;
     height: fit-content;
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
     z-index: 2;
     font-size: clamp(1rem, 1.3vmax, 2rem);
     margin: 0 auto;
@@ -112,11 +115,11 @@
     border-bottom: #cfd4e8;
   }
 
-  .fullscreen-menu-bar *{
+  .fullscreen-menu-bar * {
     margin: 1vh auto;
   }
 
-  #fullscreen-menu-bar-spacer{
+  #fullscreen-menu-bar-spacer {
     position: relative;
     z-index: 0;
   }
@@ -158,5 +161,3 @@
     pointer-events: none;
     flex-grow: 0.95;
   }
-}
-

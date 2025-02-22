@@ -35,8 +35,48 @@ img.linkUnavailable{
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Portrait Mode */
 @media (max-aspect-ratio: 1/1){
+    [data-alttext] > span {
+        display: none;
+    }
+      
+    [data-alttext]::before {
+        content: attr(data-alttext);
+    }
+
+    :root{
+        --alphabetical_text: A->Z;
+    }
+
     .landscape{
         display: none;
     }
@@ -69,7 +109,10 @@ img.linkUnavailable{
     }
 
     .sortButtonHolder{
-        flex-basis:50%
+        display: flex;
+        flex-basis:50%;
+        gap: 10px;
+        flex-direction: column;
     }
 
     .sortButtonHolder > button{
@@ -265,6 +308,10 @@ img.linkUnavailable{
     
 /* Landscape Mode */
 @media (min-aspect-ratio: 1/1) or (aspect-ratio: 1/1){
+    :root{
+        --alphabetical_text: Alphabetically;
+    }
+
     .portrait{
         display: none;
     }
