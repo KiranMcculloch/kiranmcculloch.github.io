@@ -213,10 +213,6 @@ div.articleRightInner {
 	letter-spacing: 0.017em;
 }
 
-.headerLinks > * {
-	border: 1px solid red;
-}
-
 .headerLinks a {
 	display: inline-block;
 	margin: 0 0 0 0.5em;

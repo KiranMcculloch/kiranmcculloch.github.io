@@ -189,6 +189,8 @@ position: fixed !important
         color: white;
         flex-shrink: 0;
         width: 100%;
+        padding-left: 2vw;
+        padding-right: 2vw;
         height: fit-content;
     }
     
