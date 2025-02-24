@@ -1,85 +1,5 @@
 <!DOCTYPE html>
 <html>
-<style>
-    body {
-        background-color: #808080;
-    }
-
-    #red-slider,
-    #green-slider,
-    #blue-slider {
-        float: left;
-        clear: left;
-        width: 46%;
-        height: 1%;
-        margin: 3.6%;
-        left: 23%;
-        top: 29.3%;
-        border: 1px solid black;
-    }
-
-    #swatch {
-        position: absolute;
-        top: 30.7%;
-        left: 3.3%;
-        width: 5.4vh;
-        height: 5.4vh;
-        background-image: none;
-    }
-
-    #red-slider .ui-slider-range,
-    #green-slider .ui-slider-range,
-    #blue-slider .ui-slider-range {
-        background: none;
-    }
-
-    #red-slider .ui-state-default,
-    #green-slider .ui-state-default,
-    #blue-slider .ui-state-default {
-        width: 3vh;
-        height: 1.6vh;
-        top: 125%;
-        border-radius: 0;
-        border: none;
-        background: no-repeat url('../img/slider-handle.png');
-        background-size: contain;
-        background-repeat: none;
-    }
-
-    #red-slider {
-        background: linear-gradient(to right, #000000, #ff0000);
-    }
-
-    #green-slider {
-        background: linear-gradient(to right, #000000, #00ff00);
-    }
-
-    #blue-slider {
-        background: linear-gradient(to right, #000000, #0000ff);
-    }
-
-    #red-text,
-    #green-text,
-    #blue-text {
-        text-shadow: none;
-        position: absolute;
-        font-size: 1.2vh;
-        left: 77%;
-        pointer-events: none;
-    }
-
-    #red-text {
-        top: 30.5%;
-    }
-
-    #green-text {
-        top: 35.3%;
-    }
-
-    #blue-text {
-        top: 40%;
-    }
-</style>
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -95,12 +15,12 @@
 
 <script>
     function toggleOdd() {
-        $(".exp-subtitle").css('text-align','left');
-        $(".exp-title").css('text-align','left');
-        $(".exp-section").css('left','0%');
-        $(".exp-section:visible").odd().css({'left': '15%'});
-        $(".exp-title:visible").odd().css('text-align','right');
-        $(".exp-subtitle:visible").odd().css('text-align','right');
+        $(".exp-subtitle").css('text-align', 'left');
+        $(".exp-title").css('text-align', 'left');
+        $(".exp-section").css('left', '0%');
+        $(".exp-section:visible").odd().css({ 'left': '15%' });
+        $(".exp-title:visible").odd().css('text-align', 'right');
+        $(".exp-subtitle:visible").odd().css('text-align', 'right');
     }
 
     $(document).ready(
@@ -109,7 +29,7 @@
             toggleOdd();
             if (inIframe()) {
                 $("#crt-overlay, .popup-small-button").hide()
-                
+
             }
             $("#no-filter-button").click(function () {
                 $(this).addClass("active");
@@ -242,13 +162,22 @@
                         Software Developer, June 2023 - August 2024
                     </p>
                     <ul class="exp-body">
-                        <li>Built and ran API Ecosystems in Python, focusing on a wide range of functionality, including an IDP up to OAuth 2 standards</li>
-                        <li>Developed an API testing synthesizer with an HTML/CSS frontend and a Python backend hosted in Azure Cloud</li>
-                        <li>Created and maintained Azure Function Apps written in Python to generate and manage large amounts of API Traffic</li>
-                        <li>Maintained deployment pipelines in Jenkins and Digital Ocean for several active web services</li>
-                        <li>Wrote and deployed a Serenity testing suite in Java for all of the above projects using JUnit and Cucumber; this was also deployed by Jenkins and was run at regular intervals</li>
-                        <li>Created Wordpress plugins in PHP and Javascript to manage contact forms, register webinar participants with Zoom, and integrate with Salesforce for email management and record keeping</li>
-                        <li>Collaborated extensively with other members of my team across and between projects, using my unique expertise on their projects and receiving theirs on mine, and integrating other tools like Splunk and Docker</li>
+                        <li>Built and ran API Ecosystems in Python, focusing on a wide range of functionality, including
+                            an IDP up to OAuth 2 standards</li>
+                        <li>Developed an API testing synthesizer with an HTML/CSS frontend and a Python backend hosted
+                            in Azure Cloud</li>
+                        <li>Created and maintained Azure Function Apps written in Python to generate and manage large
+                            amounts of API Traffic</li>
+                        <li>Maintained deployment pipelines in Jenkins and Digital Ocean for several active web services
+                        </li>
+                        <li>Wrote and deployed a Serenity testing suite in Java for all of the above projects using
+                            JUnit and Cucumber; this was also deployed by Jenkins and was run at regular intervals</li>
+                        <li>Created Wordpress plugins in PHP and Javascript to manage contact forms, register webinar
+                            participants with Zoom, and integrate with Salesforce for email management and record
+                            keeping</li>
+                        <li>Collaborated extensively with other members of my team across and between projects, using my
+                            unique expertise on their projects and receiving theirs on mine, and integrating other tools
+                            like Splunk and Docker</li>
                     </ul>
                 </div>
 

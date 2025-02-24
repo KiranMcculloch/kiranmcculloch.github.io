@@ -20,7 +20,7 @@
     }
 
     50% {
-        background-color: rgb(calc(var(--bg-red) + 15), calc(var(--bg-green) + 30), calc(var(--bg-blue) + 30));
+        background-color: rgb(calc(var(--bg-red) - 15), calc(var(--bg-green) - 30), calc(var(--bg-blue) - 30));
         animation-timing-function: ease-out;
     }
 
@@ -33,8 +33,7 @@ html{
     overscroll-behavior: none;
     overflow-x: hidden;
     width: 100%;
-    height: 100%
-
+    height: 100%;
 }
 
 body {

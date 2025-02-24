@@ -1,3 +1,83 @@
+body {
+    background-color: #808080;
+}
+
+#red-slider,
+#green-slider,
+#blue-slider {
+    float: left;
+    clear: left;
+    width: 46%;
+    height: 1%;
+    margin: 3.6%;
+    left: 23%;
+    top: 29.3%;
+    border: 1px solid black;
+}
+
+#swatch {
+    position: absolute;
+    top: 30.7%;
+    left: 3.3%;
+    width: 5.4vh;
+    height: 5.4vh;
+    background-image: none;
+}
+
+#red-slider .ui-slider-range,
+#green-slider .ui-slider-range,
+#blue-slider .ui-slider-range {
+    background: none;
+}
+
+#red-slider .ui-state-default,
+#green-slider .ui-state-default,
+#blue-slider .ui-state-default {
+    width: 3vh;
+    height: 1.6vh;
+    top: 125%;
+    border-radius: 0;
+    border: none;
+    background: no-repeat url('../img/slider-handle.png');
+    background-size: contain;
+    background-repeat: none;
+}
+
+#red-slider {
+    background: linear-gradient(to right, #000000, #ff0000);
+}
+
+#green-slider {
+    background: linear-gradient(to right, #000000, #00ff00);
+}
+
+#blue-slider {
+    background: linear-gradient(to right, #000000, #0000ff);
+}
+
+#red-text,
+#green-text,
+#blue-text {
+    text-shadow: none;
+    position: absolute;
+    font-size: 1.2vh;
+    left: 77%;
+    pointer-events: none;
+}
+
+#red-text {
+    top: 30.5%;
+}
+
+#green-text {
+    top: 35.3%;
+}
+
+#blue-text {
+    top: 40%;
+}
+
+
 /* Portrait mode */
 @media (max-aspect-ratio: 1/1){
     .ps-panel {
