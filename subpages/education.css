@@ -60,7 +60,6 @@ body{
 
     #map-div{
         height: 100vh;
-        left: -500px;
         position: fixed;
         overflow: hidden;
         border: 1 px solid red;
