@@ -20,11 +20,11 @@
 html {
 	font-size: 1em;
 	line-height: 1.4;
+	background-color: #dedede;
 }
 
 body {
 	margin: 0;
-	background-color: #f6f6f6;
 }
 
 article,
@@ -182,9 +182,9 @@ div.articleRight {
 	overflow: hidden;
 	line-height: 1.4em;
 	padding: 3px;
-	font-size: 94%;
+	font-size: 80%;
 	margin: 0 0 5px 15px;
-	text-align: left;
+	text-align: center;
 }
 
 div.articleRightInner {
@@ -370,6 +370,13 @@ sub,sup {
 	vertical-align: baseline;
 }
 
+.fullscreen-menu-bar{
+	background-color: blue;
+}
+
+#wrapper{
+	background-color: #f6f6f6;
+}
 
 /* Portrait mode */
 @media (max-aspect-ratio: 1/1){

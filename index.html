@@ -74,55 +74,40 @@
     };
 
     function chooseRandomSplashText() {
+        let splash_messages = [
+            "I see you reading the source code! Yeah, you! Get out of here!!",
+            "the official fan experience",
+            "formerly of .github.io fame",
+            "formerly of neocities fame",
+            "formerly of myspace fame",
+            "'s personal website",
+            "est. 1999",
+            "enjoy your stay!",
+            "can you find all seven easter eggs?",
+            "legally distinct from Windows 95",
+            "this website is certified pet-safe",
+            "the only website on the internet",
+            "reload this page for a new fortune",
+            "philly's response to Anonymous",
+            "this domain acquired from the Swiss",
+            "flagle world champion 2023-",
+            "yet to be hacked!",
+            "the dot is silent!"
+        ];
+
         if (isMobileBrowser()){
-            const splash_messages = [
-                "the official fan experience",
-                "formerly of .github.io fame",
-                "formerly of neocities fame",
-                "formerly of myspace fame",
-                "'s personal website",
-                "est. 1999",
-                "the odds of seeing this text are 1/21!",
+            splash_messages.push(
                 "looks way better on desktop",
+                "pull this up on your laptop instead",
                 "way more impressive on desktop",
-                "looks much nicer on desktop",
+                "looks much nicer on a laptop",
                 "works on mobile, designed for desktop",
-                "enjoy your stay!",
-                "can you find all seven easter eggs?",
-                "legally distinct from Windows 95",
-                "this website is certified pet-safe",
-                "the only website on the internet",
-                "reload this page for a new fortune",
-                "philly's response to Anonymous",
-                "this domain acquired from the Swiss",
-                "flagle world champion 2023-",
-                "yet to be hacked!",
-                "I see you reading the source code! Yeah, you! Get out of here!!"
-            ];
-            return splash_messages[getRandomInt(0,splash_messages.length-2)];
-        } else {
-            const splash_messages = [
-                "the official fan experience",
-                "formerly of .github.io fame",
-                "formerly of neocities fame",
-                "formerly of myspace fame",
-                "'s personal website",
-                "est. 1999",
-                "the odds of seeing this text are 1/17!",
-                "enjoy your stay!",
-                "can you find all seven easter eggs?",
-                "legally distinct from Windows 95",
-                "this website is certified pet-safe",
-                "the only website on the internet",
-                "reload this page for a new fortune",
-                "philly's response to Anonymous",
-                "this domain acquired from the Swiss",
-                "flagle world champion 2023-",
-                "yet to be hacked!",
-                "I see you reading the source code! Yeah, you! Get out of here!!"
-            ];
-            return splash_messages[getRandomInt(0,splash_messages.length-2)];
+                "try it on on an actual computer"
+            )            
         }
+
+        splash_messages.push(`the odds of seeing this text are 1/${splash_messages.length+1}`)
+        return splash_messages[getRandomInt(1,splash_messages.length-1)];
     }
 
     //randomizes the letters in a string while keeping the first n letters the same
@@ -149,7 +134,7 @@
     //number of times to randomize letter after previous letter was set and before it itself is locked in
     let letter_times = 2;
     //target text
-    let main_text = "Kiran McCulloch";
+    let main_text = "Kiran McCullo.ch";
 
 
 
@@ -396,193 +381,196 @@
 <body class="crt-text">
 
     <div class="crt-overlay"></div>
-
-    <div class="bottomnav" id="main-bottomnav">
-        <div>
-            <img id="top-left-logo" src="./img/logo.png" alt="">
+    <div id="theTrickSafariDiv">
+        <div class="bottomnav" id="main-bottomnav">
+            <div>
+                <img id="top-left-logo" src="./img/logo.png" alt="">
+            </div>
+            <p id="aboutMenu">About</p>
+            <p id="educationMenu">Education</p>
+            <p id="experienceMenu">Experience</p>
+            <p id="projectsMenu">Projects</p>
+            <p id="musicMenu">Music.tierlist</p>
+            <div class="clock">00:00:00</div>
         </div>
-        <p id="aboutMenu">About</p>
-        <p id="educationMenu">Education</p>
-        <p id="experienceMenu">Experience</p>
-        <p id="projectsMenu">Projects</p>
-        <p id="musicMenu">Music.tierlist</p>
-        <div class="clock">00:00:00</div>
+    
+        <div class="shortcut-icons-wrapper">
+            <div class="dummy-icon-wrapper"></div>
+    
+            <div class="icon-wrapper" id="about-icon">
+                <img class="shortcut-icon" id="about-icon-img" src="./img/about-icon.png">
+                <p style="margin-top: 0;">About</p>
+            </div>
+    
+            <div class="icon-wrapper" id="education-icon">
+                <img class="shortcut-icon" id="education-icon-img" src="./img/education-icon.png">
+                <p style="margin-top: 0;">Education</p>
+            </div>
+    
+            <div class="dummy-icon-wrapper"></div>
+    
+            <div class="dummy-icon-wrapper"></div>
+    
+            <div class="icon-wrapper" id="experience-icon">
+                <img class="shortcut-icon" id="experience-icon-img" src="./img/experience-icon.png">
+                <p style="margin-top: 0;">Experience</p>
+            </div>
+    
+            <div class="icon-wrapper" id="projects-icon">
+                <img class="shortcut-icon" id="projects-icon-img" src="./img/projects-icon.png">
+                <p style="margin-top: 0;">Projects</p>
+            </div>
+    
+            <div class="icon-wrapper" id="music-icon">
+                <img class="shortcut-icon" id="music-icon-img" src="./img/music-icon.png">
+                <p style="margin-top: 0;">Music.tierlist</p>
+            </div>
+        </div>
+    
+        <img id="kiran-photo" class="bounce" src="./img/k-dog.png">
+    
+    
+        <div id="center-text">
+            <p class="sub-heading">welcome to</p>
+            <p id="main-title">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </p>
+            <p id="splash-text" class="sub-heading" style="text-align: right;"></p>
+            <div id="center-list">
+                <div class="list-row">
+                    <p class="center-list-item" id="list-item-1">Programmer</p>
+                    <p class="hidden-skills">Java, Python, PHP,<br>Swift, C, C++</p>
+                </div>
+                <div class="flex-break"></div>
+    
+                <div class="list-row">
+                    <p class="center-list-item" id="list-item-2">Software Engineer</p>
+                    <p class="hidden-skills">Azure, Jenkins,<br>Serenity</p>
+                </div>
+                <div class="flex-break"></div>
+    
+                <div class="list-row">
+                    <p class="center-list-item" id="list-item-3">Graphic Designer</p>
+                    <p class="hidden-skills">Adobe Photoshop,<br>Adobe Illustrator</p>
+                </div>
+                <div class="flex-break"></div>
+    
+                <div class="list-row">
+                    <p class="center-list-item" id="list-item-4">Front-End Developer</p>
+                    <p class="hidden-skills">HTML, CSS, Node.js,<br>React.js, JQuery</p>
+                </div>
+                <div class="flex-break"></div>
+    
+                <div class="list-row">
+                    <p class="center-list-item" id="list-item-5">Video Editor</p>
+                    <p class="hidden-skills">Adobe Premiere, Davinci<br>Resolve, Final Cut Pro</p>
+                </div>
+                <div class="flex-break"></div>
+    
+                <div class="list-row">
+                    <p class="center-list-item" id="list-item-6">Computer Scientist</p>
+                    <p class="hidden-skills">Visual Studio, XCode,<br>JetBrains, Excel</p>
+                </div>
+                <div class="flex-break"></div>
+    
+                <div class="list-row">
+                    <div class="center-list-item" id="list-item-7">Click a tab at the bottom to learn more<br>or
+                        double-click a shortcut on the right for fullscreen</div>
+                </div>
+            </div>
+        </div>
+    
+        <div id="about-popup" class="popup-window draggable resizable row-container">
+            <div class="popup-window-wrapper">
+                <div class="popup-menu-bar">
+                    <p class="popup-title">About</p>
+                    <div class="popup-spacer"></div>
+                    <a class="popup-small-button" id="aboutMin">&#95;</a>
+                    <a class="popup-small-button" id="aboutMax"><b>&#9634;</b></a>
+                    <a class="popup-small-button" id="aboutClose">x</a>
+                </div>
+                <iframe src="./subpages/about.html"></iframe>
+            </div>
+        </div>
+    
+        <div id="education-popup" class="popup-window draggable resizable">
+            <div class="popup-window-wrapper">
+                <div class="popup-menu-bar" style="background-color: dodgerblue;">
+                    <p class="popup-title">Education</p>
+                    <div class="popup-spacer"></div>
+                    <p class="popup-small-button" id="educationMin">&#95;</p>
+                    <p class="popup-small-button" id="educationMax"><b>&#9634;</b></p>
+                    <p class="popup-small-button" id="educationClose">x</p>
+                </div>
+                <iframe src="./subpages/education.html"></iframe>
+            </div>
+        </div>
+    
+        <div id="experience-popup" class="popup-window draggable resizable">
+            <div class="popup-window-wrapper">
+                <div class="popup-menu-bar" style="background-color: darkblue;">
+                    <p class="popup-title">Experience</p>
+                    <div class="popup-spacer"></div>
+                    <p class="popup-small-button" id="experienceMin">&#95;</p>
+                    <p class="popup-small-button" id="experienceMax"><b>&#9634;</b></p>
+                    <p class="popup-small-button" id="experienceClose">x</p>
+                </div>
+                <iframe src="./subpages/experience.html"></iframe>
+            </div>
+        </div>
+    
+        <div id="projects-popup" class="popup-window draggable resizable">
+            <div class="popup-window-wrapper">
+                <div class="popup-menu-bar" style="background-color: royalblue;">
+                    <p class="popup-title">Projects</p>
+                    <div class="popup-spacer"></div>
+                    <p class="popup-small-button" id="projectsMin">&#95;</p>
+                    <p class="popup-small-button" id="projectsMax"><b>&#9634;</b></p>
+                    <p class="popup-small-button" id="projectsClose">x</p>
+                </div>
+                <iframe src="./subpages/projects.html"></iframe>
+            </div>
+        </div>
+    
+        <div id="music-popup" class="popup-window draggable resizable">
+            <div class="popup-window-wrapper">
+                <div class="popup-menu-bar" style="background-color: #77B6EA;">
+                    <p class="popup-title">Music.tierlist</p>
+                    <div class="popup-spacer"></div>
+                    <p class="popup-small-button" id="musicMin">&#95;</p>
+                    <p class="popup-small-button" id="musicMax"><b>&#9634;</b></p>
+                    <p class="popup-small-button" id="musicClose">x</p>
+                </div>
+                <iframe src="./subpages/albums.html"></iframe>
+            </div>
+        </div>
+    
+        <div id="credits-popup" class="popup-window draggable resizable">
+            <div class="popup-window-wrapper">
+                <div class="popup-menu-bar" style="background-color: cyan;">
+                    <p class="popup-title" style="color: black;">Credits</p>
+                    <div class="popup-spacer"></div>
+                    <p class="popup-small-button" id="creditsMin">&#95;</p>
+                    <p class="popup-small-button" id="creditsClose">x</p>
+                </div>
+                <div style="overflow-y: auto; padding-left: 5%; padding-right: 3%;">
+                    <p>Static versions of desktop icons based on those made by Microsoft</p>
+                    <p>Font from themesberg.com</p>
+                    <p>Code for clock tweaked and followed closely from tutorial by Martynas Linkevicius</p>
+                    <p>CRT-esque screendooring tweaked and followed closely from tutorial by Alec Lownes</p>
+                    <p>Wikipedia parody heavily modified from template provided by <a href="https://html5-templates.com"
+                            target="_self">html5-templates.com</a></p>
+                    <p>Photo of Kiran on landing page taken by Deni Stoimenov</p>
+                    <p>All art, animations, and code not listed above hand-made by Kiran McCulloch</p>
+                    <p>My best wishes and sincerest apologies to Microsoft, Wikipedia, Adobe, and Google</p><br>
+                    <p>Tools used to make this website include HTML, CSS, Javascript, JQuery UI, Adobe Photoshop 2020, and
+                        Piskel.com</p>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="shortcut-icons-wrapper">
-        <div class="dummy-icon-wrapper"></div>
-
-        <div class="icon-wrapper" id="about-icon">
-            <img class="shortcut-icon" id="about-icon-img" src="./img/about-icon.png">
-            <p style="margin-top: 0;">About</p>
-        </div>
-
-        <div class="icon-wrapper" id="education-icon">
-            <img class="shortcut-icon" id="education-icon-img" src="./img/education-icon.png">
-            <p style="margin-top: 0;">Education</p>
-        </div>
-
-        <div class="dummy-icon-wrapper"></div>
-
-        <div class="dummy-icon-wrapper"></div>
-
-        <div class="icon-wrapper" id="experience-icon">
-            <img class="shortcut-icon" id="experience-icon-img" src="./img/experience-icon.png">
-            <p style="margin-top: 0;">Experience</p>
-        </div>
-
-        <div class="icon-wrapper" id="projects-icon">
-            <img class="shortcut-icon" id="projects-icon-img" src="./img/projects-icon.png">
-            <p style="margin-top: 0;">Projects</p>
-        </div>
-
-        <div class="icon-wrapper" id="music-icon">
-            <img class="shortcut-icon" id="music-icon-img" src="./img/music-icon.png">
-            <p style="margin-top: 0;">Music.tierlist</p>
-        </div>
-    </div>
-
-    <img id="kiran-photo" class="bounce" src="./img/k-dog.png">
-
-
-    <div id="center-text">
-        <p class="sub-heading">welcome to</p>
-        <p id="main-title">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        </p>
-        <p id="splash-text" class="sub-heading" style="text-align: right;"></p>
-        <div id="center-list">
-            <div class="list-row">
-                <p class="center-list-item" id="list-item-1">Programmer</p>
-                <p class="hidden-skills">Java, Python, PHP,<br>Swift, C, C++</p>
-            </div>
-            <div class="flex-break"></div>
-
-            <div class="list-row">
-                <p class="center-list-item" id="list-item-2">Software Engineer</p>
-                <p class="hidden-skills">Azure, Jenkins,<br>Serenity</p>
-            </div>
-            <div class="flex-break"></div>
-
-            <div class="list-row">
-                <p class="center-list-item" id="list-item-3">Graphic Designer</p>
-                <p class="hidden-skills">Adobe Photoshop,<br>Adobe Illustrator</p>
-            </div>
-            <div class="flex-break"></div>
-
-            <div class="list-row">
-                <p class="center-list-item" id="list-item-4">Front-End Developer</p>
-                <p class="hidden-skills">HTML, CSS, Node.js,<br>React.js, JQuery</p>
-            </div>
-            <div class="flex-break"></div>
-
-            <div class="list-row">
-                <p class="center-list-item" id="list-item-5">Video Editor</p>
-                <p class="hidden-skills">Adobe Premiere, Davinci<br>Resolve, Final Cut Pro</p>
-            </div>
-            <div class="flex-break"></div>
-
-            <div class="list-row">
-                <p class="center-list-item" id="list-item-6">Computer Scientist</p>
-                <p class="hidden-skills">Visual Studio, XCode,<br>JetBrains, Excel</p>
-            </div>
-            <div class="flex-break"></div>
-
-            <div class="list-row">
-                <div class="center-list-item" id="list-item-7">Click a tab at the bottom to learn more<br>or
-                    double-click a shortcut on the right for fullscreen</div>
-            </div>
-        </div>
-    </div>
-
-    <div id="about-popup" class="popup-window draggable resizable row-container">
-        <div class="popup-window-wrapper">
-            <div class="popup-menu-bar">
-                <p class="popup-title">About</p>
-                <div class="popup-spacer"></div>
-                <a class="popup-small-button" id="aboutMin">&#95;</a>
-                <a class="popup-small-button" id="aboutMax"><b>&#9634;</b></a>
-                <a class="popup-small-button" id="aboutClose">x</a>
-            </div>
-            <iframe src="./subpages/about.html"></iframe>
-        </div>
-    </div>
-
-    <div id="education-popup" class="popup-window draggable resizable">
-        <div class="popup-window-wrapper">
-            <div class="popup-menu-bar" style="background-color: dodgerblue;">
-                <p class="popup-title">Education</p>
-                <div class="popup-spacer"></div>
-                <p class="popup-small-button" id="educationMin">&#95;</p>
-                <p class="popup-small-button" id="educationMax"><b>&#9634;</b></p>
-                <p class="popup-small-button" id="educationClose">x</p>
-            </div>
-            <iframe src="./subpages/education.html"></iframe>
-        </div>
-    </div>
-
-    <div id="experience-popup" class="popup-window draggable resizable">
-        <div class="popup-window-wrapper">
-            <div class="popup-menu-bar" style="background-color: darkblue;">
-                <p class="popup-title">Experience</p>
-                <div class="popup-spacer"></div>
-                <p class="popup-small-button" id="experienceMin">&#95;</p>
-                <p class="popup-small-button" id="experienceMax"><b>&#9634;</b></p>
-                <p class="popup-small-button" id="experienceClose">x</p>
-            </div>
-            <iframe src="./subpages/experience.html"></iframe>
-        </div>
-    </div>
-
-    <div id="projects-popup" class="popup-window draggable resizable">
-        <div class="popup-window-wrapper">
-            <div class="popup-menu-bar" style="background-color: royalblue;">
-                <p class="popup-title">Projects</p>
-                <div class="popup-spacer"></div>
-                <p class="popup-small-button" id="projectsMin">&#95;</p>
-                <p class="popup-small-button" id="projectsMax"><b>&#9634;</b></p>
-                <p class="popup-small-button" id="projectsClose">x</p>
-            </div>
-            <iframe src="./subpages/projects.html"></iframe>
-        </div>
-    </div>
-
-    <div id="music-popup" class="popup-window draggable resizable">
-        <div class="popup-window-wrapper">
-            <div class="popup-menu-bar" style="background-color: #77B6EA;">
-                <p class="popup-title">Music.tierlist</p>
-                <div class="popup-spacer"></div>
-                <p class="popup-small-button" id="musicMin">&#95;</p>
-                <p class="popup-small-button" id="musicMax"><b>&#9634;</b></p>
-                <p class="popup-small-button" id="musicClose">x</p>
-            </div>
-            <iframe src="./subpages/albums.html"></iframe>
-        </div>
-    </div>
-
-    <div id="credits-popup" class="popup-window draggable resizable">
-        <div class="popup-window-wrapper">
-            <div class="popup-menu-bar" style="background-color: cyan;">
-                <p class="popup-title" style="color: black;">Credits</p>
-                <div class="popup-spacer"></div>
-                <p class="popup-small-button" id="creditsMin">&#95;</p>
-                <p class="popup-small-button" id="creditsClose">x</p>
-            </div>
-            <div style="overflow-y: auto; padding-left: 5%; padding-right: 3%;">
-                <p>Static versions of desktop icons based on those made by Microsoft</p>
-                <p>Font from themesberg.com</p>
-                <p>Code for clock tweaked and followed closely from tutorial by Martynas Linkevicius</p>
-                <p>CRT-esque screendooring tweaked and followed closely from tutorial by Alec Lownes</p>
-                <p>Wikipedia parody heavily modified from template provided by <a href="https://html5-templates.com"
-                        target="_self">html5-templates.com</a></p>
-                <p>Photo of Kiran on landing page taken by Deni Stoimenov</p>
-                <p>All art, animations, and code not listed above hand-made by Kiran McCulloch</p>
-                <p>My best wishes and sincerest apologies to Microsoft, Wikipedia, Adobe, and Google</p><br>
-                <p>Tools used to make this website include HTML, CSS, Javascript, JQuery UI, Adobe Photoshop 2020, and
-                    Piskel.com</p>
-            </div>
-        </div>
-    </div>
+    
 </body>
 
 </html>

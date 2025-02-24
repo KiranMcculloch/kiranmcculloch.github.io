@@ -29,16 +29,33 @@
     }
 }
 
+@keyframes cycleBgColorTop {
+    0% {
+        background-color: rgb(0, calc(var(--bg-green) - 20), calc(var(--bg-blue) - 20));
+        animation-timing-function: ease-in;
+    }
+
+    50% {
+        background-color: rgb(0, calc(var(--bg-green) - 50), calc(var(--bg-blue) - 50));
+        animation-timing-function: ease-out;
+    }
+
+    100% {
+        background-color: rgb(0, calc(var(--bg-green) - 20), calc(var(--bg-blue) - 20));
+    }
+}
+
 html{
     overscroll-behavior: none;
     overflow-x: hidden;
     width: 100%;
     height: 100%;
+    
 }
 
 body {
     background-color: rgb(var(--bg-red), var(--bg-green), var(--bg-blue));
-    animation: cycleBgColor 10s infinite;
+    animation: cycleBgColorTop 10s infinite;
 }
 
 .ui-resizable {
@@ -49,6 +66,14 @@ position: fixed !important
     display: none;
 }
 
+#theTrickSafariDiv{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgb(var(--bg-red), var(--bg-green), var(--bg-blue));
+    animation: cycleBgColor 10s infinite;
+    height: 100dvh;
+}
 
 
 
@@ -257,6 +282,68 @@ position: fixed !important
 
     #list-item-7{
         display: none;
+    }
+
+    #credits-popup {
+        left: 10vw;
+        top: 5vh;
+    }
+
+    .popup-window-wrapper {
+        display: flex;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        overflow: hidden;
+        font-size: small;
+    }
+
+    .popup-window-wrapper iframe {
+        flex-grow: 1;
+    }
+
+    .popup-window {
+        position: fixed;
+        z-index: 4;
+        width: 80vw;
+        height: 70vh;
+        background-color: #cfd4e8;
+        border-right: 0.2vw solid #565861;
+        border-bottom: 0.2vw solid #565861;
+        border-left: 0.2vw solid #f5f7ff;
+        border-top: 0.2vw solid #f5f7ff;
+    }
+    
+    .popup-menu-bar {
+        height: fit-content;
+        width: 100%;
+        background-color: blue;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        padding: 0px;
+    }
+    
+    .popup-menu-bar * {
+        font-size: 1.5vh;
+        padding: 1vw;
+        margin: 1vh auto;
+    }
+    
+    .popup-small-button:hover {
+        background-color: #e3e9ff;
+    }
+    
+    .popup-title {
+        pointer-events: none;
+        font-size: 1.3vmax;
+        margin-left: auto;
+        /* font-size: 3vmin; */
+        color: white;
+        padding-left: 1vw;
     }
 
 }

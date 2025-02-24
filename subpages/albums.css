@@ -8,6 +8,7 @@ img{
 }
 
 html{
+    height: 100dvh;
     background-color: var(--developer-black);
 }
 
@@ -183,7 +184,7 @@ img.linkUnavailable{
         gap: 1em;
         opacity: 0%;
         text-align: center;
-        top: 10vh;
+        top: 8vh;
         left: 10vw;
         width: 80vw;
         height: 80vh;

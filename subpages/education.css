@@ -15,6 +15,7 @@
 html{
     width: 100vw;
     height: 100vh;
+    overflow: hidden;
 }
 
 
@@ -24,6 +25,8 @@ body{
     image-rendering: -moz-crisp-edges;
     image-rendering: -o-pixelated;
     image-rendering: pixelated;
+    /* background-color: #2348c9; */
+    background-color: black;
 }
 
 #marker-mtl{
@@ -60,6 +63,7 @@ body{
 
     #map-div{
         height: 100vh;
+        left: -10vw;
         position: fixed;
         overflow: hidden;
         border: 1 px solid red;
@@ -80,7 +84,7 @@ body{
 
     #water-div{
         position: fixed;
-        top: 0;
+        top: 0px;
         left: 0;
         width: 100vw;
         height: 100vh;
