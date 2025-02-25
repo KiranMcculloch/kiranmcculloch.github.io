@@ -75,8 +75,31 @@ position: fixed !important
     height: 100dvh;
 }
 
+.bottomnav p {
+    margin: 0.4vw;
+    box-sizing: border-box;
+    border-right: 0.4vw solid #565861;
+    border-bottom: 0.4vw solid #565861;
+    border-left: 0.4vw solid #f5f7ff;
+    border-top: 0.4vw solid #f5f7ff;
+    color: #000000;
+    text-align: center;
+    padding: 0.6vw 2vw;
+    text-decoration: none;
+    font-size: 1.1vmax;
+}
 
+.bottomnav p:hover {
+    background-color: #e3e9ff;
+}
 
+.bottomnav p.active {
+    background-color: #a3a7b8;
+    border-left: 0.4vw solid #565861;
+    border-top: 0.4vw solid #565861;
+    border-bottom: 0.4vw solid #a3a7b8;
+    border-right: 0.4vw solid #a3a7b8;
+}
 
 
 
@@ -161,6 +184,10 @@ position: fixed !important
         align-items: center;
     }
 
+    #contactMenu{
+        margin-right: auto;
+    }
+
     #top-left-logo {
         height: 5vh;
         padding: 0.5vh;
@@ -168,7 +195,7 @@ position: fixed !important
         padding-right: 1.5vw;
     }
     
-    .bottomnav p {
+    .bottomnav p:not(#contactMenu) {
         display: none;
     }
 
@@ -284,7 +311,7 @@ position: fixed !important
         display: none;
     }
 
-    #credits-popup {
+    #credits-popup, #contact-popup {
         left: 10vw;
         top: 5vh;
     }
@@ -449,6 +476,12 @@ position: fixed !important
         top: 12vh;
     }
 
+
+    #contact-popup {
+        left: 25vw;
+        top: 12vh;
+    }
+
     .list-row {
         pointer-events: none;
     }
@@ -529,32 +562,7 @@ position: fixed !important
         flex-direction: row;
         align-items: center;
     }
-    
-    .bottomnav p {
-        margin: 0.4vw;
-        box-sizing: border-box;
-        border-right: 0.4vw solid #565861;
-        border-bottom: 0.4vw solid #565861;
-        border-left: 0.4vw solid #f5f7ff;
-        border-top: 0.4vw solid #f5f7ff;
-        color: #000000;
-        text-align: center;
-        padding: 0.6vw 2vw;
-        text-decoration: none;
-        font-size: 1.1vmax;
-    }
-    
-    .bottomnav p:hover {
-        background-color: #e3e9ff;
-    }
-    
-    .bottomnav p.active {
-        background-color: #a3a7b8;
-        border-left: 0.4vw solid #565861;
-        border-top: 0.4vw solid #565861;
-        border-bottom: 0.4vw solid #a3a7b8;
-        border-right: 0.4vw solid #a3a7b8;
-    }
+
     
     #top-left-logo {
         float: left;
