@@ -405,7 +405,7 @@ sub,sup {
 
 	.contentsPanel{
 		font-size: 80%;
-		width: 33vw;
+		width: 88vw;
 	}
 
 	body p {
@@ -423,6 +423,10 @@ sub,sup {
 
 	div.articleRight {
 		width: 60%;
+	}
+
+	.roleNote{
+		font-size: 0.5em;
 	}
 
 }
@@ -455,6 +459,5 @@ sub,sup {
 	h1 {
 		font-size: 3em;
 	}
-
 }
 
