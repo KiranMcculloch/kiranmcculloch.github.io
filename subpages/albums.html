@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <link type="text/css" rel="stylesheet" href="../style.css">
@@ -17,7 +18,7 @@
 
     function isMobileBrowser() {
         let check = false;
-        (function(a){if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(a)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0,4))) check = true;})(navigator.userAgent||navigator.vendor||window.opera);
+        (function (a) { if (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(a) || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0, 4))) check = true; })(navigator.userAgent || navigator.vendor || window.opera);
         return check;
     };
 
@@ -27,29 +28,29 @@
             (navigator.msMaxTouchPoints > 0));
     }
 
-    let browsertype=navigator.userAgent;
+    let browsertype = navigator.userAgent;
 
     // if(browsertype.includes("Safari")){
     //     alert("Hi! Looks like you're opening this website in Safari. Look, I developed this entire thing on Safari, so I get it, but there are a couple known bugs you should be aware of:\n\n1) CSS animations don't render in iFrames;\n2) background-images don't listen to image-rendering properties (so they may be rendered blurrily.)\n\nThese bugs are not present on Chrome or Firefox, so I'd recommend using one of those - but if you're like me and prefer Safari anyways, continue on, just keeping in mind you may not be getting the full experience. Thanks!");
     // }
     // if(browsertype.includes("Chrome")){
-        
+
     // }
 
     //click into detailed info
-    function seeMoreAlbum(element){
-        $("#moreInfo").find("#dummyTopSection").css("background-image",`url("${$(element).find("img").attr("src")}")`);
+    function seeMoreAlbum(element) {
+        $("#moreInfo").find("#dummyTopSection").css("background-image", `url("${$(element).find("img").attr("src")}")`);
 
         var hiddenInfo = $(element).find(".hiddenInfo")
         $("#moreInfo").find(".heading").text(hiddenInfo.find(".albumInfo").text());
-        if(hiddenInfo.find(".subtitleInfo").length){
+        if (hiddenInfo.find(".subtitleInfo").length) {
             $("#moreInfo").find(".subheading").text(hiddenInfo.find(".subtitleInfo").text());
             $("#moreInfo").find(".subheading").show();
         } else {
             $("#moreInfo").find(".subheading").hide();
         }
         $("#moreInfo").find(".artistyear").text(`${hiddenInfo.find(".artistInfo").text()} | ${hiddenInfo.find(".yearInfo").text()}`);
-        $("#moreInfo").find("#starsimg").attr("src",`../img/stars/${$(element).parent().parent().find(".tierNumber").text()}.png`);
+        $("#moreInfo").find("#starsimg").attr("src", `../img/stars/${$(element).parent().parent().find(".tierNumber").text()}.png`);
         $("#moreInfo").find("#reviewblock").html(hiddenInfo.find(".reviewInfo").html());
 
         var wikilink = $("#moreInfo").find("#wikipedia-link");
@@ -59,31 +60,31 @@
         var amlink = $("#moreInfo").find("#apple-music-link");
         var aminfo = hiddenInfo.find(".appleMusicInfo").text();
 
-        if (wikiinfo == "Placeholder"){
+        if (wikiinfo == "Placeholder") {
             wikilink.find("img").addClass("linkUnavailable");
-            wikilink.css("pointer-events","none");
+            wikilink.css("pointer-events", "none");
         } else {
             wikilink.find("img").removeClass("linkUnavailable");
-            wikilink.attr("href",wikiinfo);
-            wikilink.css("pointer-events","auto");
+            wikilink.attr("href", wikiinfo);
+            wikilink.css("pointer-events", "auto");
         }
 
-        if (spotinfo == "Placeholder"){
+        if (spotinfo == "Placeholder") {
             spotlink.find("img").addClass("linkUnavailable");
-            spotlink.css("pointer-events","none");
+            spotlink.css("pointer-events", "none");
         } else {
             spotlink.find("img").removeClass("linkUnavailable")
-            spotlink.attr("href",spotinfo);
-            spotlink.css("pointer-events","auto");
+            spotlink.attr("href", spotinfo);
+            spotlink.css("pointer-events", "auto");
         }
 
-        if (aminfo == "Placeholder"){
+        if (aminfo == "Placeholder") {
             amlink.find("img").addClass("linkUnavailable")
-            amlink.css("pointer-events","none");
+            amlink.css("pointer-events", "none");
         } else {
             amlink.find("img").removeClass("linkUnavailable")
-            amlink.attr("href",aminfo);
-            amlink.css("pointer-events","auto");
+            amlink.attr("href", aminfo);
+            amlink.css("pointer-events", "auto");
         }
 
         $('body').css('overflow', 'hidden');
@@ -95,13 +96,12 @@
 
 
     //click off of detailed info
-    $(document).mouseup(function(e) {
+    $(document).mouseup(function (e) {
         var container = $("#moreInfo");
         // if the target of the click isn't the container nor a descendant of the container
-        if (!container.is(e.target) && container.has(e.target).length === 0) 
-        {
+        if (!container.is(e.target) && container.has(e.target).length === 0) {
             $('body').css('overflow', 'scroll');
-            $("#tierListWrapper").css("filter","blur(0px)")
+            $("#tierListWrapper").css("filter", "blur(0px)")
             $("#blurOverlay").hide();
             container.hide();
             $("#moreInfo").find("#reviewblock").html("");
@@ -109,25 +109,25 @@
     });
 
     //sorting
-    function sortTierAlphabetically(button){
+    function sortTierAlphabetically(button) {
         tier = button.parent().parent().parent()
         var sortModifier = 1;
-        if (button.hasClass("sorted-ascending")){
+        if (button.hasClass("sorted-ascending")) {
             button.find(".arrowIndicator").html("&uarr;")
             button.removeClass("sorted-ascending");
             sortModifier = -1;
         } else {
-            button.find(".arrowIndicator").html("&darr;")            
+            button.find(".arrowIndicator").html("&darr;")
             button.addClass("sorted-ascending");
         }
 
-        var tieralbums = $(tier.find(".album").toArray().sort(function (a,b){
+        var tieralbums = $(tier.find(".album").toArray().sort(function (a, b) {
             nameA = a.querySelector(".hiddenInfo").querySelector(".albumInfo").innerHTML;
             nameB = b.querySelector(".hiddenInfo").querySelector(".albumInfo").innerHTML;
-            return nameA.localeCompare(nameB) * sortModifier;        
+            return nameA.localeCompare(nameB) * sortModifier;
         }));
-        tieralbums.each(function( index ) {
-            $( this ).css("order",index);
+        tieralbums.each(function (index) {
+            $(this).css("order", index);
         });
 
         tier.find(".artistSortButton").html("Sort by Artist &udarr;");
@@ -137,28 +137,28 @@
         button.addClass("selected")
     }
 
-    function sortTierYearwise(button){
+    function sortTierYearwise(button) {
         tier = button.parent().parent().parent()
         var sortModifier = 1;
-        if (button.hasClass("sorted-ascending")){
+        if (button.hasClass("sorted-ascending")) {
             button.html("Sort by Year &uarr;");
             button.removeClass("sorted-ascending");
-            sortModifier  =-1;
+            sortModifier = -1;
         } else {
             button.html("Sort by Year &darr;");
             button.addClass("sorted-ascending");
         }
-        
-        var tieralbums = $(tier.find(".album").toArray().sort(function (a,b){
+
+        var tieralbums = $(tier.find(".album").toArray().sort(function (a, b) {
             var returning = 0
             yearA = Number(a.querySelector(".hiddenInfo").querySelector(".yearInfo").innerHTML);
             yearB = Number(b.querySelector(".hiddenInfo").querySelector(".yearInfo").innerHTML);
-            if (yearA > yearB){ returning = 1}
-            if (yearA < yearB){ returning = -1}     
+            if (yearA > yearB) { returning = 1 }
+            if (yearA < yearB) { returning = -1 }
             return returning;
         }));
-        tieralbums.each(function( index ) {
-            $( this ).css("order",index);
+        tieralbums.each(function (index) {
+            $(this).css("order", index);
         });
 
         tier.find(".artistSortButton").html("Sort by Artist &udarr;")
@@ -168,10 +168,10 @@
         button.addClass("selected")
     }
 
-    function sortTierArtistwise(button){
+    function sortTierArtistwise(button) {
         tier = button.parent().parent().parent()
         var sortModifier = 1;
-        if (button.hasClass("sorted-ascending")){
+        if (button.hasClass("sorted-ascending")) {
             button.html("Sort by Artist &uarr;");
             button.removeClass("sorted-ascending");
             sortModifier = -1;
@@ -180,46 +180,46 @@
             button.addClass("sorted-ascending");
         }
 
-        var tieralbums = $(tier.find(".album").toArray().sort(function (a,b){
+        var tieralbums = $(tier.find(".album").toArray().sort(function (a, b) {
             nameA = a.querySelector(".hiddenInfo").querySelector(".artistInfo").innerHTML;
             nameB = b.querySelector(".hiddenInfo").querySelector(".artistInfo").innerHTML;
-            return nameA.localeCompare(nameB) * sortModifier;    
+            return nameA.localeCompare(nameB) * sortModifier;
         }));
-        tieralbums.each(function( index ) {
-            $( this ).css("order",index);
+        tieralbums.each(function (index) {
+            $(this).css("order", index);
         });
 
         tier.find(".yearSortButton").html("Sort by Year &udarr;")
         tier.find(".yearSortButton").removeClass("selected")
-        tier.find(".arrowIndicator").html("&udarr;")        
+        tier.find(".arrowIndicator").html("&udarr;")
         tier.find(".alphabeticalSortButton").removeClass("selected")
         button.addClass("selected")
     }
 
 
     //control placement of tooltip
-    $(document).on('mousemove', function(e){
-        var windowHeightLine = ($(window).height()*(2/3));
-        var windowWidthLine = ($(window).width()*(2/3));
-        var tipWidth = $('#albumTooltip').outerWidth()+1;
-        var tipHeight = $('#albumTooltip').outerHeight()+1;
+    $(document).on('mousemove', function (e) {
+        var windowHeightLine = ($(window).height() * (2 / 3));
+        var windowWidthLine = ($(window).width() * (2 / 3));
+        var tipWidth = $('#albumTooltip').outerWidth() + 1;
+        var tipHeight = $('#albumTooltip').outerHeight() + 1;
 
         //top left
-        if (e.clientY <= windowHeightLine && e.clientX <= windowWidthLine){
+        if (e.clientY <= windowHeightLine && e.clientX <= windowWidthLine) {
             $('#albumTooltip').css('top', e.pageY);
-            $('#albumTooltip').css('left', e.pageX+1);
-        //top right
-        } else if (e.clientY <= windowHeightLine && e.clientX > windowWidthLine){
+            $('#albumTooltip').css('left', e.pageX + 1);
+            //top right
+        } else if (e.clientY <= windowHeightLine && e.clientX > windowWidthLine) {
             $('#albumTooltip').css('top', e.pageY);
-            $('#albumTooltip').css('left', e.pageX-tipWidth);
-        //bottom left
-        } else if (e.clientY > windowHeightLine && e.clientX <= windowWidthLine){
-            $('#albumTooltip').css('top', e.pageY-tipHeight);
-            $('#albumTooltip').css('left', e.pageX+1);
-        //bottom right
+            $('#albumTooltip').css('left', e.pageX - tipWidth);
+            //bottom left
+        } else if (e.clientY > windowHeightLine && e.clientX <= windowWidthLine) {
+            $('#albumTooltip').css('top', e.pageY - tipHeight);
+            $('#albumTooltip').css('left', e.pageX + 1);
+            //bottom right
         } else {
-            $('#albumTooltip').css('top', e.pageY-tipHeight);
-            $('#albumTooltip').css('left', e.pageX-tipWidth);
+            $('#albumTooltip').css('top', e.pageY - tipHeight);
+            $('#albumTooltip').css('left', e.pageX - tipWidth);
         }
     });
 
@@ -232,7 +232,7 @@
                 $("#crt-overlay, .fullscreen-menu-bar, .home-button").hide()
             }
             $("#moreInfo").hide();
-            $("#moreInfo").css("opacity","100%");
+            $("#moreInfo").css("opacity", "100%");
             //disable hover until animation is finished
             $(".list-row").delay(2500).queue(function () {
                 $(".list-row").css("pointer-events", "auto");
@@ -247,22 +247,22 @@
             }, function () {
                 $(this).attr('src', './img/logo.png');
             });
- 
 
-            if (isTouchscreen){
+
+            if (isTouchscreen) {
 
             } else {
                 //deal with additional album info tooltips
                 $(".album").hover(
                     function () {
                         var hiddenInfo = $(this).find(".hiddenInfo")
-                        if(hiddenInfo.find(".subtitleInfo").length){
+                        if (hiddenInfo.find(".subtitleInfo").length) {
                             $('#albumTooltip').html(`<b>${hiddenInfo.find(".albumInfo").text()}<br>${hiddenInfo.find(".subtitleInfo").text()}</b><br>by ${hiddenInfo.find(".artistInfo").text()}<br>${hiddenInfo.find(".yearInfo").text()}`);
                         } else {
                             $('#albumTooltip').html(`<b>${hiddenInfo.find(".albumInfo").text()}</b><br>by ${hiddenInfo.find(".artistInfo").text()}<br>${hiddenInfo.find(".yearInfo").text()}`);
                         }
 
-                        $('#albumTooltip').css("border-color",$(this).parent().parent().find(".tierLabel").css("background-color"));
+                        $('#albumTooltip').css("border-color", $(this).parent().parent().find(".tierLabel").css("background-color"));
                         $('#albumTooltip').addClass("visible");
                     },
                     function () {
@@ -270,7 +270,7 @@
                     }
                 );
             }
-            
+
         }
     );
 </script>
@@ -292,19 +292,20 @@
     <div class="home-button" onclick='window.location.href = "../index.html"'>
         <img src="../img/home.png" alt="a pixellated icon of a home">
     </div>
-    <div id="tierListWrapper" style="display: flex; flex-direction: column; width: 100; gap: 1vh; background-color: var(--developer-black);">
+    <div id="tierListWrapper"
+        style="display: flex; flex-direction: column; width: 100; gap: 1vh; background-color: var(--developer-black);">
         <div id="albumTooltip"></div>
-    <!--████████╗██╗███████╗██████╗     ████████╗ ███████╗ ███╗   ██╗
+        <!--████████╗██╗███████╗██████╗     ████████╗ ███████╗ ███╗   ██╗
         ╚══██╔══╝██║██╔════╝██╔══██╗    ╚══██╔══╝ ██╔════╝ ████╗  ██║
             ██║   ██║█████╗  ██████╔╝       ██║    █████╗   ██╔██╗ ██║
             ██║   ██║██╔══╝  ██╔══██╗       ██║    ██╔══╝   ██║╚██╗██║
             ██║   ██║███████╗██║  ██║       ██║    ███████╗ ██║ ╚████║
             ╚═╝   ╚═╝╚══════╝╚═╝  ╚═╝       ╚═╝    ╚══════╝ ╚═╝  ╚═══╝ -->
-                                                           
+
         <div id="tier10" class="tier">
             <div id="tierLabel10" style="background-color: dodgerblue;" class="tierLabel">
                 <div class="tierNumber">10</div>
-                <div class="tierDescription">Perfection. Next to no 
+                <div class="tierDescription">Perfection. Next to no
                     skips. An absolute must-listen.</div>
                 <div class="sortButtonHolder">
                     <button class="alphabeticalSortButton" onclick="sortTierAlphabetically($(this))">
@@ -313,7 +314,8 @@
                         <span class="arrowIndicator">&#8645;</span>
                     </button>
                     <button class="yearSortButton" onclick="sortTierYearwise($(this))">Sort by Year &#8645;</button>
-                    <button class="artistSortButton" onclick="sortTierArtistwise($(this))">Sort by Artist &#8645;</button>
+                    <button class="artistSortButton" onclick="sortTierArtistwise($(this))">Sort by Artist
+                        &#8645;</button>
                 </div>
             </div>
             <div class="albumHolder">
@@ -340,28 +342,38 @@
                         <p class="albumInfo">White Lighter</p>
                         <p class="artistInfo">Typhoon</p>
                         <p class="yearInfo">2013</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/4O1WEqjRcJqSjF0HhQPm31?si=54bbfe99b1ed4a27</p>
+                        <p class="spotifyInfo">https://open.spotify.com/album/4O1WEqjRcJqSjF0HhQPm31?si=54bbfe99b1ed4a27
+                        </p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/White_Lighter</p>
                         <div class="reviewInfo">
                             <p>It is no small secret that this is my favorite album of all time.</p>
-                            <p>White Lighter is a project about scope. The lo-fi Prelude and the lamentful Caesar are under a minute long, while the closer, Post-Script, meditatively glides past 6 minutes. But the real scale is found internally - each track could easily be four or five smaller ones; the effect is that you're always on the edge of your seat, never knowing what's coming next, settling into a slow moment never long enough for it to be boring before the band knocks you out of said seat with an explosion of sound, horns and strings, Kyle Morton's expressive voice and a chorus of harmonies permeating throughout.</p>
-                            <p>I mean, this album alone has some of the best single moments in Music: The fable-like outro of Young Fathers, the heartbreaking, furious second verse of the Lake, the punchy Wolves section on Morton's Fork, the almost Alt-J-y end of the first verse on Dreams of Cannibalism, all come to mind. God, everything leading up to the drop on Hunger and Thirst gets me every time.</p>
-                            <p>Thing is, it's impossible to talk about these songs in terms of Verses and Choruses and Bridges, they're more like rivers; the flow can be calm and gentle or breakneck, and you're just as likely to hit some rapids or go over a waterfall as you are to float gently by. These songs are expressions of faith, of belief, of love, of loss. Morton's lyrics wash you in it, they stick to you, they come back to you months later like proverbs. He sings, he talks, he yells. When he's angry, you feel it, when he's desperate, you're just as much so. The other vocalists and the brass section and the rest of the veritable orchestra he has backing him up reinforce these emotions, and the result is, despite my best efforts, indescribable.</p>
-                            <p>Put on some headphones, and set aside ninety-three minutes of your life - you're gonna end up wanting to listen to it twice.</p>
-                            <b>TOP SONGS: Young Fathers, Dreams of Cannibalism, Post Script - but there is not a single bad moment, let alone song, on this album.</b>
+                            <p>White Lighter is a project about scope. The lo-fi Prelude and the lamentful Caesar are
+                                under a minute long, while the closer, Post-Script, meditatively glides past 6 minutes.
+                                But the real scale is found internally - each track could easily be four or five smaller
+                                ones; the effect is that you're always on the edge of your seat, never knowing what's
+                                coming next, settling into a slow moment never long enough for it to be boring before
+                                the band knocks you out of said seat with an explosion of sound, horns and strings, Kyle
+                                Morton's expressive voice and a chorus of harmonies permeating throughout.</p>
+                            <p>I mean, this album alone has some of the best single moments in Music: The fable-like
+                                outro of Young Fathers, the heartbreaking, furious second verse of the Lake, the punchy
+                                Wolves section on Morton's Fork, the almost Alt-J-y end of the first verse on Dreams of
+                                Cannibalism, all come to mind. God, everything leading up to the drop on Hunger and
+                                Thirst gets me every time.</p>
+                            <p>Thing is, it's impossible to talk about these songs in terms of Verses and Choruses and
+                                Bridges, they're more like rivers; the flow can be calm and gentle or breakneck, and
+                                you're just as likely to hit some rapids or go over a waterfall as you are to float
+                                gently by. These songs are expressions of faith, of belief, of love, of loss. Morton's
+                                lyrics wash you in it, they stick to you, they come back to you months later like
+                                proverbs. He sings, he talks, he yells. When he's angry, you feel it, when he's
+                                desperate, you're just as much so. The other vocalists and the brass section and the
+                                rest of the veritable orchestra he has backing him up reinforce these emotions, and the
+                                result is, despite my best efforts, indescribable.</p>
+                            <p>Put on some headphones, and set aside ninety-three minutes of your life - you're gonna
+                                end up wanting to listen to it twice.</p>
+                            <b>TOP SONGS: Young Fathers, Dreams of Cannibalism, Post Script - but there is not a single
+                                bad moment, let alone song, on this album.</b>
                         </div>
-                    </div>
-                </div>
-                <div class="album" onClick="seeMoreAlbum(this)">
-                    <img src="../img/albums/300/dream.jpg">
-                    <div class="hiddenInfo">
-                        <p class="albumInfo">The Dream</p>
-                        <p class="artistInfo">Alt-J</p>
-                        <p class="yearInfo">2022</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/5ogYKSRRlVAgMzv09HFeIn?si=-D8NV6U1QcmZlyb7dxNlFQ</p>
-                        <p class="appleMusicInfo">Placeholder</p>
-                        <p class="wikipediaInfo">https://en.wikipedia.org/wiki/The_Dream_(alt-J_album)</p>
                     </div>
                 </div>
                 <div class="album" onClick="seeMoreAlbum(this)">
@@ -370,9 +382,34 @@
                         <p class="albumInfo">Abbey Road</p>
                         <p class="artistInfo">The Beatles</p>
                         <p class="yearInfo">1969</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/0ETFjACtuP2ADo6LFhL6HN?si=b0be09566f9246fb</p>
+                        <p class="spotifyInfo">https://open.spotify.com/album/0ETFjACtuP2ADo6LFhL6HN?si=b0be09566f9246fb
+                        </p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Abbey_Road</p>
+                        <div class="reviewInfo">
+                            <p> Shocker, I know. The Beatles are pretty undeniably the greatest band of all time (not
+                                even my personal favorite - still the Greatest.) The more you look into it, the more it
+                                becomes self-evident. But that's just a fact - and reviews are for opinions.</p>
+                            <p> Abbey Road was the final album recorded by the Beatles, and as such is the culmination
+                                of all their work, all their growth as a band and as individuals - and it shows. Whereas
+                                the White Album was great because it has an eclectic collection of tracks showing off
+                                all the depth and personality each Beatle brings to the table, and Sgt. Pepper's was
+                                great because it did something unique (for the time) and put together a tight, curated
+                                tracklist, Abbey Road is great because it does both, and better than either. Like the
+                                White Album, some of the dumbest songs ever written are on this album, and yet they're
+                                some of my favorites. Like Sgt. Pepper's, they try something really cool and new (The
+                                Medley) and top it all off with a big finale (although admittedly A Day in the Life is
+                                better than The End.)</p>
+                            <p> And, man, they do not miss once on this album. It goes something like this: all-timer
+                                Lennon song; all-timer Harrison song (all-timer Song, period); all-timer Granny
+                                Mccartney song; all-timer normal Mccartney song; the only good Ringo song, which is not
+                                only good but Fantastic; [redacted]; all-timer Harrison song again; all-timer Lennon
+                                song again; and then Paul McCartney's fucking masterpiece, an innovation in tracks
+                                blending together, a pretty much unmatched achievement in album layout before or since.
+                                Look me in the eyes and tell me Abbey Road doesn't deserve the hype.</p>
+                            <p> Oh, and I do not like I Want You (She's So Heavy).</p>
+                            <b> TOP SONGS: Something, Octopus's Garden, She Came In Through The Bathroom Window</b>
+                        </div>
                     </div>
                 </div>
                 <div class="album" onClick="seeMoreAlbum(this)">
@@ -381,7 +418,8 @@
                         <p class="albumInfo">Magical Mystery Tour</p>
                         <p class="artistInfo">The Beatles</p>
                         <p class="yearInfo">1967</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/2BtE7qm1qzM80p9vLSiXkj?si=730b316ce26d4e4e</p>
+                        <p class="spotifyInfo">https://open.spotify.com/album/2BtE7qm1qzM80p9vLSiXkj?si=730b316ce26d4e4e
+                        </p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Magical_Mystery_Tour</p>
                     </div>
@@ -393,9 +431,11 @@
                         <p class="subtitleInfo">or, the Last Remains of the Dodo</p>
                         <p class="artistInfo">Aimee Mann</p>
                         <p class="yearInfo">2000</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/41Qh3WL5sMD76RZKWWGWQw?si=5ba2cbc997194ff8</p>
+                        <p class="spotifyInfo">https://open.spotify.com/album/41Qh3WL5sMD76RZKWWGWQw?si=5ba2cbc997194ff8
+                        </p>
                         <p class="appleMusicInfo">Placeholder</p>
-                        <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Bachelor_No._2_or,_the_Last_Remains_of_the_Dodo</p>
+                        <p class="wikipediaInfo">
+                            https://en.wikipedia.org/wiki/Bachelor_No._2_or,_the_Last_Remains_of_the_Dodo</p>
                     </div>
                 </div>
                 <div class="album" onClick="seeMoreAlbum(this)">
@@ -404,7 +444,8 @@
                         <p class="albumInfo">The New Abnormal</p>
                         <p class="artistInfo">The Strokes</p>
                         <p class="yearInfo">2020</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/2xkZV2Hl1Omi8rk2D7t5lN?si=84a9f003ec8649a5</p>
+                        <p class="spotifyInfo">https://open.spotify.com/album/2xkZV2Hl1Omi8rk2D7t5lN?si=84a9f003ec8649a5
+                        </p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/The_New_Abnormal</p>
                     </div>
@@ -416,9 +457,11 @@
                         <p class="subtitleInfo">or Death and All His Friends</p>
                         <p class="artistInfo">Coldplay</p>
                         <p class="yearInfo">2008</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/4XTT0NcNHyvl6h9JX2AfEi?si=718b72b4c09b472e</p>
+                        <p class="spotifyInfo">https://open.spotify.com/album/4XTT0NcNHyvl6h9JX2AfEi?si=718b72b4c09b472e
+                        </p>
                         <p class="appleMusicInfo">Placeholder</p>
-                        <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Viva_la_Vida_or_Death_and_All_His_Friends</p>
+                        <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Viva_la_Vida_or_Death_and_All_His_Friends
+                        </p>
                     </div>
                 </div>
                 <div class="album" onClick="seeMoreAlbum(this)">
@@ -427,7 +470,8 @@
                         <p class="albumInfo">Welcome Interstate Managers</p>
                         <p class="artistInfo">Fountains of Wayne</p>
                         <p class="yearInfo">2003</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/6TZp52tXShLQbq8yNMxqNT?si=5f2b25959b4c4253</p>
+                        <p class="spotifyInfo">https://open.spotify.com/album/6TZp52tXShLQbq8yNMxqNT?si=5f2b25959b4c4253
+                        </p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Welcome_Interstate_Managers</p>
                     </div>
@@ -438,7 +482,8 @@
                         <p class="albumInfo">The Suburbs</p>
                         <p class="artistInfo">Arcade Fire</p>
                         <p class="yearInfo">2010</p>
-                        <p class="spotifyInfo">https://open.spotify.com/track/2UWdUez9MB9yzL7Y81Mcip?si=0c54f7d2a2e84f8b</p>
+                        <p class="spotifyInfo">https://open.spotify.com/track/2UWdUez9MB9yzL7Y81Mcip?si=0c54f7d2a2e84f8b
+                        </p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/The_Suburbs</p>
                     </div>
@@ -449,9 +494,11 @@
                         <p class="albumInfo">Always the Bridesmaid</p>
                         <p class="artistInfo">The Decemberists</p>
                         <p class="yearInfo">2008</p>
-                        <p class="spotifyInfo">https://open.spotify.com/playlist/6CZ4LnB0Cyleg4vBvthEga?si=dab1faeb5f734281</p>
+                        <p class="spotifyInfo">
+                            https://open.spotify.com/playlist/6CZ4LnB0Cyleg4vBvthEga?si=dab1faeb5f734281</p>
                         <p class="appleMusicInfo">Placeholder</p>
-                        <p class="wikipediaInfo">https://en.wikipedia.org/wiki/The_Decemberists#2008:_Always_the_Bridesmaid</p>
+                        <p class="wikipediaInfo">
+                            https://en.wikipedia.org/wiki/The_Decemberists#2008:_Always_the_Bridesmaid</p>
                     </div>
                 </div>
                 <div class="album" onClick="seeMoreAlbum(this)">
@@ -460,12 +507,13 @@
                         <p class="albumInfo">Fleet Foxes</p>
                         <p class="artistInfo">Fleet Foxes</p>
                         <p class="yearInfo">2008</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/1rfgmU0AYNwWfS88pCOlX7?si=6ef-IkVnROKFjwQm0D7eCQ</p>
+                        <p class="spotifyInfo">
+                            https://open.spotify.com/album/1rfgmU0AYNwWfS88pCOlX7?si=6ef-IkVnROKFjwQm0D7eCQ</p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Fleet_Foxes_(album)</p>
                         <div class="reviewInfo"></div>
                     </div>
-                </div> 
+                </div>
                 <div class="album" onClick="seeMoreAlbum(this)">
                     <img src="../img/albums/300/newmoon.jpg">
                     <div class="hiddenInfo">
@@ -473,33 +521,68 @@
                         <p class="subtitleInfo">(Original Motion Picture Soundtrack)</p>
                         <p class="artistInfo">Various Artists</p>
                         <p class="yearInfo">2009</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/2PDlvc7K51qC4Bkali3q0R?si=QZRHEjeBQPSoGt7EOwLOaQ</p>
+                        <p class="spotifyInfo">
+                            https://open.spotify.com/album/2PDlvc7K51qC4Bkali3q0R?si=QZRHEjeBQPSoGt7EOwLOaQ</p>
                         <p class="appleMusicInfo">Placeholder</p>
-                        <p class="wikipediaInfo">https://en.wikipedia.org/wiki/The_Twilight_Saga:_New_Moon_(soundtrack)</p>
+                        <p class="wikipediaInfo">https://en.wikipedia.org/wiki/The_Twilight_Saga:_New_Moon_(soundtrack)
+                        </p>
                         <div class="reviewInfo">
-                            <p>The Twilight Saga: New Moon (Original Motion Picture Soundtrack) surely seems like the outlier on this list, right? Thing is, this album does something very well that many other albums fail to do at all. Buoyed by its impressive array of late-2000s indie talent, this album <i>cultivates a vibe.</i></p>
-                            <p>It's impossible to put on this soundtrack and not feel like you're there, taken back to high school in the closing years of the first decade; you're Edward, trying to fit in, different somehow from your classmates, object of attention against your wishes; you're Bella, just as isolated, never fully settled down in this new place; at once at odds with your surrounding and knowing exactly how each tired day is going to play out, like you've been alive for a hundred years. </p>
-                            <p>These songs are yearning; in their most upbeat moments its feels like a rare breakthrough, a reminder to keep going. It's often slow, but always thoughtful. It feels like you've just burned a best-of CD and taken it on the bus. </p>
+                            <p>The Twilight Saga: New Moon (Original Motion Picture Soundtrack) surely seems like the
+                                outlier on this list, right? Thing is, this album does something very well that many
+                                other albums fail to do at all. Buoyed by its impressive array of late-2000s indie
+                                talent, this album <i>cultivates a vibe.</i></p>
+                            <p>It's impossible to put on this soundtrack and not feel like you're there, taken back to
+                                high school in the closing years of the first decade; you're Edward, trying to fit in,
+                                different somehow from your classmates, object of attention against your wishes; you're
+                                Bella, just as isolated, never fully settled down in this new place; at once at odds
+                                with your surrounding and knowing exactly how each tired day is going to play out, like
+                                you've been alive for a hundred years. </p>
+                            <p>These songs are yearning; in their most upbeat moments its feels like a rare
+                                breakthrough, a reminder to keep going. It's often slow, but always thoughtful. It feels
+                                like you've just burned a best-of CD and taken it on the bus. </p>
                             <p>And I don't even like the Twilight movies that much!</p>
                             <b>TOP SONGS: Shooting The Moon, Satellite Heart, Meet Me on the Equinox</b>
                         </div>
                     </div>
-                </div> 
+                </div>
                 <div class="album" onClick="seeMoreAlbum(this)">
                     <img src="../img/albums/300/afut.jpg">
                     <div class="hiddenInfo">
                         <p class="albumInfo">Ants From Up There</p>
                         <p class="artistInfo">Black Country, New Road</p>
                         <p class="yearInfo">2022</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/21xp7NdU1ajmO1CX0w2Egd?si=e78d482a2af647e3</p>
+                        <p class="spotifyInfo">https://open.spotify.com/album/21xp7NdU1ajmO1CX0w2Egd?si=e78d482a2af647e3
+                        </p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Ants_from_Up_There</p>
                         <div class="reviewInfo">
-                            <p>This album does have its issues. Haldern is a lesser son of greater sires, and if you do something more interesting with Mark's Theme and fix that godawful drumming on Snow Globes - the refrain is so good but the dissonance takes me out every time! - you have an airtight, perfect album on your hands.</p>
-                            <p>Now, that's not what we've got. But what we do have more than makes up for it; you could put Snow Globes on the tracklist another five times and it would still be a Ten. I stumbled across this album online, and all I had to listen to was that Intro to be completely, irrevocably sold on the project.</p>
-                            <p>And it just gets better from there. Chaos Space Marine can just as easily be the opener to a goofy faux-victorian student musical, but the driving rhythm and our first - of many - taste of Isaac Wood's delicious, rich vocals keep you entirely immersed. If Intro gets you sold on the promise, this song gets you hooked on the vibe, the story, the tone. There's teases of the intensity (those drums!), the humor ("So long, chumps"), and even the story (references to Good Will Hunting's iconic Billie Eillish refrain and the ever-present Concorde) that await you.</p>
-                            <p>Concorde, speaking of, is deceptively laid-back but has that signature bombastic buildup and ending that makes it all worth it. Bread Song is heartbreaking until it becomes heartbreaking <i>and</i> raucous. I sing Good Will Hunting to myself pretty much constantly; this is easily the catchiest song on an album that doesn't go for catchiness but has it in unbelievable abundance anyways. Actually, I take it back, The Place Where He Inserted the Blade is the catchiest, a laurel it need not rest on, since it's also perhaps the greatest song ever written. And Basketball Shoes is so ambitious, so BIG, that just thinking about it gives me chills and actually listening to it sends me into a near-catatonic state, like a musical cinder block heaved full-force at my sternum.</p>
-                            <p>With its amount of depth, clever instrumentation, huge moments, diversity of pace but consistency of tone, and just stellar lyrics, this could easily be a Typhoon album (and that's high praise) - no wonder I love it so much.</p>
+                            <p>This album does have its issues. Haldern is a lesser son of greater sires, and if you do
+                                something more interesting with Mark's Theme and fix that godawful drumming on Snow
+                                Globes - the refrain is so good but the dissonance takes me out every time! - you have
+                                an airtight, perfect album on your hands.</p>
+                            <p>Now, that's not what we've got. But what we do have more than makes up for it; you could
+                                put Snow Globes on the tracklist another five times and it would still be a Ten. I
+                                stumbled across this album online, and all I had to listen to was that Intro to be
+                                completely, irrevocably sold on the project.</p>
+                            <p>And it just gets better from there. Chaos Space Marine can just as easily be the opener
+                                to a goofy faux-victorian student musical, but the driving rhythm and our first - of
+                                many - taste of Isaac Wood's delicious, rich vocals keep you entirely immersed. If Intro
+                                gets you sold on the promise, this song gets you hooked on the vibe, the story, the
+                                tone. There's teases of the intensity (those drums!), the humor ("So long, chumps"), and
+                                even the story (references to Good Will Hunting's iconic Billie Eillish refrain and the
+                                ever-present Concorde) that await you.</p>
+                            <p>Concorde, speaking of, is deceptively laid-back but has that signature bombastic buildup
+                                and ending that makes it all worth it. Bread Song is heartbreaking until it becomes
+                                heartbreaking <i>and</i> raucous. I sing Good Will Hunting to myself pretty much
+                                constantly; this is easily the catchiest song on an album that doesn't go for catchiness
+                                but has it in unbelievable abundance anyways. Actually, I take it back, The Place Where
+                                He Inserted the Blade is the catchiest, a laurel it need not rest on, since it's also
+                                perhaps the greatest song ever written. And Basketball Shoes is so ambitious, so BIG,
+                                that just thinking about it gives me chills and actually listening to it sends me into a
+                                near-catatonic state, like a musical cinder block heaved full-force at my sternum.</p>
+                            <p>With its amount of depth, clever instrumentation, huge moments, diversity of pace but
+                                consistency of tone, and just stellar lyrics, this could easily be a Typhoon album (and
+                                that's high praise) - no wonder I love it so much.</p>
                             <b>TOP SONGS: Good Will Hunting, The Place Where He Inserted the Blade, Basketball Shoes</b>
                         </div>
                     </div>
@@ -507,20 +590,20 @@
             </div>
         </div>
 
-    <!--████████╗██╗███████╗██████╗     ███╗   ██╗ ██╗ ███╗   ██╗ ███████╗
+        <!--████████╗██╗███████╗██████╗     ███╗   ██╗ ██╗ ███╗   ██╗ ███████╗
         ╚══██╔══╝██║██╔════╝██╔══██╗    ████╗  ██║ ██║ ████╗  ██║ ██╔════╝
             ██║   ██║█████╗  ██████╔╝    ██╔██╗ ██║ ██║ ██╔██╗ ██║ █████╗  
             ██║   ██║██╔══╝  ██╔══██╗    ██║╚██╗██║ ██║ ██║╚██╗██║ ██╔══╝  
             ██║   ██║███████╗██║  ██║    ██║ ╚████║ ██║ ██║ ╚████║ ███████╗
             ╚═╝   ╚═╝╚══════╝╚═╝  ╚═╝    ╚═╝  ╚═══╝ ╚═╝ ╚═╝  ╚═══╝ ╚══════╝ -->
-                                                                       
+
         <div id="tier9" class="tier">
             <div id="tierLabel9" style="background-color: green;" class="tierLabel">
                 <div class="tierNumber">9</div>
-                <div class="tierDescription">Incredible album, but with 
-                    something holding it back from 
-                    true perfection. Maybe a few 
-                    skips, maybe the vibe. 10s and 9s 
+                <div class="tierDescription">Incredible album, but with
+                    something holding it back from
+                    true perfection. Maybe a few
+                    skips, maybe the vibe. 10s and 9s
                     can be pretty interchangeable
                     from person to person. <b>Still a must-listen.</b></div>
                 <div class="sortButtonHolder">
@@ -530,18 +613,51 @@
                         <span class="arrowIndicator">&#8645;</span>
                     </button>
                     <button class="yearSortButton" onclick="sortTierYearwise($(this))">Sort by Year &#8645;</button>
-                    <button class="artistSortButton" onclick="sortTierArtistwise($(this))">Sort by Artist &#8645;</button>
+                    <button class="artistSortButton" onclick="sortTierArtistwise($(this))">Sort by Artist
+                        &#8645;</button>
                 </div>
             </div>
             <div class="albumHolder">
-
+                <div class="album" onClick="seeMoreAlbum(this)">
+                    <img src="../img/albums/300/dream.jpg">
+                    <div class="hiddenInfo">
+                        <p class="albumInfo">The Dream</p>
+                        <p class="artistInfo">Alt-J</p>
+                        <p class="yearInfo">2022</p>
+                        <p class="spotifyInfo">
+                            https://open.spotify.com/album/5ogYKSRRlVAgMzv09HFeIn?si=-D8NV6U1QcmZlyb7dxNlFQ</p>
+                        <p class="appleMusicInfo">Placeholder</p>
+                        <p class="wikipediaInfo">https://en.wikipedia.org/wiki/The_Dream_(alt-J_album)</p>
+                        <div class="reviewInfo">
+                            <p>What can I say? Alt-J are allergic to making a perfect album. They're always so close,
+                                too.</p>
+                            <p>This one is noticeably chiller than the other three. Besides the obligatory
+                                slow-build-up-and-massive-climax tracks (which, as usual, are incredible,) even the
+                                catchy upbeat songs - namely are very laid-back, smooth, slick, flowy. If you close your
+                                eyes you can picture Joe Newman singing most of these on a pool float somewhere. This
+                                can be very good and even fascinatingly implemented on tracks like Bane, U&ME, and the
+                                Actor; on the other hand, you have songs like Hard Drive Gold, which unfortunately
+                                Sucks. And of course, as usual, they've added some pretty forgettable tracks in the
+                                second half there, which, when combined with the overall lethargic feel of the album,
+                                make for some real snoozers.</p>
+                            <p>THAT BEING SAID: Chicago and Philadelphia are classic Alt-J grandiose-bangers. Bane is
+                                slippery and intriguing throughout, while being the closest this album gets to a proper
+                                Rock song. Get Better would be trite if made by anyone else but instead it's an
+                                all-timer Sad Boy Hours staple. Powders makes me feel emotions, man. And Happier When
+                                You're Gone is, against all odds, probably in my top three Alt-J songs of all time. I
+                                gave this a 9 for a reason.</p>
+                            <b>TOP SONGS: Happier When You're Gone, Philadelphia, Powders</b>
+                        </div>
+                    </div>
+                </div>
                 <div class="album" onClick="seeMoreAlbum(this)">
                     <img src="../img/albums/300/aaw.jpg">
                     <div class="hiddenInfo">
                         <p class="albumInfo">An Awesome Wave</p>
                         <p class="artistInfo">Alt-J</p>
                         <p class="yearInfo">2012</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/6k3vC8nep1BfqAIJ81L6OL?si=3d6aca5c21034d75</p>
+                        <p class="spotifyInfo">https://open.spotify.com/album/6k3vC8nep1BfqAIJ81L6OL?si=3d6aca5c21034d75
+                        </p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/An_Awesome_Wave</p>
                     </div>
@@ -553,7 +669,8 @@
                         <p class="albumInfo">This Is All Yours</p>
                         <p class="artistInfo">Alt-J</p>
                         <p class="yearInfo">2014</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/4oktVvRuO1In9B7Hz0xm0a?si=b0312314770948fc</p>
+                        <p class="spotifyInfo">https://open.spotify.com/album/4oktVvRuO1In9B7Hz0xm0a?si=b0312314770948fc
+                        </p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/This_Is_All_Yours</p>
                     </div>
@@ -566,7 +683,8 @@
                         <p class="subtitleInfo">"The White Album"</p>
                         <p class="artistInfo">The Beatles</p>
                         <p class="yearInfo">1968</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/1klALx0u4AavZNEvC4LrTL?si=ztljmTnQQ--yaLFcZQJQvg</p>
+                        <p class="spotifyInfo">
+                            https://open.spotify.com/album/1klALx0u4AavZNEvC4LrTL?si=ztljmTnQQ--yaLFcZQJQvg</p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/The_Beatles_(album)</p>
                     </div>
@@ -578,9 +696,11 @@
                         <p class="albumInfo">Sgt. Pepper's Lonely Hearts Club Band</p>
                         <p class="artistInfo">The Beatles</p>
                         <p class="yearInfo">1967</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/6QaVfG1pHYl1z15ZxkvVDW?si=jIhvqxRQRneQyNogjXR-gg</p>
+                        <p class="spotifyInfo">
+                            https://open.spotify.com/album/6QaVfG1pHYl1z15ZxkvVDW?si=jIhvqxRQRneQyNogjXR-gg</p>
                         <p class="appleMusicInfo">Placeholder</p>
-                        <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Sgt._Pepper%27s_Lonely_Hearts_Club_Band</p>
+                        <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Sgt._Pepper%27s_Lonely_Hearts_Club_Band
+                        </p>
                     </div>
                 </div>
 
@@ -590,14 +710,31 @@
                         <p class="albumInfo">Comedown Machine</p>
                         <p class="artistInfo">The Strokes</p>
                         <p class="yearInfo">2013</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/4WnkQO4xD9ljQooB3VIxCV?si=1b072b23dbd3455e</p>
+                        <p class="spotifyInfo">https://open.spotify.com/album/4WnkQO4xD9ljQooB3VIxCV?si=1b072b23dbd3455e
+                        </p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Comedown_Machine</p>
                         <div class="reviewInfo">
-                            <p>Look, Tap Out is a good song. So is the All the Time - but after that, you really think you've heard enough of this album. "I get the gist," you know? THEN that little synth riff at the beginning of One Way Trigger kicks in and you're back up again. That song makes you pick your ass up and Dance, but in a kinda melancholy way, kind of a Charlie Brown type dance. Like you're dancing and Remembering. "You asked me to stay..."</p>
-                            <p>Then, bang, we're pulled out of that moment, like snapping out of a daydream, straight into the passenger seat of a convertible doing a $dollar down the Pacific Coast Highway. Goddamn right it's Welcome to Japan. This song is refined slick oily Cool, and it makes you feel cool. Hell, it <i>makes</i> you cool all on its own. And when you hit that ending, it's like crashing out after a really good run, like sprinting and tripping on a rock. And that brief, glorious moment where you were on top of the world is over. And then - </p>
+                            <p>Look, Tap Out is a good song. So is the All the Time - but after that, you really think
+                                you've heard enough of this album. "I get the gist," you know? THEN that little synth
+                                riff at the beginning of One Way Trigger kicks in and you're back up again. That song
+                                makes you pick your ass up and Dance, but in a kinda melancholy way, kind of a Charlie
+                                Brown type dance. Like you're dancing and Remembering. "You asked me to stay..."</p>
+                            <p>Then, bang, we're pulled out of that moment, like snapping out of a daydream, straight
+                                into the passenger seat of a convertible doing a $dollar down the Pacific Coast Highway.
+                                Goddamn right it's Welcome to Japan. This song is refined slick oily Cool, and it makes
+                                you feel cool. Hell, it <i>makes</i> you cool all on its own. And when you hit that
+                                ending, it's like crashing out after a really good run, like sprinting and tripping on a
+                                rock. And that brief, glorious moment where you were on top of the world is over. And
+                                then - </p>
                             <p>You open your eyes.</p>
-                            <p>Here it is, masked behind this arpeggio somewhere between a violin and a synth, this heart-monitor rhythm that makes you feel like the song is scanning you somehow: the Comedown Machine. You can practically se the title card appearing before your eyes. After such a bombastic beginning to the album, we've finally reached our limit and crumbled under the pressure - but that was just the prologue. We've reached the true heart of the story. In the life of a rockstar, we've just jumped the shark. We're crashing out. We're down.</p>
+                            <p>Here it is, masked behind this arpeggio somewhere between a violin and a synth, this
+                                heart-monitor rhythm that makes you feel like the song is scanning you somehow: the
+                                Comedown Machine. You can practically se the title card appearing before your eyes.
+                                After such a bombastic beginning to the album, we've finally reached our limit and
+                                crumbled under the pressure - but that was just the prologue. We've reached the true
+                                heart of the story. In the life of a rockstar, we've just jumped the shark. We're
+                                crashing out. We're down.</p>
                             <p>But we don't stay there for long.</p>
                             <b>TOP SONGS: Partners in Crime, Welcome to Japan, Happy Ending</b>
                         </div>
@@ -610,7 +747,8 @@
                         <p class="albumInfo">Offerings</p>
                         <p class="artistInfo">Typhoon</p>
                         <p class="yearInfo">2018</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/2keHjWDRlQYnrTkm7ShyUc?si=fa5e1c1aa32a4a68</p>
+                        <p class="spotifyInfo">https://open.spotify.com/album/2keHjWDRlQYnrTkm7ShyUc?si=fa5e1c1aa32a4a68
+                        </p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Offerings_(Typhoon_album)</p>
                     </div>
@@ -622,7 +760,8 @@
                         <p class="albumInfo">X&Y</p>
                         <p class="artistInfo">Coldplay</p>
                         <p class="yearInfo">2005</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/4E7bV0pzG0LciBSWTszra6?si=8b386bde79a748c6</p>
+                        <p class="spotifyInfo">https://open.spotify.com/album/4E7bV0pzG0LciBSWTszra6?si=8b386bde79a748c6
+                        </p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/X%26Y</p>
                     </div>
@@ -634,7 +773,8 @@
                         <p class="albumInfo">A Rush of Blood to the Head</p>
                         <p class="artistInfo">Coldplay</p>
                         <p class="yearInfo">2002</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/0RHX9XECH8IVI3LNgWDpmQ?si=14a3f1b0916b4f0f</p>
+                        <p class="spotifyInfo">https://open.spotify.com/album/0RHX9XECH8IVI3LNgWDpmQ?si=14a3f1b0916b4f0f
+                        </p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/A_Rush_of_Blood_to_the_Head</p>
                     </div>
@@ -646,13 +786,25 @@
                         <p class="albumInfo">Be the Cowboy</p>
                         <p class="artistInfo">Mitski</p>
                         <p class="yearInfo">2018</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/42cH7mrkfljkqkxA2Ip9Xq?si=46a95dc4da9847ca</p>
+                        <p class="spotifyInfo">https://open.spotify.com/album/42cH7mrkfljkqkxA2Ip9Xq?si=46a95dc4da9847ca
+                        </p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Be_the_Cowboy</p>
                         <div class="reviewInfo">
-                            <p>Mitski has a tendency to write the best two minutes of music you've ever heard, and instead of adding some slop to make it a nice radio-friendly 3.5 minutes like most artists would, she leaves it as-is and goes and writes <i>another</i>. What we're left with is a collection of diverse, immensely catchy, sometimes-light-sometimes-heavy-but-always-short-and-sweet, good-ass songs.</p>
-                            <p>These songs are firmly in the Mitski Tradition of, say, Francis Forever, with melancholy but realistic lyrics (I often think about "Cause nobody butters me up like you/and nobody fucks me like/me") and an often-slow start that builds to an absolute Ripper of a climax. The secret sauce on this album, though, is the prevalence of an upbeat tempo, not just within each song but <i>between</i> them, whisking us past each amazingly hand-crafted song like a whirlwind or an out-of-control carousel, enticing us, grabbing our attention, then, "Nope, time to go."</p>
-                            <p>Put it on shuffle or listen straight through, this collection of gems will sparkle just as brightly either way. You'll never want it to end.</p>
+                            <p>Mitski has a tendency to write the best two minutes of music you've ever heard, and
+                                instead of adding some slop to make it a nice radio-friendly 3.5 minutes like most
+                                artists would, she leaves it as-is and goes and writes <i>another</i>. What we're left
+                                with is a collection of diverse, immensely catchy,
+                                sometimes-light-sometimes-heavy-but-always-short-and-sweet, good-ass songs.</p>
+                            <p>These songs are firmly in the Mitski Tradition of, say, Francis Forever, with melancholy
+                                but realistic lyrics (I often think about "Cause nobody butters me up like you/and
+                                nobody fucks me like/me") and an often-slow start that builds to an absolute Ripper of a
+                                climax. The secret sauce on this album, though, is the prevalence of an upbeat tempo,
+                                not just within each song but <i>between</i> them, whisking us past each amazingly
+                                hand-crafted song like a whirlwind or an out-of-control carousel, enticing us, grabbing
+                                our attention, then, "Nope, time to go."</p>
+                            <p>Put it on shuffle or listen straight through; every gem will sparkle just as brightly.
+                                You'll seriously never want it to end.</p>
                             <b>TOP SONGS: Why Didn't You Stop Me?, Lonesome Love, Me And My Husband</b>
                         </div>
                     </div>
@@ -664,7 +816,8 @@
                         <p class="albumInfo">The Carpenter</p>
                         <p class="artistInfo">The Avett Brothers</p>
                         <p class="yearInfo">2012</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/4RclFqtNPoThUz7327xFbD?si=b2bb6667c8184982</p>
+                        <p class="spotifyInfo">https://open.spotify.com/album/4RclFqtNPoThUz7327xFbD?si=b2bb6667c8184982
+                        </p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/The_Carpenter_(album)</p>
                     </div>
@@ -676,7 +829,8 @@
                         <p class="albumInfo">I and Love and You</p>
                         <p class="artistInfo">The Avett Brothers</p>
                         <p class="yearInfo">2009</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/2PPFtYUnnqMYflIEn3b7ON?si=fFo26lJTTiuvLxofIkqj5g</p>
+                        <p class="spotifyInfo">
+                            https://open.spotify.com/album/2PPFtYUnnqMYflIEn3b7ON?si=fFo26lJTTiuvLxofIkqj5g</p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/I_and_Love_and_You</p>
                     </div>
@@ -688,12 +842,13 @@
                         <p class="albumInfo">Carrie & Lowell</p>
                         <p class="artistInfo">Sufjan Stevens</p>
                         <p class="yearInfo">2015</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/64xtjfsPHNHch0CZ7fPTjS?si=wq2gd6RoSOS54P0tvcwQ1g</p>
+                        <p class="spotifyInfo">
+                            https://open.spotify.com/album/64xtjfsPHNHch0CZ7fPTjS?si=wq2gd6RoSOS54P0tvcwQ1g</p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Carrie_%26_Lowell</p>
                         <div class="reviewInfo"></div>
                     </div>
-                </div> 
+                </div>
 
                 <div class="album" onClick="seeMoreAlbum(this)">
                     <img src="../img/albums/300/itaots.jpg">
@@ -701,12 +856,13 @@
                         <p class="albumInfo">In the Aeroplane over the Sea</p>
                         <p class="artistInfo">Neutral Milk Hotel</p>
                         <p class="yearInfo">1998</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/0vVekV45lOaVKs6RZQQNob?si=44e93cc2c12441ba</p>
+                        <p class="spotifyInfo">https://open.spotify.com/album/0vVekV45lOaVKs6RZQQNob?si=44e93cc2c12441ba
+                        </p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/In_the_Aeroplane_Over_the_Sea</p>
                         <div class="reviewInfo"></div>
                     </div>
-                </div> 
+                </div>
 
                 <div class="album" onClick="seeMoreAlbum(this)">
                     <img src="../img/albums/300/xo.jpg">
@@ -714,16 +870,17 @@
                         <p class="albumInfo">XO</p>
                         <p class="artistInfo">Elliott Smith</p>
                         <p class="yearInfo">1998</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/1zOxlHQGGV6EH7n4OIFTyh?si=wu27p25mQFaIjwBIb4pb3w</p>
+                        <p class="spotifyInfo">
+                            https://open.spotify.com/album/1zOxlHQGGV6EH7n4OIFTyh?si=wu27p25mQFaIjwBIb4pb3w</p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/XO_(Elliott_Smith_album)</p>
                         <div class="reviewInfo"></div>
                     </div>
-                </div> 
+                </div>
             </div>
         </div>
 
-    <!--████████╗██╗███████╗██████╗     ███████╗ ██╗  ██████╗  ██╗  ██╗ ████████╗
+        <!--████████╗██╗███████╗██████╗     ███████╗ ██╗  ██████╗  ██╗  ██╗ ████████╗
         ╚══██╔══╝██║██╔════╝██╔══██╗    ██╔════╝ ██║ ██╔════╝  ██║  ██║ ╚══██╔══╝
             ██║   ██║█████╗  ██████╔╝    █████╗   ██║ ██║  ███╗ ███████║    ██║   
             ██║   ██║██╔══╝  ██╔══██╗    ██╔══╝   ██║ ██║   ██║ ██╔══██║    ██║   
@@ -732,8 +889,9 @@
         <div id="tier8" class="tier">
             <div id="tierLabel8" style="background-color: greenyellow;" class="tierLabel">
                 <div class="tierNumber">8</div>
-                <div class="tierDescription">This is a very good album. 
-                    <b>Must-listen</b> if you like the genre or band already, otherwise still quite good. </div>
+                <div class="tierDescription">This is a very good album.
+                    <b>Must-listen</b> if you like the genre or band already, otherwise still quite good.
+                </div>
                 <div class="sortButtonHolder">
                     <button class="alphabeticalSortButton" onclick="sortTierAlphabetically($(this))">
                         <span>Sort<br></span>
@@ -741,7 +899,8 @@
                         <span class="arrowIndicator">&#8645;</span>
                     </button>
                     <button class="yearSortButton" onclick="sortTierYearwise($(this))">Sort by Year &#8645;</button>
-                    <button class="artistSortButton" onclick="sortTierArtistwise($(this))">Sort by Artist &#8645;</button>
+                    <button class="artistSortButton" onclick="sortTierArtistwise($(this))">Sort by Artist
+                        &#8645;</button>
                 </div>
             </div>
             <div class="albumHolder">
@@ -752,7 +911,8 @@
                         <p class="albumInfo">The Glow pt. 2</p>
                         <p class="artistInfo">The Microphones</p>
                         <p class="yearInfo">2001</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/6QYoRO2sXThCORAifrP4Bl?si=26e927c610eb43d4</p>
+                        <p class="spotifyInfo">https://open.spotify.com/album/6QYoRO2sXThCORAifrP4Bl?si=26e927c610eb43d4
+                        </p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/The_Glow_Pt._2</p>
                     </div>
@@ -763,301 +923,339 @@
                         <p class="albumInfo">Let It Be</p>
                         <p class="artistInfo">The Beatles</p>
                         <p class="yearInfo">1970</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/0jTGHV5xqHPvEcwL8f6YU5?si=N0FLAiy8Rl-X_4ioSrcFHg</p>
+                        <p class="spotifyInfo">
+                            https://open.spotify.com/album/0jTGHV5xqHPvEcwL8f6YU5?si=N0FLAiy8Rl-X_4ioSrcFHg</p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Let_It_Be_(album)</p>
                     </div>
-                </div> 
+                </div>
                 <div class="album" onClick="seeMoreAlbum(this)">
                     <img src="../img/albums/300/isthisit.jpg">
                     <div class="hiddenInfo">
                         <p class="albumInfo">Is This It</p>
                         <p class="artistInfo">The Strokes</p>
                         <p class="yearInfo">2001</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/2k8KgmDp9oHrmu0MIj4XDE?si=hn5JuBD0RXeI4xbTbe1opQ</p>
+                        <p class="spotifyInfo">
+                            https://open.spotify.com/album/2k8KgmDp9oHrmu0MIj4XDE?si=hn5JuBD0RXeI4xbTbe1opQ</p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Is_This_It</p>
                     </div>
-                </div> 
+                </div>
                 <div class="album" onClick="seeMoreAlbum(this)">
                     <img src="../img/albums/300/angles.jpg">
                     <div class="hiddenInfo">
                         <p class="albumInfo">Angles</p>
                         <p class="artistInfo">The Strokes</p>
                         <p class="yearInfo">2011</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/6Jx4cGhWHewTcfKDJKguBQ?si=DsoxiGghSwCmSph9c2JXlg</p>
+                        <p class="spotifyInfo">
+                            https://open.spotify.com/album/6Jx4cGhWHewTcfKDJKguBQ?si=DsoxiGghSwCmSph9c2JXlg</p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Angles_(The_Strokes_album)</p>
                         <div class="reviewInfo">
-                            <p>The beginning of Macchu Pichu is sounds like going through one of those Mario pipes into Strokesland, and boy is it a welcome sight. This is the song that got me into the Strokes, full stop, and everyone who listens to it has the same reaction.</p>
-                            <p>Not all of the album is this good. You're So Right is forgettable, and Metabolism sounds kinda the same but with a knockoff Muse sound (the band does grandiose much better on other occasions); these opinions seem to be reflected by the community at large, given their lackluster Spotify play count. I have no need to listen to Call Me Back ever again. For the most part, though, the tracks found here are quite good, listenable and relistenable, even though they might entirely escape your notice on the first listen-through.</p>
-                            <p>This isn't the type of album with a consistent feel or story or anything, it's more like a  Toys'R'Us of catchy alt rock. So, points deducted, I suppose, but it's hard to be mad or disappointed in this album for longer than a couple seconds. Cause before you know it, Gratisfaction is playing, and everything is forgiven.</p>
+                            <p>The beginning of Macchu Pichu is sounds like going through one of those Mario pipes into
+                                Strokesland, and boy is it a welcome sight. This is the song that got me into the
+                                Strokes, full stop, and everyone who listens to it has the same reaction.</p>
+                            <p>Not all of the album is this good. You're So Right is forgettable, and Metabolism sounds
+                                kinda the same but with a knockoff Muse sound (the band does grandiose much better on
+                                other occasions); these opinions seem to be reflected by the community at large, given
+                                their lackluster Spotify play count. I have no need to listen to Call Me Back ever
+                                again. For the most part, though, the tracks found here are quite good, listenable and
+                                relistenable, even though they might entirely escape your notice on the first
+                                listen-through.</p>
+                            <p>This isn't the type of album with a consistent feel or story or anything, it's more like
+                                a Toys'R'Us of catchy alt rock. So, points deducted, I suppose, but it's hard to be mad
+                                or disappointed in this album for longer than a couple seconds. Cause before you know
+                                it, Gratisfaction is playing, and everything is forgiven.</p>
                             <b>TOP SONGS: Macchu Pichu, Under Cover of Darkness, Gratisfaction</b>
                         </div>
                     </div>
-                </div> 
+                </div>
                 <div class="album" onClick="seeMoreAlbum(this)">
                     <img src="../img/albums/300/symmag.jpg">
                     <div class="hiddenInfo">
                         <p class="albumInfo">Sympathetic Magic</p>
                         <p class="artistInfo">Typhoon</p>
                         <p class="yearInfo">2021</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/7CVV2JOhid8GxxM52SS5Md?si=puX4NP7iSv2KLJL4qUBCaA</p>
+                        <p class="spotifyInfo">
+                            https://open.spotify.com/album/7CVV2JOhid8GxxM52SS5Md?si=puX4NP7iSv2KLJL4qUBCaA</p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Sympathetic_Magic_(album)</p>
                     </div>
-                </div> 
+                </div>
                 <div class="album" onClick="seeMoreAlbum(this)">
                     <img src="../img/albums/300/ghoststories.jpg">
                     <div class="hiddenInfo">
                         <p class="albumInfo">Ghost Stories</p>
                         <p class="artistInfo">Coldplay</p>
                         <p class="yearInfo">2014</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/2G4AUqfwxcV1UdQjm2ouYr?si=f3749182c7cb4c21</p>
+                        <p class="spotifyInfo">https://open.spotify.com/album/2G4AUqfwxcV1UdQjm2ouYr?si=f3749182c7cb4c21
+                        </p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Ghost_Stories_(Coldplay_album)</p>
                     </div>
-                </div> 
+                </div>
                 <div class="album" onClick="seeMoreAlbum(this)">
                     <img src="../img/albums/300/paramore.jpg">
                     <div class="hiddenInfo">
                         <p class="albumInfo">Paramore</p>
                         <p class="artistInfo">Paramore</p>
                         <p class="yearInfo">2013</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/4sgYpkIASM1jVlNC8Wp9oF?si=ooq5IM8MS_-bRAMP1dRFjQ</p>
+                        <p class="spotifyInfo">
+                            https://open.spotify.com/album/4sgYpkIASM1jVlNC8Wp9oF?si=ooq5IM8MS_-bRAMP1dRFjQ</p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Paramore_(album)</p>
                     </div>
-                </div> 
+                </div>
                 <div class="album" onClick="seeMoreAlbum(this)">
                     <img src="../img/albums/300/ironsea.jpg">
                     <div class="hiddenInfo">
                         <p class="albumInfo">Under the Iron Sea</p>
                         <p class="artistInfo">Keane</p>
                         <p class="yearInfo">2006</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/02Ird1pnGUdA6ruy87cxVa?si=7430af50f301436b</p>
+                        <p class="spotifyInfo">https://open.spotify.com/album/02Ird1pnGUdA6ruy87cxVa?si=7430af50f301436b
+                        </p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Under_the_Iron_Sea</p>
                     </div>
-                </div> 
+                </div>
                 <div class="album" onClick="seeMoreAlbum(this)">
                     <img src="../img/albums/300/yourstokeep.jpg">
                     <div class="hiddenInfo">
                         <p class="albumInfo">Yours To Keep</p>
                         <p class="artistInfo">Albert Hammond, Jr.</p>
                         <p class="yearInfo">2006</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/1pJT6SArgRf1aQ5DCTxl7g?si=UPIPXOI2QhOyQ4KG6V8pVA</p>
+                        <p class="spotifyInfo">
+                            https://open.spotify.com/album/1pJT6SArgRf1aQ5DCTxl7g?si=UPIPXOI2QhOyQ4KG6V8pVA</p>
                         <p class="appleMusicInfo">Placeholder</p>
-                        <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Yours_to_Keep_(Albert_Hammond_Jr._album)</p>
+                        <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Yours_to_Keep_(Albert_Hammond_Jr._album)
+                        </p>
                     </div>
-                </div> 
+                </div>
                 <div class="album" onClick="seeMoreAlbum(this)">
                     <img src="../img/albums/300/stickseason.jpg">
                     <div class="hiddenInfo">
                         <p class="albumInfo">Stick Season</p>
                         <p class="artistInfo">Noah Kahan</p>
                         <p class="yearInfo">2022</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/50ZenUP4O2Q5eCy2NRNvuz?si=bONBn5UxRvW8Xgrtr4vjRw</p>
+                        <p class="spotifyInfo">
+                            https://open.spotify.com/album/50ZenUP4O2Q5eCy2NRNvuz?si=bONBn5UxRvW8Xgrtr4vjRw</p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Stick_Season_(album)</p>
                     </div>
-                </div> 
+                </div>
                 <div class="album" onClick="seeMoreAlbum(this)">
                     <img src="../img/albums/300/fotb.jpg">
                     <div class="hiddenInfo">
                         <p class="albumInfo">Father of the Bride</p>
                         <p class="artistInfo">Vampire Weekend</p>
                         <p class="yearInfo">2019</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/1A3nVEWRJ8yvlPzawHI1pQ?si=7157e663ccd54d2b</p>
+                        <p class="spotifyInfo">https://open.spotify.com/album/1A3nVEWRJ8yvlPzawHI1pQ?si=7157e663ccd54d2b
+                        </p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Father_of_the_Bride_(album)</p>
                     </div>
-                </div> 
+                </div>
                 <div class="album" onClick="seeMoreAlbum(this)">
                     <img src="../img/albums/300/songsaboutjane.jpg">
                     <div class="hiddenInfo">
                         <p class="albumInfo">Songs About Jane</p>
                         <p class="artistInfo">Maroon 5</p>
                         <p class="yearInfo">2002</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/1Rv9WRKyYhFaGbuYDaQunN?si=fc02a671a943403f</p>
+                        <p class="spotifyInfo">https://open.spotify.com/album/1Rv9WRKyYhFaGbuYDaQunN?si=fc02a671a943403f
+                        </p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Songs_About_Jane</p>
                     </div>
-                </div> 
+                </div>
                 <div class="album" onClick="seeMoreAlbum(this)">
                     <img src="../img/albums/300/cranewife.jpg">
                     <div class="hiddenInfo">
                         <p class="albumInfo">The Crane Wife</p>
                         <p class="artistInfo">The Decemberists</p>
                         <p class="yearInfo">2006</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/4qvFBtRrwbSgoH3nyVlTCp?si=ef08246fe9974120</p>
+                        <p class="spotifyInfo">https://open.spotify.com/album/4qvFBtRrwbSgoH3nyVlTCp?si=ef08246fe9974120
+                        </p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/The_Crane_Wife</p>
                     </div>
-                </div> 
+                </div>
                 <div class="album" onClick="seeMoreAlbum(this)">
                     <img src="../img/albums/300/cleopatra.jpg">
                     <div class="hiddenInfo">
                         <p class="albumInfo">Cleopatra</p>
                         <p class="artistInfo">The Lumineers</p>
                         <p class="yearInfo">2016</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/26HAAGfOhnc0CqqcHoaQGD?si=WjhnoRoJRYenJOQZFhPjoA</p>
+                        <p class="spotifyInfo">
+                            https://open.spotify.com/album/26HAAGfOhnc0CqqcHoaQGD?si=WjhnoRoJRYenJOQZFhPjoA</p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Cleopatra_(album)</p>
                     </div>
-                </div> 
+                </div>
                 <div class="album" onClick="seeMoreAlbum(this)">
                     <img src="../img/albums/300/kingisdead.jpg">
                     <div class="hiddenInfo">
                         <p class="albumInfo">The King Is Dead</p>
                         <p class="artistInfo">The Decemberists</p>
                         <p class="yearInfo">2011</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/3hd8GiXOy4KUTxVDVUDT5F?si=84556535f9d04a50</p>
+                        <p class="spotifyInfo">https://open.spotify.com/album/3hd8GiXOy4KUTxVDVUDT5F?si=84556535f9d04a50
+                        </p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/The_King_Is_Dead_(album)</p>
                     </div>
-                </div> 
+                </div>
                 <div class="album" onClick="seeMoreAlbum(this)">
                     <img src="../img/albums/300/emotionalism.jpg">
                     <div class="hiddenInfo">
                         <p class="albumInfo">Emotionalism</p>
                         <p class="artistInfo">The Avett Brothers</p>
                         <p class="yearInfo">2007</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/4pb5b6XKuzzh5CqPFOzptQ?si=wrSronIbSCWkly1SWlL4uA</p>
+                        <p class="spotifyInfo">
+                            https://open.spotify.com/album/4pb5b6XKuzzh5CqPFOzptQ?si=wrSronIbSCWkly1SWlL4uA</p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Emotionalism_(album)</p>
                     </div>
-                </div> 
+                </div>
                 <div class="album" onClick="seeMoreAlbum(this)">
                     <img src="../img/albums/300/matd.jpg">
                     <div class="hiddenInfo">
                         <p class="albumInfo">Magpie and the Dandelion</p>
                         <p class="artistInfo">The Avett Brothers</p>
                         <p class="yearInfo">2013</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/35s4PRYklJmst9IiTuCK0S?si=9OdSqnhpQYWmu0O0gnBr8g</p>
+                        <p class="spotifyInfo">
+                            https://open.spotify.com/album/35s4PRYklJmst9IiTuCK0S?si=9OdSqnhpQYWmu0O0gnBr8g</p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Magpie_and_the_Dandelion</p>
                     </div>
-                </div> 
+                </div>
                 <div class="album" onClick="seeMoreAlbum(this)">
                     <img src="../img/albums/300/am.jpg">
                     <div class="hiddenInfo">
                         <p class="albumInfo">AM</p>
                         <p class="artistInfo">Arctic Monkeys</p>
                         <p class="yearInfo">2013</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/78bpIziExqiI9qztvNFlQu?si=0353883c7bdb4fe9</p>
+                        <p class="spotifyInfo">https://open.spotify.com/album/78bpIziExqiI9qztvNFlQu?si=0353883c7bdb4fe9
+                        </p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/AM_(Arctic_Monkeys_album)</p>
                     </div>
-                </div> 
+                </div>
                 <div class="album" onClick="seeMoreAlbum(this)">
                     <img src="../img/albums/300/trench.jpg">
                     <div class="hiddenInfo">
                         <p class="albumInfo">Trench</p>
                         <p class="artistInfo">twenty one pilots</p>
                         <p class="yearInfo">2018</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/621cXqrTSSJi1WqDMSLmbL?si=a8eda823bc114dd9</p>
+                        <p class="spotifyInfo">https://open.spotify.com/album/621cXqrTSSJi1WqDMSLmbL?si=a8eda823bc114dd9
+                        </p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Trench_(album)</p>
                     </div>
-                </div> 
+                </div>
                 <div class="album" onClick="seeMoreAlbum(this)">
                     <img src="../img/albums/300/mvotc.jpg">
                     <div class="hiddenInfo">
                         <p class="albumInfo">Modern Vampires of the City</p>
                         <p class="artistInfo">Vampire Weekend</p>
                         <p class="yearInfo">2013</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/1GXMNFfoHF4sN7lG8gZq1j?si=28996132d88842fb</p>
+                        <p class="spotifyInfo">https://open.spotify.com/album/1GXMNFfoHF4sN7lG8gZq1j?si=28996132d88842fb
+                        </p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Modern_Vampires_of_the_City</p>
                     </div>
-                </div> 
+                </div>
                 <div class="album" onClick="seeMoreAlbum(this)">
                     <img src="../img/albums/300/mbdtf.jpg">
                     <div class="hiddenInfo">
                         <p class="albumInfo">My Beautiful Dark Twisted Fantasy</p>
                         <p class="artistInfo">Kanye West</p>
                         <p class="yearInfo">2010</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/20r762YmB5HeofjMCiPMLv?si=8849903d5dee4913</p>
+                        <p class="spotifyInfo">https://open.spotify.com/album/20r762YmB5HeofjMCiPMLv?si=8849903d5dee4913
+                        </p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/My_Beautiful_Dark_Twisted_Fantasy</p>
                         <div class="reviewInfo"></div>
                     </div>
-                </div> 
+                </div>
                 <div class="album" onClick="seeMoreAlbum(this)">
                     <img src="../img/albums/300/10000gecs.jpg">
                     <div class="hiddenInfo">
                         <p class="albumInfo">10,000 Gecs</p>
                         <p class="artistInfo">100 Gecs</p>
                         <p class="yearInfo">2023</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/2XS5McKf3zdJWpcZ4OkZPZ?si=iUQxPtylSV2B7o_yNiBNgQ</p>
+                        <p class="spotifyInfo">
+                            https://open.spotify.com/album/2XS5McKf3zdJWpcZ4OkZPZ?si=iUQxPtylSV2B7o_yNiBNgQ</p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/10,000_gecs</p>
                         <div class="reviewInfo"></div>
                     </div>
-                </div> 
+                </div>
                 <div class="album" onClick="seeMoreAlbum(this)">
                     <img src="../img/albums/300/gonenow.jpg">
                     <div class="hiddenInfo">
                         <p class="albumInfo">Gone Now</p>
                         <p class="artistInfo">Bleachers</p>
                         <p class="yearInfo">2017</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/10HKbC9lKDHGQvndGck6XJ?si=a18eb02a9c9947c1</p>
+                        <p class="spotifyInfo">https://open.spotify.com/album/10HKbC9lKDHGQvndGck6XJ?si=a18eb02a9c9947c1
+                        </p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Gone_Now</p>
                         <div class="reviewInfo"></div>
                     </div>
-                </div> 
+                </div>
                 <div class="album" onClick="seeMoreAlbum(this)">
                     <img src="../img/albums/300/illinois.jpg">
                     <div class="hiddenInfo">
                         <p class="albumInfo">Illinois</p>
                         <p class="artistInfo">Sufjan Stevens</p>
                         <p class="yearInfo">2005</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/1pOl0KEC1iQnA6F0XxV4To?si=4f2f27e6b5434b0a</p>
+                        <p class="spotifyInfo">https://open.spotify.com/album/1pOl0KEC1iQnA6F0XxV4To?si=4f2f27e6b5434b0a
+                        </p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Illinois_(Sufjan_Stevens_album)</p>
                         <div class="reviewInfo"></div>
                     </div>
-                </div> 
+                </div>
                 <div class="album" onClick="seeMoreAlbum(this)">
                     <img src="../img/albums/300/midwestprincess.jpg">
                     <div class="hiddenInfo">
                         <p class="albumInfo">The Rise and Fall of a Midwest Princess</p>
                         <p class="artistInfo">Chappell Roan</p>
                         <p class="yearInfo">2023</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/0EiI8ylL0FmWWpgHVTsZjZ?si=rPFybARcSEyKrjKEEFfzkA</p>
+                        <p class="spotifyInfo">
+                            https://open.spotify.com/album/0EiI8ylL0FmWWpgHVTsZjZ?si=rPFybARcSEyKrjKEEFfzkA</p>
                         <p class="appleMusicInfo">Placeholder</p>
-                        <p class="wikipediaInfo">https://en.wikipedia.org/wiki/The_Rise_and_Fall_of_a_Midwest_Princess</p>
+                        <p class="wikipediaInfo">https://en.wikipedia.org/wiki/The_Rise_and_Fall_of_a_Midwest_Princess
+                        </p>
                         <div class="reviewInfo"></div>
                     </div>
-                </div> 
+                </div>
                 <div class="album" onClick="seeMoreAlbum(this)">
                     <img src="../img/albums/300/wtt.jpg">
                     <div class="hiddenInfo">
                         <p class="albumInfo">Watch the Throne</p>
                         <p class="artistInfo">Jay-Z & Kanye West</p>
                         <p class="yearInfo">2011</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/2if1gb3t6IkhiKzrtS9Glc?si=jen7mqfLTc2WG04SSlXJSg</p>
+                        <p class="spotifyInfo">
+                            https://open.spotify.com/album/2if1gb3t6IkhiKzrtS9Glc?si=jen7mqfLTc2WG04SSlXJSg</p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Watch_the_Throne</p>
                         <div class="reviewInfo"></div>
                     </div>
-                </div> 
+                </div>
             </div>
         </div>
 
-    <!--████████╗██╗███████╗██████╗     ███████╗ ███████╗██╗   ██╗ ███████╗ ███╗   ██╗
+        <!--████████╗██╗███████╗██████╗     ███████╗ ███████╗██╗   ██╗ ███████╗ ███╗   ██╗
         ╚══██╔══╝██║██╔════╝██╔══██╗    ██╔════╝ ██╔════╝██║   ██║ ██╔════╝ ████╗  ██║
             ██║   ██║█████╗  ██████╔╝    ███████╗ █████╗  ██║   ██║ █████╗   ██╔██╗ ██║
             ██║   ██║██╔══╝  ██╔══██╗    ╚════██║ ██╔══╝  ╚██╗ ██╔╝ ██╔══╝   ██║╚██╗██║
             ██║   ██║███████╗██║  ██║    ███████║ ███████╗ ╚████╔╝  ███████╗ ██║ ╚████║
-            ╚═╝   ╚═╝╚══════╝╚═╝  ╚═╝    ╚══════╝ ╚══════╝  ╚═══╝   ╚══════╝ ╚═╝  ╚═══╝ -->                                                            
+            ╚═╝   ╚═╝╚══════╝╚═╝  ╚═╝    ╚══════╝ ╚══════╝  ╚═══╝   ╚══════╝ ╚═╝  ╚═══╝ -->
         <div id="tier7" class="tier">
             <div id="tierLabel7" style="background-color: yellow;" class="tierLabel">
                 <div class="tierNumber">7</div>
                 <div class="tierDescription">A few real standouts, solidly
-                    listenable throughout; 
+                    listenable throughout;
                     definitely a <b>GOOD</b> album.</div>
                 <div class="sortButtonHolder">
                     <button class="alphabeticalSortButton" onclick="sortTierAlphabetically($(this))">
@@ -1066,7 +1264,8 @@
                         <span class="arrowIndicator">&#8645;</span>
                     </button>
                     <button class="yearSortButton" onclick="sortTierYearwise($(this))">Sort by Year &#8645;</button>
-                    <button class="artistSortButton" onclick="sortTierArtistwise($(this))">Sort by Artist &#8645;</button>
+                    <button class="artistSortButton" onclick="sortTierArtistwise($(this))">Sort by Artist
+                        &#8645;</button>
                 </div>
             </div>
             <div class="albumHolder">
@@ -1076,246 +1275,270 @@
                         <p class="albumInfo">Relaxer</p>
                         <p class="artistInfo">Alt-J</p>
                         <p class="yearInfo">2017</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/3uHMSQ1cC1fFAi4WMnelQP?si=acpU5_BeQOmhUb6xu7tQzw</p>
+                        <p class="spotifyInfo">
+                            https://open.spotify.com/album/3uHMSQ1cC1fFAi4WMnelQP?si=acpU5_BeQOmhUb6xu7tQzw</p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Relaxer_(album)</p>
                     </div>
-                </div> 
+                </div>
                 <div class="album" onClick="seeMoreAlbum(this)">
                     <img src="../img/albums/300/rubbersoul.jpg">
                     <div class="hiddenInfo">
                         <p class="albumInfo">Rubber Soul</p>
                         <p class="artistInfo">The Beatles</p>
                         <p class="yearInfo">1965</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/50o7kf2wLwVmOTVYJOTplm?si=2f4bb3f642424916</p>
+                        <p class="spotifyInfo">https://open.spotify.com/album/50o7kf2wLwVmOTVYJOTplm?si=2f4bb3f642424916
+                        </p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Rubber_Soul</p>
                     </div>
-                </div> 
+                </div>
                 <div class="album" onClick="seeMoreAlbum(this)">
                     <img src="../img/albums/300/roomonfire.jpg">
                     <div class="hiddenInfo">
                         <p class="albumInfo">Room on Fire</p>
                         <p class="artistInfo">The Strokes</p>
                         <p class="yearInfo">2003</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/3HFbH1loOUbqCyPsLuHLLh?si=d71f86e8443c45d5</p>
+                        <p class="spotifyInfo">https://open.spotify.com/album/3HFbH1loOUbqCyPsLuHLLh?si=d71f86e8443c45d5
+                        </p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Room_on_Fire</p>
                     </div>
-                </div> 
+                </div>
                 <div class="album" onClick="seeMoreAlbum(this)">
                     <img src="../img/albums/300/thisiswhy.jpg">
                     <div class="hiddenInfo">
                         <p class="albumInfo">This Is Why</p>
                         <p class="artistInfo">Paramore</p>
                         <p class="yearInfo">2023</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/6tG8sCK4htJOLjlWwb7gZB?si=5ff36b06bc754951</p>
+                        <p class="spotifyInfo">https://open.spotify.com/album/6tG8sCK4htJOLjlWwb7gZB?si=5ff36b06bc754951
+                        </p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/This_Is_Why</p>
                     </div>
-                </div> 
+                </div>
                 <div class="album" onClick="seeMoreAlbum(this)">
                     <img src="../img/albums/300/afterlaughter.jpg">
                     <div class="hiddenInfo">
                         <p class="albumInfo">After Laughter</p>
                         <p class="artistInfo">Paramore</p>
                         <p class="yearInfo">2017</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/1c9Sx7XdXuMptGyfCB6hHs?si=x20n-v6IR4i0oBs6kXHqDg</p>
+                        <p class="spotifyInfo">
+                            https://open.spotify.com/album/1c9Sx7XdXuMptGyfCB6hHs?si=x20n-v6IR4i0oBs6kXHqDg</p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/After_Laughter</p>
                     </div>
-                </div> 
+                </div>
                 <div class="album" onClick="seeMoreAlbum(this)">
                     <img src="../img/albums/300/lumineers.jpg">
                     <div class="hiddenInfo">
                         <p class="albumInfo">The Lumineers</p>
                         <p class="artistInfo">The Lumineers</p>
                         <p class="yearInfo">2012</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/2MTEiVNgRgIvVIrJAqHNBu?si=IBBloaFBSLmMr-uiiGk-KQ</p>
+                        <p class="spotifyInfo">
+                            https://open.spotify.com/album/2MTEiVNgRgIvVIrJAqHNBu?si=IBBloaFBSLmMr-uiiGk-KQ</p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/The_Lumineers_(album)</p>
                     </div>
-                </div> 
+                </div>
                 <div class="album" onClick="seeMoreAlbum(this)">
                     <img src="../img/albums/300/iii.jpg">
                     <div class="hiddenInfo">
                         <p class="albumInfo">III</p>
                         <p class="artistInfo">The Lumineers</p>
                         <p class="yearInfo">2019</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/0cGGGHvqwMD2J7bNz8TG3s?si=Og4M-siYTxKdPusUnUgUgg</p>
+                        <p class="spotifyInfo">
+                            https://open.spotify.com/album/0cGGGHvqwMD2J7bNz8TG3s?si=Og4M-siYTxKdPusUnUgUgg</p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/III_(The_Lumineers_album)</p>
                     </div>
-                </div> 
+                </div>
                 <div class="album" onClick="seeMoreAlbum(this)">
                     <img src="../img/albums/300/mignonette.jpg">
                     <div class="hiddenInfo">
                         <p class="albumInfo">Mignonette</p>
                         <p class="artistInfo">The Avett Brothers</p>
                         <p class="yearInfo">2004</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/3Qre72w4Yc9Ib2UeCgTaOK?si=5cff7c8587874a0c</p>
+                        <p class="spotifyInfo">https://open.spotify.com/album/3Qre72w4Yc9Ib2UeCgTaOK?si=5cff7c8587874a0c
+                        </p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Mignonette_(album)</p>
                     </div>
-                </div> 
+                </div>
                 <div class="album" onClick="seeMoreAlbum(this)">
                     <img src="../img/albums/300/punisher.jpg">
                     <div class="hiddenInfo">
                         <p class="albumInfo">Punisher</p>
                         <p class="artistInfo">Phoebe Bridgers</p>
                         <p class="yearInfo">2020</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/6Pp6qGEywDdofgFC1oFbSH?si=5bd3253328d04bd6</p>
+                        <p class="spotifyInfo">https://open.spotify.com/album/6Pp6qGEywDdofgFC1oFbSH?si=5bd3253328d04bd6
+                        </p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Punisher_(album)</p>
                     </div>
-                </div> 
+                </div>
                 <div class="album" onClick="seeMoreAlbum(this)">
                     <img src="../img/albums/300/vampireweekend.jpg">
                     <div class="hiddenInfo">
                         <p class="albumInfo">Vampire Weekend</p>
                         <p class="artistInfo">Vampire Weekend</p>
                         <p class="yearInfo">2008</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/7n8NJkGKAl2np1bXiRn0CY?si=lzmLWMlfT-SPnsWR1Ribpw</p>
+                        <p class="spotifyInfo">
+                            https://open.spotify.com/album/7n8NJkGKAl2np1bXiRn0CY?si=lzmLWMlfT-SPnsWR1Ribpw</p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Vampire_Weekend_(album)</p>
                     </div>
-                </div> 
+                </div>
                 <div class="album" onClick="seeMoreAlbum(this)">
                     <img src="../img/albums/300/1000gecs.jpg">
                     <div class="hiddenInfo">
                         <p class="albumInfo">1000 gecs</p>
                         <p class="artistInfo">100 gecs</p>
                         <p class="yearInfo">2019</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/2uhB1KivbFnlkARpbd0Cvu?si=53294b9605ea4c3a</p>
+                        <p class="spotifyInfo">https://open.spotify.com/album/2uhB1KivbFnlkARpbd0Cvu?si=53294b9605ea4c3a
+                        </p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/1000_gecs</p>
                     </div>
-                </div> 
+                </div>
                 <div class="album" onClick="seeMoreAlbum(this)">
                     <img src="../img/albums/300/stoneroses.jpg">
                     <div class="hiddenInfo">
                         <p class="albumInfo">The Stone Roses</p>
                         <p class="artistInfo">The Stone Roses</p>
                         <p class="yearInfo">1989</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/0um9FI6BLBldL5POP4D4Cw?si=AbvfIYrBQAyP8KCwWHPEWw</p>
+                        <p class="spotifyInfo">
+                            https://open.spotify.com/album/0um9FI6BLBldL5POP4D4Cw?si=AbvfIYrBQAyP8KCwWHPEWw</p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/The_Stone_Roses_(album)</p>
                     </div>
-                </div> 
+                </div>
                 <div class="album" onClick="seeMoreAlbum(this)">
                     <img src="../img/albums/300/blurryface.jpg">
                     <div class="hiddenInfo">
                         <p class="albumInfo">Blurryface</p>
                         <p class="artistInfo">twenty one pilots</p>
                         <p class="yearInfo">2015</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/3cQO7jp5S9qLBoIVtbkSM1?si=a4b6d2b8caee45ea</p>
+                        <p class="spotifyInfo">https://open.spotify.com/album/3cQO7jp5S9qLBoIVtbkSM1?si=a4b6d2b8caee45ea
+                        </p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Blurryface</p>
                     </div>
-                </div> 
+                </div>
                 <div class="album" onClick="seeMoreAlbum(this)">
                     <img src="../img/albums/300/vessel.jpg">
                     <div class="hiddenInfo">
                         <p class="albumInfo">Vessel</p>
                         <p class="artistInfo">twenty one pilots</p>
                         <p class="yearInfo">2013</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/2r2r78NE05YjyHyVbVgqFn?si=85e1f812e5924d92</p>
+                        <p class="spotifyInfo">https://open.spotify.com/album/2r2r78NE05YjyHyVbVgqFn?si=85e1f812e5924d92
+                        </p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Vessel_(Twenty_One_Pilots_album)</p>
                     </div>
-                </div> 
+                </div>
                 <div class="album" onClick="seeMoreAlbum(this)">
                     <img src="../img/albums/300/fwn.jpg">
                     <div class="hiddenInfo">
                         <p class="albumInfo">Favourite Worst Nightmare</p>
                         <p class="artistInfo">Arctic Monkeys</p>
                         <p class="yearInfo">2007</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/6rsQnwaoJHxXJRCDBPkBRw?si=tus33fQfSz2g33hjsIBfJQ</p>
+                        <p class="spotifyInfo">
+                            https://open.spotify.com/album/6rsQnwaoJHxXJRCDBPkBRw?si=tus33fQfSz2g33hjsIBfJQ</p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Favourite_Worst_Nightmare</p>
                         <div class="reviewInfo"></div>
                     </div>
-                </div> 
+                </div>
                 <div class="album" onClick="seeMoreAlbum(this)">
                     <img src="../img/albums/300/kidsseeghosts.jpg">
                     <div class="hiddenInfo">
                         <p class="albumInfo">Kids See Ghosts</p>
                         <p class="artistInfo">Kids See Ghosts</p>
                         <p class="yearInfo">2018</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/6pwuKxMUkNg673KETsXPUV?si=ECULWLviQAeQFsMEpbrvdw</p>
+                        <p class="spotifyInfo">
+                            https://open.spotify.com/album/6pwuKxMUkNg673KETsXPUV?si=ECULWLviQAeQFsMEpbrvdw</p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Kids_See_Ghosts_(album)</p>
                         <div class="reviewInfo"></div>
                     </div>
-                </div> 
+                </div>
                 <div class="album" onClick="seeMoreAlbum(this)">
                     <img src="../img/albums/300/parachutes.jpg">
                     <div class="hiddenInfo">
                         <p class="albumInfo">Parachutes</p>
                         <p class="artistInfo">Coldplay</p>
                         <p class="yearInfo">2000</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/6ZG5lRT77aJ3btmArcykra?si=N_JpRj6fQCCU0hudtisU4g</p>
+                        <p class="spotifyInfo">
+                            https://open.spotify.com/album/6ZG5lRT77aJ3btmArcykra?si=N_JpRj6fQCCU0hudtisU4g</p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Parachutes_(Coldplay_album)</p>
                         <div class="reviewInfo"></div>
                     </div>
-                </div> 
+                </div>
                 <div class="album" onClick="seeMoreAlbum(this)">
                     <img src="../img/albums/300/reflektor.jpg">
                     <div class="hiddenInfo">
                         <p class="albumInfo">Reflektor</p>
                         <p class="artistInfo">Arcade Fire</p>
                         <p class="yearInfo">2013</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/2brwuyGZ2lLqWnBX6U4MQT?si=pfbGsTRjRTCLmeAo25xb9A</p>
+                        <p class="spotifyInfo">
+                            https://open.spotify.com/album/2brwuyGZ2lLqWnBX6U4MQT?si=pfbGsTRjRTCLmeAo25xb9A</p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Reflektor</p>
                         <div class="reviewInfo"></div>
                     </div>
-                </div> 
+                </div>
                 <div class="album" onClick="seeMoreAlbum(this)">
                     <img src="../img/albums/300/tlop.jpg">
                     <div class="hiddenInfo">
                         <p class="albumInfo">The Life of Pablo</p>
                         <p class="artistInfo">Kanye West</p>
                         <p class="yearInfo">2016</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/7gsWAHLeT0w7es6FofOXk1?si=93MMqn2dRJa3F4-usBzZ8A</p>
+                        <p class="spotifyInfo">
+                            https://open.spotify.com/album/7gsWAHLeT0w7es6FofOXk1?si=93MMqn2dRJa3F4-usBzZ8A</p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/The_Life_of_Pablo</p>
                         <div class="reviewInfo"></div>
                     </div>
-                </div> 
+                </div>
                 <div class="album" onClick="seeMoreAlbum(this)">
                     <img src="../img/albums/300/eitheror.jpg">
                     <div class="hiddenInfo">
                         <p class="albumInfo">Either/Or</p>
                         <p class="artistInfo">Elliott Smith</p>
                         <p class="yearInfo">1997</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/5bmpvyP7UGqB4VuXmrJUMy?si=aUjiz_aRQZKTyfhg4h243g</p>
+                        <p class="spotifyInfo">
+                            https://open.spotify.com/album/5bmpvyP7UGqB4VuXmrJUMy?si=aUjiz_aRQZKTyfhg4h243g</p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Either/Or_(album)</p>
-                        <div class="reviewInfo">                        
-                            <p>It's just not as vibrant, energetic, or catchy as XO. "Between the Bars" is no "Waltz 2." There's some slappers in here for sure, but honestly the more laid-back tone doesn't do it for me; combine that with fewer catchy melodies and a less polished sound and you have a nice, solid, very ElliottSmithy Elliott Smith album. Maybe just listen to the greatest hits and leave it at that.</p>
+                        <div class="reviewInfo">
+                            <p>It's just not as vibrant, energetic, or catchy as XO. "Between the Bars" is no "Waltz 2."
+                                There's some slappers in here for sure, but honestly the more laid-back tone doesn't do
+                                it for me; combine that with fewer catchy melodies and a less polished sound and you
+                                have a nice, solid, very ElliottSmithy Elliott Smith album. Maybe just listen to the
+                                greatest hits and leave it at that.</p>
                             <b>TOP SONGS: Pictures of Me, Rose Parade, Between the Bars</b>
                         </div>
                     </div>
-                </div> 
+                </div>
             </div>
         </div>
 
-    <!--████████╗██╗███████╗██████╗     ███████╗ ██╗ ██╗  ██╗
+        <!--████████╗██╗███████╗██████╗     ███████╗ ██╗ ██╗  ██╗
         ╚══██╔══╝██║██╔════╝██╔══██╗    ██╔════╝ ██║ ╚██╗██╔╝
             ██║   ██║█████╗  ██████╔╝    ███████╗ ██║  ╚███╔╝ 
             ██║   ██║██╔══╝  ██╔══██╗    ╚════██║ ██║  ██╔██╗ 
             ██║   ██║███████╗██║  ██║    ███████║ ██║ ██╔╝ ██╗
-            ╚═╝   ╚═╝╚══════╝╚═╝  ╚═╝    ╚══════╝ ╚═╝ ╚═╝  ╚═╝ -->           
+            ╚═╝   ╚═╝╚══════╝╚═╝  ╚═╝    ╚══════╝ ╚═╝ ╚═╝  ╚═╝ -->
         <div id="tier6" class="tier">
             <div id="tierLabel6" style="background-color: orange;" class="tierLabel">
                 <div class="tierNumber">6</div>
-                <div class="tierDescription">Couple of good songs, rest is 
-                    anywhere from forgettable 
-                    to bad. This tier can be very 
+                <div class="tierDescription">Couple of good songs, rest is
+                    anywhere from forgettable
+                    to bad. This tier can be very
                     variable - Still on the good
-                     side of ok.</div>
+                    side of ok.</div>
                 <div class="sortButtonHolder">
                     <button class="alphabeticalSortButton" onclick="sortTierAlphabetically($(this))">
                         <span>Sort<br></span>
@@ -1323,7 +1546,8 @@
                         <span class="arrowIndicator">&#8645;</span>
                     </button>
                     <button class="yearSortButton" onclick="sortTierYearwise($(this))">Sort by Year &#8645;</button>
-                    <button class="artistSortButton" onclick="sortTierArtistwise($(this))">Sort by Artist &#8645;</button>
+                    <button class="artistSortButton" onclick="sortTierArtistwise($(this))">Sort by Artist
+                        &#8645;</button>
                 </div>
             </div>
             <div class="albumHolder">
@@ -1333,22 +1557,24 @@
                         <p class="albumInfo">Revolver</p>
                         <p class="artistInfo">The Beatles</p>
                         <p class="yearInfo">1966</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/3PRoXYsngSwjEQWR5PsHWR?si=0d79dae000324be2</p>
+                        <p class="spotifyInfo">https://open.spotify.com/album/3PRoXYsngSwjEQWR5PsHWR?si=0d79dae000324be2
+                        </p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Revolver_(Beatles_album)</p>
                     </div>
-                </div> 
+                </div>
                 <div class="album" onClick="seeMoreAlbum(this)">
                     <img src="../img/albums/300/contra.jpg">
                     <div class="hiddenInfo">
                         <p class="albumInfo">Contra</p>
                         <p class="artistInfo">Vampire Weekend</p>
                         <p class="yearInfo">2010</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/0H8cHlbp6eieUUOLmv4FzJ?si=33068e22b33a47a8</p>
+                        <p class="spotifyInfo">https://open.spotify.com/album/0H8cHlbp6eieUUOLmv4FzJ?si=33068e22b33a47a8
+                        </p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Contra_(album)</p>
                     </div>
-                </div> 
+                </div>
                 <div class="album" onClick="seeMoreAlbum(this)">
                     <img src="../img/albums/300/rab.jpg">
                     <div class="hiddenInfo">
@@ -1359,34 +1585,35 @@
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Regional_at_Best</p>
                     </div>
-                </div> 
+                </div>
                 <div class="album" onClick="seeMoreAlbum(this)">
                     <img src="../img/albums/300/sita.jpg">
                     <div class="hiddenInfo">
                         <p class="albumInfo">Stranger In The Alps</p>
                         <p class="artistInfo">Phoebe Bridgers</p>
                         <p class="yearInfo">2017</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/0qWcLfCZ8wtcoOdX14oGNI?si=646603d955974b90</p>
+                        <p class="spotifyInfo">https://open.spotify.com/album/0qWcLfCZ8wtcoOdX14oGNI?si=646603d955974b90
+                        </p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Stranger_in_the_Alps</p>
                     </div>
-                </div> 
+                </div>
             </div>
         </div>
 
 
-   <!-- ████████╗██╗███████╗██████╗     ███████╗ ██╗ ██╗   ██╗ ███████╗
+        <!-- ████████╗██╗███████╗██████╗     ███████╗ ██╗ ██╗   ██╗ ███████╗
         ╚══██╔══╝██║██╔════╝██╔══██╗    ██╔════╝ ██║ ██║   ██║ ██╔════╝
             ██║   ██║█████╗  ██████╔╝    █████╗   ██║ ██║   ██║ █████╗  
             ██║   ██║██╔══╝  ██╔══██╗    ██╔══╝   ██║ ╚██╗ ██╔╝ ██╔══╝  
             ██║   ██║███████╗██║  ██║    ██║      ██║  ╚████╔╝  ███████╗
-            ╚═╝   ╚═╝╚══════╝╚═╝  ╚═╝    ╚═╝      ╚═╝   ╚═══╝   ╚══════╝ -->                                                                              
+            ╚═╝   ╚═╝╚══════╝╚═╝  ╚═╝    ╚═╝      ╚═╝   ╚═══╝   ╚══════╝ -->
         <div id="tier5" class="tier">
             <div id="tierLabel5" style="background-color: orangered;" class="tierLabel">
                 <div class="tierNumber">5</div>
-                <div class="tierDescription">Meh. Very average. Albums with 
-                    one banger and the rest 
-                    are bad also go here. 
+                <div class="tierDescription">Meh. Very average. Albums with
+                    one banger and the rest
+                    are bad also go here.
                     Just good enough to not be bad.</div>
                 <div class="sortButtonHolder">
                     <button class="alphabeticalSortButton" onclick="sortTierAlphabetically($(this))">
@@ -1395,7 +1622,8 @@
                         <span class="arrowIndicator">&#8645;</span>
                     </button>
                     <button class="yearSortButton" onclick="sortTierYearwise($(this))">Sort by Year &#8645;</button>
-                    <button class="artistSortButton" onclick="sortTierArtistwise($(this))">Sort by Artist &#8645;</button>
+                    <button class="artistSortButton" onclick="sortTierArtistwise($(this))">Sort by Artist
+                        &#8645;</button>
                 </div>
             </div>
             <div class="albumHolder">
@@ -1405,11 +1633,12 @@
                         <p class="albumInfo">First Impressions of Earth</p>
                         <p class="artistInfo">The Strokes</p>
                         <p class="yearInfo">2006</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/1HQ61my1h3VWp2EBWKlp0n?si=1abfdb4e3042429a</p>
+                        <p class="spotifyInfo">https://open.spotify.com/album/1HQ61my1h3VWp2EBWKlp0n?si=1abfdb4e3042429a
+                        </p>
                         <p class="appleMusicInfo">Placeholder</p>
                         <p class="wikipediaInfo">https://en.wikipedia.org/wiki/First_Impressions_of_Earth</p>
                     </div>
-                </div> 
+                </div>
             </div>
         </div>
     </div>
@@ -1426,14 +1655,14 @@
             <div class="subheading crt-text">Subtitle</div>
             <div class="artistyear">Artist | Year</div>
         </div>
-        
+
         <div id="icon-row">
             <div id="links-row">
                 <a target="_blank" id="wikipedia-link" href="http://en.wikipedia.org">
                     <img src="../img/wiki-icon.png">
                 </a>
                 <a target="_blank" id="spotify-link" href="http://en.wikipedia.org">
-                    <img target="_blank"src="../img/spotify-icon.png">
+                    <img target="_blank" src="../img/spotify-icon.png">
                 </a>
                 <a target="_blank" id="apple-music-link" href="http://en.wikipedia.org">
                     <img src="../img/apple-music-icon.png">
