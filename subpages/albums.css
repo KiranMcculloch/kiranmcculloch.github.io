@@ -502,4 +502,22 @@ img.linkUnavailable{
         padding: 1em;
     }
 
+    .home-button{
+        display: block;
+        width: 5vw;
+        height: 5vw;
+        border-right: 0.5vw solid #565861;
+        border-bottom: 0.5vw solid #565861;
+        border-left: 0.5vw solid #f5f7ff;
+        border-top: 0.5vw solid #f5f7ff;
+      }
+      
+      .home-button:active:hover {
+        background-color: #acb0c1;
+        border-left: 0.5vw solid #565861;
+        border-top: 0.5vw solid #565861;
+        border-right: 0.5vw solid #f5f7ff;
+        border-bottom: 0.5vw solid #f5f7ff;
+      }
+
 }

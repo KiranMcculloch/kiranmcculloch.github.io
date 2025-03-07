@@ -229,7 +229,7 @@
             $('img').attr('draggable', false);
 
             if (inIframe()) {
-                $("#crt-overlay, .fullscreen-menu-bar").hide()
+                $("#crt-overlay, .fullscreen-menu-bar, .home-button").hide()
             }
             $("#moreInfo").hide();
             $("#moreInfo").css("opacity","100%");
@@ -277,7 +277,7 @@
 
 
 <body class="crt-text">
-    <div class="fullscreen-menu-bar">
+    <!-- <div class="fullscreen-menu-bar">
         <p class="popup-title">music.tierlist</p>
         <div class="popup-spacer"></div>
         <a class="popup-small-button" href="../index.html" id="aboutFullMin">&#95;</a>
@@ -286,7 +286,7 @@
     </div>
     <div class="fullscreen-menu-bar" id="fullscreen-menu-bar-spacer">
         <p class="popup-title">About</p>
-    </div>
+    </div> -->
     <div class="crt-overlay" id="crt-overlay" style="opacity: 80%;"></div>
 
     <div class="home-button" onclick='window.location.href = "../index.html"'>
