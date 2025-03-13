@@ -18,6 +18,22 @@ img.linkUnavailable{
 
 #reviewblock{
     text-align: left;
+    display: flex;
+    gap: 0;
+    flex-direction: column;
+    padding: 1.5em;
+}
+
+#reviewblock > p{
+    text-indent: 50px;
+}
+
+#reviewblock pre{
+    width: min-content;
+}
+
+pre{
+    font-family: "Cheltenham";
 }
 
 #links-row{
@@ -40,18 +56,20 @@ img.linkUnavailable{
     height: fit-content;
 }
 
-
-
 .album>img:hover{
     border-radius: 0.3em;
     border: 0.3vmax solid aliceblue;
 }
 
+.lyricsBlock{
+    text-align: center; 
+    text-indent: 0;
+    align-self: center;
+}
 
-
-
-
-
+hr{
+    width: 95%;
+}
 
 
 
@@ -280,11 +298,6 @@ img.linkUnavailable{
     #links-row > a > img{
         height: 4vh;
     }    
-
-    #reviewblock{
-        text-indent: 50px;
-        padding: 1em;
-    }
 }
 
 
@@ -497,15 +510,10 @@ img.linkUnavailable{
         gap: 2vw;
     }
 
-    #reviewblock{
-        text-indent: 50px;
-        padding: 1em;
-    }
-
     .home-button{
         display: block;
-        width: 5vw;
-        height: 5vw;
+        width: 4vw;
+        height: 4vw;
         border-right: 0.5vw solid #565861;
         border-bottom: 0.5vw solid #565861;
         border-left: 0.5vw solid #f5f7ff;
