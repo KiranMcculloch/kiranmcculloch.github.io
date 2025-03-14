@@ -103,10 +103,24 @@ position: fixed !important
 
 
 
+#contactMenu{
+    border-left: 0.4vw solid aqua;
+    border-top: 0.4vw solid aqua;
+    animation: cycleBgColorTop 10s infinite;
+}
 
+#contactMenu:hover{
+    animation: none;
+    background-color: aquamarine;
+}
 
-
-
+#contactMenu.active{
+    animation: cycleBgColorTop 10s infinite;
+    border-left: 0.4vw solid #565861;
+    border-top: 0.4vw solid #565861;
+    border-bottom: 0.4vw solid aqua;
+    border-right: 0.4vw solid aqua;
+}
 
 
 
