@@ -155,7 +155,7 @@
             yearB = Number(b.querySelector(".hiddenInfo").querySelector(".yearInfo").innerHTML);
             if (yearA > yearB) { returning = 1 }
             if (yearA < yearB) { returning = -1 }
-            return returning;
+            return returning * sortModifier;
         }));
         tieralbums.each(function (index) {
             $(this).css("order", index);
@@ -561,12 +561,12 @@
                             <p>Full review forthcoming...</p>
                             <hr>
                             <div class="lyricsBlock">
-                                <i>So I taxi to an all-night party<br>
-                                    Park me in the corner<br>
-                                    in an old chair<br>
-                                    Sip my drink and stare out into space<br>
-                                    And now you're leaving New York<br>
-                                    For no better place<br><br>
+                                <i>And here is your reflection<br>
+                                    in a building uptown,<br>
+                                    a ghost inside some Madison Avenue display<br>
+                                    Like water under bridges,<br>
+                                    you're slowly passing by<br>
+                                    so you sail between the rooftops and the sky<br><br>
                                 </i>
                             </div>
                             <b>FAVORITE SONGS: Mexican Wine, Little Red Light, Hung Up On You</b>
@@ -1057,7 +1057,8 @@ Is in the ripe and ruin
                                     "You are,<br>
                                     You are"<br><br></i>
                             </div>
-                            <b>FAVORITE SONGS: God Put a Smile upon Your Face, Warning Sign, A Rush of Blood to the Head</b>
+                            <b>FAVORITE SONGS: God Put a Smile upon Your Face, Warning Sign, A Rush of Blood to the
+                                Head</b>
                         </div>
                     </div>
                 </div>
@@ -1210,7 +1211,7 @@ Is in the ripe and ruin
                                     But every road leads to an end<br>
                                     Yes, every road leads to an end<br>
                                     Your apparition passes through me in the willows<br>
-                                    Five red hens -<br> 
+                                    Five red hens -<br>
                                     you'll never see us again<br>
                                     You'll never see us again<br><br>
                                 </i>
@@ -1266,7 +1267,7 @@ Is in the ripe and ruin
                                     but not today<br>
                                     So go to sleep, make the change<br>
                                     I'll meet you here tomorrow<br>
-                                    Independence Day<br>
+                                    Independence Day<br><br>
                                 </i>
                             </div>
                             <b>FAVORITE SONGS: Sweet Adeline, Waltz #2 (XO), Independence Day</b>
@@ -1432,7 +1433,7 @@ Is in the ripe and ruin
                                     I feel cut off from all I have been<br>
                                     But am I the stump or am I the limb?"<br>
                                     I was eyeing the door and you noticed it<br><br>
-                                    
+
                                     I said, "I have to be running"<br>
                                     Late for dinner or something<br><br>
 
@@ -1536,9 +1537,16 @@ Is in the ripe and ruin
                             <p>Full review forthcoming...</p>
                             <hr>
                             <div class="lyricsBlock">
-                                <i></i>
+                                <i>
+                                    Picked up your smoke,<br>
+                                    then you drag a little<br>
+                                    I wanna choke,<br>
+                                    so you won't belittle<br>
+                                    Everyone knows<br>
+                                    that you'll do it over and over and over and over again<br><br>
+                                </i>
                             </div>
-                            <b>FAVORITE SONGS: </b>
+                            <b>FAVORITE SONGS: In Transit, Scared, Holiday</b>
                         </div>
                     </div>
                 </div>
@@ -1556,9 +1564,14 @@ Is in the ripe and ruin
                             <p>Full review forthcoming...</p>
                             <hr>
                             <div class="lyricsBlock">
-                                <i></i>
+                                <i>
+                                    It's been a long year<br>
+                                    and all of our book's pages dog-eared<br>
+                                    We'll write out the ends on our palms, dear,<br>
+                                    then forget to read<br><br>
+                                </i>
                             </div>
-                            <b>FAVORITE SONGS: </b>
+                            <b>FAVORITE SONGS: All My Love, New Perspective, Homesick</b>
                         </div>
                     </div>
                 </div>
@@ -1576,9 +1589,14 @@ Is in the ripe and ruin
                             <p>Full review forthcoming...</p>
                             <hr>
                             <div class="lyricsBlock">
-                                <i></i>
+                                <i>
+                                    Baby, I know death probably hasn't happened yet<br>
+                                    'cause I don't remember living life before this<br>
+                                    And darling, our disease is the same one as the trees<br>
+                                    unaware that they've been living in a forest<br><br>
+                                </i>
                             </div>
-                            <b>FAVORITE SONGS: </b>
+                            <b>FAVORITE SONGS: Bambina, Unbearably White, Flower Moon</b>
                         </div>
                     </div>
                 </div>
@@ -1596,9 +1614,13 @@ Is in the ripe and ruin
                             <p>Full review forthcoming...</p>
                             <hr>
                             <div class="lyricsBlock">
-                                <i></i>
+                                <i>And mama, I've been crying<br>
+                                    'Cause things ain't how they used to be<br>
+                                    She said, "The battle's almost won<br>
+                                    And we're only several miles from the Sun"<br><br>
+                                </i>
                             </div>
-                            <b>FAVORITE SONGS: </b>
+                            <b>FAVORITE SONGS: This Love, She Will Be Loved, Sunday Morning</b>
                         </div>
                     </div>
                 </div>
@@ -1616,29 +1638,15 @@ Is in the ripe and ruin
                             <p>Full review forthcoming...</p>
                             <hr>
                             <div class="lyricsBlock">
-                                <i></i>
+                                <i>We made our oath to Vavilov:<br>
+                                    we'd not betray the solanum,<br>
+                                    the acres of asteraceae,<br>
+                                    to our own pangs of starvation<br>
+                                    When the war came<br>
+                                    When the war came<br><br>
+                                </i>
                             </div>
-                            <b>FAVORITE SONGS: </b>
-                        </div>
-                    </div>
-                </div>
-                <div class="album" onClick="seeMoreAlbum(this)">
-                    <img src="../img/albums/300/cleopatra.jpg">
-                    <div class="hiddenInfo">
-                        <p class="albumInfo">Cleopatra</p>
-                        <p class="artistInfo">The Lumineers</p>
-                        <p class="yearInfo">2016</p>
-                        <p class="spotifyInfo">
-                            https://open.spotify.com/album/26HAAGfOhnc0CqqcHoaQGD?si=WjhnoRoJRYenJOQZFhPjoA</p>
-                        <p class="appleMusicInfo">Placeholder</p>
-                        <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Cleopatra_(album)</p>
-                        <div class="reviewInfo">
-                            <p>Full review forthcoming...</p>
-                            <hr>
-                            <div class="lyricsBlock">
-                                <i></i>
-                            </div>
-                            <b>FAVORITE SONGS: </b>
+                            <b>FAVORITE SONGS: O Valencia!, Summersong, The Crane Wife 1 & 2</b>
                         </div>
                     </div>
                 </div>
@@ -1656,9 +1664,15 @@ Is in the ripe and ruin
                             <p>Full review forthcoming...</p>
                             <hr>
                             <div class="lyricsBlock">
-                                <i></i>
+                                <i>A barony of ivy in the trees<br>
+                                    expanding out its empire by degrees<br>
+                                    And all the branches burst to bloom<br>
+                                    in the boom<br>
+                                    Heaven sent this cardinal, maroon,<br>
+                                    to decorate our living room<br><br>
+                                </i>
                             </div>
-                            <b>FAVORITE SONGS: </b>
+                            <b>FAVORITE SONGS: Calamity Song, Rox in the Box, All Arise!</b>
                         </div>
                     </div>
                 </div>
@@ -1676,9 +1690,15 @@ Is in the ripe and ruin
                             <p>Full review forthcoming...</p>
                             <hr>
                             <div class="lyricsBlock">
-                                <i></i>
+                                <i>
+                                    Well my '63 Ford is a bull,<br>
+                                    she's four thousand pounds at least<br>
+                                    But metal surrenders<br>
+                                    when oak trees meet fenders<br>
+                                    qnd engines go through the front seat<br><br>
+                                </i>
                             </div>
-                            <b>FAVORITE SONGS: </b>
+                            <b>FAVORITE SONGS: Paranoia in B Flat Major, Will You Return?, The Ballad of Love and Hate</b>
                         </div>
                     </div>
                 </div>
@@ -1696,9 +1716,14 @@ Is in the ripe and ruin
                             <p>Full review forthcoming...</p>
                             <hr>
                             <div class="lyricsBlock">
-                                <i></i>
+                                <i>Her name became<br>
+                                    the flame unto the fire<br>
+                                    A magpie on the wire warned of those<br>
+                                    Dead until the high;<br>
+                                    shamelessly alive until the low<br><br>
+                                </i>
                             </div>
-                            <b>FAVORITE SONGS: </b>
+                            <b>FAVORITE SONGS: Open Ended Life, Another Is Waiting, Bring Your Love To Me</b>
                         </div>
                     </div>
                 </div>
@@ -1716,9 +1741,13 @@ Is in the ripe and ruin
                             <p>Full review forthcoming...</p>
                             <hr>
                             <div class="lyricsBlock">
-                                <i></i>
+                                <i>You and me could have been a team<br>
+                                    Each had a half of a king and queen seat<br>
+                                    Like the beginning of Mean Streets<br>
+                                    You could be my baby<br><br>
+                                </i>
                             </div>
-                            <b>FAVORITE SONGS: </b>
+                            <b>FAVORITE SONGS: R U Mine?, Arabella, Snap Out Of It</b>
                         </div>
                     </div>
                 </div>
@@ -1736,9 +1765,15 @@ Is in the ripe and ruin
                             <p>Full review forthcoming...</p>
                             <hr>
                             <div class="lyricsBlock">
-                                <i></i>
+                                <i>Hide you in my coat pocket<br>
+                                    where I kept my rebel red<br>
+                                    I felt I was invincible, you wrapped around my head<br>
+                                    Now different lives I lead,<br>
+                                    my body lives on lead<br>
+                                    The last two lines may read incorrect until said<br><br>
+                                </i>
                             </div>
-                            <b>FAVORITE SONGS: </b>
+                            <b>FAVORITE SONGS: Chlorine, The Hype, Cut My Lip</b>
                         </div>
                     </div>
                 </div>
@@ -1756,9 +1791,14 @@ Is in the ripe and ruin
                             <p>Full review forthcoming...</p>
                             <hr>
                             <div class="lyricsBlock">
-                                <i></i>
+                                <i>We worshipped you,<br> 
+                                    your red right hand<br>
+                                    Won't we see you once again?<br>
+                                    In foreign soil, in foreign land<br>
+                                    who will guide us through the end?<br><br>
+                                </i>
                             </div>
-                            <b>FAVORITE SONGS: </b>
+                            <b>FAVORITE SONGS: Step, Diane Young, Finger Back</b>
                         </div>
                     </div>
                 </div>
@@ -1776,9 +1816,15 @@ Is in the ripe and ruin
                             <p>Full review forthcoming...</p>
                             <hr>
                             <div class="lyricsBlock">
-                                <i></i>
+                                <i>I-I-I-I did it, alright, alright, I admit it<br>
+                                    Now pick your next move, you could leave or live with it<br>
+                                    Ichabod Crane with that motherfuckin' top off<br>
+                                    Split and go where? Back to wearing knockoffs?<br>
+                                    Ha ha, knock it off, Neimans, shop it off<br>
+                                    Let's talk over mai tais, waitress, top it off<br><br>
+                                </i>
                             </div>
-                            <b>FAVORITE SONGS: </b>
+                            <b>FAVORITE SONGS: Dark Fantasy, All Of The Lights, Runaway</b>
                         </div>
                     </div>
                 </div>
@@ -1796,9 +1842,38 @@ Is in the ripe and ruin
                             <p>Full review forthcoming...</p>
                             <hr>
                             <div class="lyricsBlock">
-                                <i></i>
+                                <i>I smell the trees when I'm in Colorado<br>
+                                    Interior gas station McDonald's<br>
+                                    I left my cell phone dead at the house<br>
+                                    I see the stars when the sun goes down<br><br>
+                                </i>
                             </div>
-                            <b>FAVORITE SONGS: </b>
+                            <b>FAVORITE SONGS: 757, Hollywood Baby, Frog on the Floor</b>
+                        </div>
+                    </div>
+                </div>
+                <div class="album" onClick="seeMoreAlbum(this)">
+                    <img src="../img/albums/300/reflektor.jpg">
+                    <div class="hiddenInfo">
+                        <p class="albumInfo">Reflektor</p>
+                        <p class="artistInfo">Arcade Fire</p>
+                        <p class="yearInfo">2013</p>
+                        <p class="spotifyInfo">
+                            https://open.spotify.com/album/2brwuyGZ2lLqWnBX6U4MQT?si=pfbGsTRjRTCLmeAo25xb9A</p>
+                        <p class="appleMusicInfo">Placeholder</p>
+                        <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Reflektor</p>
+                        <div class="reviewInfo">
+                            <p>Full review forthcoming...</p>
+                            <hr>
+                            <div class="lyricsBlock">
+                                <i>Entre la nuit, la nuit et l'aurore<br>
+                                    Entre le royaume des vivants et des morts<br>
+                                    If this is heaven, I need something more<br>
+                                    Just a place to be alone<br>
+                                    'Cause you're my home<br><br>
+                                </i>
+                            </div>
+                            <b>FAVORITE SONGS: You Already Know, Joan of Arc, Afterlife</b>
                         </div>
                     </div>
                 </div>
@@ -1816,9 +1891,14 @@ Is in the ripe and ruin
                             <p>Full review forthcoming...</p>
                             <hr>
                             <div class="lyricsBlock">
-                                <i></i>
+                                <i>Rolling thunder had cursed my bedroom<br>
+                                    Heard from your mother, she don't recognize you<br>
+                                    Now Mickey Mantle left on a Sunday<br>
+                                    And all of the neighborhood<br>
+                                    rushes home to pray<br><br>
+                                </i>
                             </div>
-                            <b>FAVORITE SONGS: </b>
+                            <b>FAVORITE SONGS: Dream of Mickey Mantle, Goodmorning, Goodbye</b>
                         </div>
                     </div>
                 </div>
@@ -1836,9 +1916,17 @@ Is in the ripe and ruin
                             <p>Full review forthcoming...</p>
                             <hr>
                             <div class="lyricsBlock">
-                                <i></i>
+                                <i>Oh, great intentions<br>
+                                    Covenant with the imitation<br>
+                                    Have you no conscience?<br>
+                                    I think about it now<br><br>
+                                    Oh, God of Progress,<br>
+                                    have you degraded or forgot us?<br>
+                                    Where have your laws gone?<br>
+                                    I think about it now<br><br>
+                                </i>
                             </div>
-                            <b>FAVORITE SONGS: </b>
+                            <b>FAVORITE SONGS: Chicago, Casimir Pulaski Day, The Man of Metropolis Steals Our Hearts</b>
                         </div>
                     </div>
                 </div>
@@ -1857,9 +1945,14 @@ Is in the ripe and ruin
                             <p>Full review forthcoming...</p>
                             <hr>
                             <div class="lyricsBlock">
-                                <i></i>
+                                <i>I thank my wicked dreams, a year from Tennessee<br>
+                                    Oh, Santa Monica, you've been too good to me<br>
+                                    Won't make my mama proud, it's gonna cause a scene<br>
+                                    She sees her baby girl, I know she's gonna scream<br><br>
+                                    God, what have you done?<br><br>
+                                </i>
                             </div>
-                            <b>FAVORITE SONGS: </b>
+                            <b>FAVORITE SONGS: Femininomenon, Red Wine Supernova, HOT TO GO!</b>
                         </div>
                     </div>
                 </div>
@@ -1877,9 +1970,13 @@ Is in the ripe and ruin
                             <p>Full review forthcoming...</p>
                             <hr>
                             <div class="lyricsBlock">
-                                <i></i>
+                                <i>Sophisticated ignorance,<br>
+                                    write my curses in cursive<br>
+                                    I get it custom, you a customer<br>
+                                    You ain't accustomed to going through customs, you ain't been nowhere, huh?<br><br>
+                                </i>
                             </div>
-                            <b>FAVORITE SONGS: </b>
+                            <b>FAVORITE SONGS: Ni**as in Paris, Gotta Have It, Why I Love You</b>
                         </div>
                     </div>
                 </div>
@@ -1938,6 +2035,30 @@ Is in the ripe and ruin
                     </div>
                 </div>
                 <div class="album" onClick="seeMoreAlbum(this)">
+                    <img src="../img/albums/300/cleopatra.jpg">
+                    <div class="hiddenInfo">
+                        <p class="albumInfo">Cleopatra</p>
+                        <p class="artistInfo">The Lumineers</p>
+                        <p class="yearInfo">2016</p>
+                        <p class="spotifyInfo">
+                            https://open.spotify.com/album/26HAAGfOhnc0CqqcHoaQGD?si=WjhnoRoJRYenJOQZFhPjoA</p>
+                        <p class="appleMusicInfo">Placeholder</p>
+                        <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Cleopatra_(album)</p>
+                        <div class="reviewInfo">
+                            <p>Full review forthcoming...</p>
+                            <hr>
+                            <div class="lyricsBlock">
+                                <i>Were you safe and warm in your coat of arms<br>
+                                    with your fingers in a fist<br>
+                                    Did you hear the notes, all those static codes<br>
+                                    in the radio abyss?<br><br>
+                                </i>
+                            </div>
+                            <b>FAVORITE SONGS: Sleep on the Floor, Cleopatra, Gun Song</b>
+                        </div>
+                    </div>
+                </div>
+                <div class="album" onClick="seeMoreAlbum(this)">
                     <img src="../img/albums/300/rubbersoul.jpg">
                     <div class="hiddenInfo">
                         <p class="albumInfo">Rubber Soul</p>
@@ -1951,9 +2072,13 @@ Is in the ripe and ruin
                             <p>Full review forthcoming...</p>
                             <hr>
                             <div class="lyricsBlock">
-                                <i></i>
+                                <i>I told that girl I could start right away<br>
+                                    when she said, "Listen, babe, I got something to say<br>
+                                    I got no car and it's breaking my heart - <br>
+                                    but I found a driver and that's a start"<br><br>
+                                </i>
                             </div>
-                            <b>FAVORITE SONGS: </b>
+                            <b>FAVORITE SONGS: Norwegian Wood (This Bird Has Flown), Michelle, I'm Looking Through You</b>
                         </div>
                     </div>
                 </div>
@@ -1971,9 +2096,12 @@ Is in the ripe and ruin
                             <p>Full review forthcoming...</p>
                             <hr>
                             <div class="lyricsBlock">
-                                <i></i>
+                                <i>He wants it easy, he want it relaxed<br>
+                                    Said, "I can do a lot of things, but I can't do that"<br>
+                                    Two steps forward then three steps back, alright<br><br>
+                                </i>
                             </div>
-                            <b>FAVORITE SONGS: </b>
+                            <b>FAVORITE SONGS: Reptilia, Automatic Stop, 12:51</b>
                         </div>
                     </div>
                 </div>
@@ -1991,9 +2119,12 @@ Is in the ripe and ruin
                             <p>Full review forthcoming...</p>
                             <hr>
                             <div class="lyricsBlock">
-                                <i></i>
+                                <i>Turns out I'm livin' in a horror film<br>
+                                    Where I'm both the killer and the final girl<br>
+                                    So who, who are you?<br><br>
+                                </i>
                             </div>
-                            <b>FAVORITE SONGS: </b>
+                            <b>FAVORITE SONGS: Running Out Of Time, You First, Thick Skull</b>
                         </div>
                     </div>
                 </div>
@@ -2011,9 +2142,16 @@ Is in the ripe and ruin
                             <p>Full review forthcoming...</p>
                             <hr>
                             <div class="lyricsBlock">
-                                <i></i>
+                                <i>Be sure<br>
+                                    to put your faith in something more<br>
+                                    I'm just a girl and you're<br>
+                                    not as alone as you feel<br>
+                                    We all got problems, don't we?<br>
+                                    We all need heroes, don't we?<br>
+                                    But rest assured there's not a single person here who's worthy<br><br>
+                                </i>
                             </div>
-                            <b>FAVORITE SONGS: </b>
+                            <b>FAVORITE SONGS: Hard Times, Rose-Colored Boy, Grudges</b>
                         </div>
                     </div>
                 </div>
@@ -2031,9 +2169,12 @@ Is in the ripe and ruin
                             <p>Full review forthcoming...</p>
                             <hr>
                             <div class="lyricsBlock">
-                                <i></i>
+                                <i>No, classy girls don't kiss in bars<br>
+                                    Boys will break their backs and hearts<br>
+                                    But it's alright, the hardest part is through<br><br>
+                                </i>
                             </div>
-                            <b>FAVORITE SONGS: </b>
+                            <b>FAVORITE SONGS: Stubborn Love, Big Parade, Flapper Girl</b>
                         </div>
                     </div>
                 </div>
@@ -2051,9 +2192,13 @@ Is in the ripe and ruin
                             <p>Full review forthcoming...</p>
                             <hr>
                             <div class="lyricsBlock">
-                                <i></i>
+                                <i>'Cause all of this, it don't come free<br>
+                                    And don't become a casualty<br>
+                                    And live beneath<br>
+                                    what you were meant to be<br><br>
+                                </i>
                             </div>
-                            <b>FAVORITE SONGS: </b>
+                            <b>FAVORITE SONGS: Life in the City, Gloria, Leader Of The Landslide</b>
                         </div>
                     </div>
                 </div>
@@ -2071,9 +2216,15 @@ Is in the ripe and ruin
                             <p>Full review forthcoming...</p>
                             <hr>
                             <div class="lyricsBlock">
-                                <i></i>
+                                <i>
+                                    And I love you but I can't remember why<br>
+                                    and I'd love to find a reason to deny<br>
+                                    I was a one-hit wonder in my own hometown<br><br>
+                                    And I guess I might have made a few mistakes<br>
+                                    but maybe that's exactly what it takes<br>
+                                    to get a little happy in this big, sad world<br><br></i>
                             </div>
-                            <b>FAVORITE SONGS: </b>
+                            <b>FAVORITE SONGS: Nothing Short of Thankful, Letter to a Pretty Girl, Pretty Girl at the Airport</b>
                         </div>
                     </div>
                 </div>
@@ -2091,9 +2242,15 @@ Is in the ripe and ruin
                             <p>Full review forthcoming...</p>
                             <hr>
                             <div class="lyricsBlock">
-                                <i></i>
+                                <i>Baby, you're a vampire<br>
+                                    You want blood and I promised<br>
+                                    I'm a bad liar<br>
+                                    With a savior complex<br>
+                                    All the skeletons you hide<br>
+                                    Show me yours and I'll show you mine<br><br>
+                                </i>
                             </div>
-                            <b>FAVORITE SONGS: </b>
+                            <b>FAVORITE SONGS: Kyoto, ICU, I Know The End</b>
                         </div>
                     </div>
                 </div>
@@ -2111,9 +2268,14 @@ Is in the ripe and ruin
                             <p>Full review forthcoming...</p>
                             <hr>
                             <div class="lyricsBlock">
-                                <i></i>
+                                <i>The Argentines collapse in defeat<br>
+                                    The admiralty surveys the remnants of the fleet<br>
+                                    The ground beneath their feet<br>
+                                    is a nautically mapped sheet<br>
+                                    As thin as paper while it slips away from view<br><br>
+                                </i>
                             </div>
-                            <b>FAVORITE SONGS: </b>
+                            <b>FAVORITE SONGS: Oxford Comma, Campus, Walcott</b>
                         </div>
                     </div>
                 </div>
@@ -2131,9 +2293,14 @@ Is in the ripe and ruin
                             <p>Full review forthcoming...</p>
                             <hr>
                             <div class="lyricsBlock">
-                                <i></i>
+                                <i>Your arms look so fucking cute, they look like lil' cigarettes<br>
+                                    I bet I could smoke you, I could roast you<br>
+                                    And then you'd love it and you'd text me "I love you"<br>
+                                    And then I'd fucking ghost you<br><br>
+                                </i>
                             </div>
-                            <b>FAVORITE SONGS: </b>
+                            <b>FAVORITE SONGS: 745 sticky, stupid horse, hand crushed by a mallet</b>
+                            <b>HONORABLE MENTION: ringtone (Remix) [feat. Charli XCX, Rico Nasty, Kero Kero Bonito]</b>
                         </div>
                     </div>
                 </div>
@@ -2151,29 +2318,13 @@ Is in the ripe and ruin
                             <p>Full review forthcoming...</p>
                             <hr>
                             <div class="lyricsBlock">
-                                <i></i>
+                                <i>When the streets are cold and lonely<br>
+                                    And the cars, they burn below me<br>
+                                    Are you all alone,<br>
+                                    is anybody home?<br><br>
+                                </i>
                             </div>
-                            <b>FAVORITE SONGS: </b>
-                        </div>
-                    </div>
-                </div>
-                <div class="album" onClick="seeMoreAlbum(this)">
-                    <img src="../img/albums/300/blurryface.jpg">
-                    <div class="hiddenInfo">
-                        <p class="albumInfo">Blurryface</p>
-                        <p class="artistInfo">twenty one pilots</p>
-                        <p class="yearInfo">2015</p>
-                        <p class="spotifyInfo">https://open.spotify.com/album/3cQO7jp5S9qLBoIVtbkSM1?si=a4b6d2b8caee45ea
-                        </p>
-                        <p class="appleMusicInfo">Placeholder</p>
-                        <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Blurryface</p>
-                        <div class="reviewInfo">
-                            <p>Full review forthcoming...</p>
-                            <hr>
-                            <div class="lyricsBlock">
-                                <i></i>
-                            </div>
-                            <b>FAVORITE SONGS: </b>
+                            <b>FAVORITE SONGS: She Bangs the Drums, Waterfall, Bye Bye Bad Man</b>
                         </div>
                     </div>
                 </div>
@@ -2191,9 +2342,15 @@ Is in the ripe and ruin
                             <p>Full review forthcoming...</p>
                             <hr>
                             <div class="lyricsBlock">
-                                <i></i>
+                                <i>Fight it,<br>
+                                    take the pain, ignite it<br>
+                                    Tie a noose around your mind, loose enough to breathe fine, and tie it<br>
+                                    to a tree, tell it, "You belong to me<br>
+                                    this ain't a noose, this is a leash,<br>
+                                    and I have news for you, you must obey Me"<br><br>
+                                </i>
                             </div>
-                            <b>FAVORITE SONGS: </b>
+                            <b>FAVORITE SONGS: Ode to Sleep, Migraine, Guns for Hands</b>
                         </div>
                     </div>
                 </div>
@@ -2211,29 +2368,13 @@ Is in the ripe and ruin
                             <p>Full review forthcoming...</p>
                             <hr>
                             <div class="lyricsBlock">
-                                <i></i>
+                                <i>Everything's in order in a black hole<br>
+                                    Nothing seems as pretty as the past though<br>
+                                    That Bloody Mary's lacking in Tabasco<br>
+                                    Remember when you used to be a rascal?<br><br>
+                                </i>
                             </div>
-                            <b>FAVORITE SONGS: </b>
-                        </div>
-                    </div>
-                </div>
-                <div class="album" onClick="seeMoreAlbum(this)">
-                    <img src="../img/albums/300/kidsseeghosts.jpg">
-                    <div class="hiddenInfo">
-                        <p class="albumInfo">Kids See Ghosts</p>
-                        <p class="artistInfo">Kids See Ghosts</p>
-                        <p class="yearInfo">2018</p>
-                        <p class="spotifyInfo">
-                            https://open.spotify.com/album/6pwuKxMUkNg673KETsXPUV?si=ECULWLviQAeQFsMEpbrvdw</p>
-                        <p class="appleMusicInfo">Placeholder</p>
-                        <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Kids_See_Ghosts_(album)</p>
-                        <div class="reviewInfo">
-                            <p>Full review forthcoming...</p>
-                            <hr>
-                            <div class="lyricsBlock">
-                                <i></i>
-                            </div>
-                            <b>FAVORITE SONGS: </b>
+                            <b>FAVORITE SONGS: Teddy Picker, Fluorescent Adolescent, 505</b>
                         </div>
                     </div>
                 </div>
@@ -2251,29 +2392,15 @@ Is in the ripe and ruin
                             <p>Full review forthcoming...</p>
                             <hr>
                             <div class="lyricsBlock">
-                                <i></i>
+                                <i>Bones, sinking like stones<br>
+                                    All that we fought for<br>
+                                    Homes, places we've grown<br>
+                                    All of us are done for<br>
+                                    And we live in a beautiful world<br>
+                                    Yeah, we do, yeah, we do<br><br>
+                                </i>
                             </div>
-                            <b>FAVORITE SONGS: </b>
-                        </div>
-                    </div>
-                </div>
-                <div class="album" onClick="seeMoreAlbum(this)">
-                    <img src="../img/albums/300/reflektor.jpg">
-                    <div class="hiddenInfo">
-                        <p class="albumInfo">Reflektor</p>
-                        <p class="artistInfo">Arcade Fire</p>
-                        <p class="yearInfo">2013</p>
-                        <p class="spotifyInfo">
-                            https://open.spotify.com/album/2brwuyGZ2lLqWnBX6U4MQT?si=pfbGsTRjRTCLmeAo25xb9A</p>
-                        <p class="appleMusicInfo">Placeholder</p>
-                        <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Reflektor</p>
-                        <div class="reviewInfo">
-                            <p>Full review forthcoming...</p>
-                            <hr>
-                            <div class="lyricsBlock">
-                                <i></i>
-                            </div>
-                            <b>FAVORITE SONGS: </b>
+                            <b>FAVORITE SONGS: Don't Panic, Shiver, Everything's Not Lost</b>
                         </div>
                     </div>
                 </div>
@@ -2291,9 +2418,13 @@ Is in the ripe and ruin
                             <p>Full review forthcoming...</p>
                             <hr>
                             <div class="lyricsBlock">
-                                <i></i>
+                                <i>The sun is in my eyes<br>
+                                    Woke up and felt the vibe<br>
+                                    No matter how hard they try,<br>
+                                    we never gonna die<br><br>
+                                </i>
                             </div>
-                            <b>FAVORITE SONGS: </b>
+                            <b>FAVORITE SONGS: Father Stretch My Hands Pt. 1, Famous, Wolves</b>
                         </div>
                     </div>
                 </div>
@@ -2313,6 +2444,7 @@ Is in the ripe and ruin
                                 it for me; combine that with fewer catchy melodies and a less polished sound and you
                                 have a nice, solid, very ElliottSmithy Elliott Smith album. Maybe just listen to the
                                 greatest hits and leave it at that.</p>
+                            <hr>
                             <div class="lyricsBlock">
                                 <i>
                                     I'm not surprised at all, and really, why should I be?<br>
@@ -2356,6 +2488,26 @@ Is in the ripe and ruin
             </div>
             <div class="albumHolder">
                 <div class="album" onClick="seeMoreAlbum(this)">
+                    <img src="../img/albums/300/blurryface.jpg">
+                    <div class="hiddenInfo">
+                        <p class="albumInfo">Blurryface</p>
+                        <p class="artistInfo">twenty one pilots</p>
+                        <p class="yearInfo">2015</p>
+                        <p class="spotifyInfo">https://open.spotify.com/album/3cQO7jp5S9qLBoIVtbkSM1?si=a4b6d2b8caee45ea
+                        </p>
+                        <p class="appleMusicInfo">Placeholder</p>
+                        <p class="wikipediaInfo">https://en.wikipedia.org/wiki/Blurryface</p>
+                        <div class="reviewInfo">
+                            <p>Full review forthcoming...</p>
+                            <hr>
+                            <div class="lyricsBlock">
+                                <i>Death inspires me like a dog inspires a rabbit<br><br></i>
+                            </div>
+                            <b>FAVORITE SONGS: Ride, Tear In My Heart, The Judge</b>
+                        </div>
+                    </div>
+                </div>
+                <div class="album" onClick="seeMoreAlbum(this)">
                     <img src="../img/albums/300/revolver.jpg">
                     <div class="hiddenInfo">
                         <p class="albumInfo">Revolver</p>
@@ -2369,9 +2521,13 @@ Is in the ripe and ruin
                             <p>Full review forthcoming...</p>
                             <hr>
                             <div class="lyricsBlock">
-                                <i></i>
+                                <i>Turn off your mind, relax and float downstream<br>
+                                    It is not dying, it is not dying<br>
+                                    Lay down all thoughts, surrender to the void<br>
+                                    It is shining, it is shining<br><br>
+                                </i>
                             </div>
-                            <b>FAVORITE SONGS: </b>
+                            <b>FAVORITE SONGS: Eleanor Rigby, Yellow Submarine, For No One</b>
                         </div>
                     </div>
                 </div>
@@ -2389,9 +2545,13 @@ Is in the ripe and ruin
                             <p>Full review forthcoming...</p>
                             <hr>
                             <div class="lyricsBlock">
-                                <i></i>
+                                <i>Years go by and hearts start to harden<br>
+                                    Those palms and firs that grew in your garden<br>
+                                    are falling down and nearing the rosebeds,<br>
+                                    the roots are shooting up through the tool shed<br><br>
+                                </i>
                             </div>
-                            <b>FAVORITE SONGS: </b>
+                            <b>FAVORITE SONGS: White Sky, Holiday, Cousins</b>
                         </div>
                     </div>
                 </div>
@@ -2408,9 +2568,13 @@ Is in the ripe and ruin
                             <p>Full review forthcoming...</p>
                             <hr>
                             <div class="lyricsBlock">
-                                <i></i>
+                                <i>We all are stranger creatures than when we all started out as kids<br>
+                                    Culture forbids<br>
+                                    We have romantic fantasies about what dying truly is<br>
+                                    Fall off the grid<br><br>
+                                </i>
                             </div>
-                            <b>FAVORITE SONGS: </b>
+                            <b>FAVORITE SONGS: Guns for Hands, Ode to Sleep, Ruby</b>
                         </div>
                     </div>
                 </div>
@@ -2428,9 +2592,14 @@ Is in the ripe and ruin
                             <p>Full review forthcoming...</p>
                             <hr>
                             <div class="lyricsBlock">
-                                <i></i>
+                                <i>You said when you met me, you<br>
+                                    were bored<br>
+                                    And you,<br>
+                                    you were in a band<br>
+                                    when I was born<br><br>
+                                </i>
                             </div>
-                            <b>FAVORITE SONGS: </b>
+                            <b>FAVORITE SONGS: Motion Sickness, Scott Street</b>
                         </div>
                     </div>
                 </div>
@@ -2477,9 +2646,13 @@ Is in the ripe and ruin
                             <p>Full review forthcoming...</p>
                             <hr>
                             <div class="lyricsBlock">
-                                <i></i>
+                                <i>Twenty-nine different attributes<br>
+                                    Only seven that you like<br>
+                                    Twenty ways to see the world<br>
+                                    And twenty ways to start a fight<br><br>
+                                </i>
                             </div>
-                            <b>FAVORITE SONGS: </b>
+                            <b>FAVORITE SONGS: You Only Live Once</b>
                         </div>
                     </div>
                 </div>

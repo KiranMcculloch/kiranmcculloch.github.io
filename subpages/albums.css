@@ -34,6 +34,7 @@ img.linkUnavailable{
 
 pre{
     font-family: "Cheltenham";
+    padding: 2vw;
 }
 
 #links-row{
@@ -298,6 +299,11 @@ hr{
     #links-row > a > img{
         height: 4vh;
     }    
+
+
+    .lyricsBlock{
+        font-size: clamp(0.7em,0.7vw,1.4em);
+    }
 }
 
 
