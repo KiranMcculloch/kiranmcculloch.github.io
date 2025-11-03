@@ -447,21 +447,25 @@ hr{
     }
 
     #dummyTopSection{
+        padding: 1vw;
         display: flex;
         flex-direction: column;
         background-size: cover;
         background-position: center;
         filter: blur(4px);
-        padding: 1vw;
+    }
+
+    #dummyTopSection > .heading{
+        width: 95%;
     }
 
     #realTopSection{
         padding: 1vw;
-        width: 95%;
         z-index: 2;
         position: absolute;
         top:0;
-        left:0;
+        left:2.5%;
+        width:95%;
         -webkit-text-stroke: 4px var(--developer-black);
         paint-order: stroke fill;
         color: white;    
