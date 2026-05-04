@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        body{
+            background-color: #33353d;
+            background-image: url("5008.png");
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            color: antiquewhite;
+            text-align: center;
+        }
+        #main-map{
+            width: 75%;
+        }
+        .main-container{
+            display: flex;
+            flex-direction: column;
+            gap: 0px 0px;
+        }
+        .row{
+            display: flex;
+            padding: 0px;
+            flex-direction: row;
+            justify-content: center;
+            gap: 0px 0px;
+        }
+        .row > *{
+            align-self: center;
+        }
+
+        details {
+            border: 1px solid #aaaaaa;
+            border-radius: 4px;
+            padding: 0.5em 0.5em 0;
+            width: 90%;
+            margin: 1vw;
+            background-color: black;
+        }
+
+        code {
+            background-color: #444444;
+            border-radius: 3px;
+            font-family: "Courier New", monospace;
+            padding: 0 3px;
+        }
+
+        summary {
+            font-weight: bold;
+            margin: -0.5em -0.5em 0;
+            padding: 0.5em;
+        }
+
+        details[open] {
+            padding: 0.5em;
+        }
+
+        details[open] summary {
+            border-bottom: 1px solid #aaaaaa;
+            margin-bottom: 0.5em;
+        }
+
+        p{padding: 0px;margin: 0%;width:75%;}
+        h2{font-size: 3vw;padding: 0px;margin: 0%;}
+        h1{font-size: 5vw;padding: 0px;margin: 0%;}
+
+        img,iframe{
+            border: 0.5em solid antiquewhite;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="row" style="padding-top: 1vw;">
+            <h1>Splitting the Difference</h1>
+        </div>
+        <div class="row" style="padding-bottom: 1vw;">
+            <p>A project by Kiran McCulloch</p>
+        </div>
+        <div class="row">
+                <img src="map.png" id="main-map">
+        </div>
+        <div class="row" style="padding-bottom: 1vw;">
+            <p>The above image shows the lower 48 US States and the 10 Canadian Provinces, each split into two parts by a line that maximizes the area discrepancy but keep the population on either side as close to the same as possible. A label shows the percentage of the population within the smaller half above the abbreviation of the subdivision.</p>
+        </div>
+        <div class="row">
+                <iframe src="map.html" width="75%" height="500"></iframe>
+        </div>
+        <div class="row" style="padding-bottom: 1vw;">
+            <p>An interactive version of the initial map. Hover over city markers to see details, and click on subdivisions and their splits for more information.</p>
+        </div>
+        <div class="row">
+                <h2>About</h2>
+        </div>
+        <!-- <div class="row">
+                <details>
+                    <summary>How I Made This</summary>
+                    <details>
+                        <summary>Data Collection</summary>
+                        Lorem Ipsum
+                    </details>
+                    <details>
+                        <summary>The Algorithm</summary>
+                        To generate my splits, I wrote python code that makes heavy use of rasterio and shapely to do the calculations. In pseudocode, the algorithm looks something like this:
+                        <code>
+
+                        </code>
+                        <details>
+                            <summary>A Full Breakdown</summary>
+                        </details>
+                    </details>
+                    <details>
+                        <summary>Processing</summary>
+                        Lorem Ipsum
+                    </details>
+                    <details>
+                        <summary>Adding Details</summary>
+                        Splits and percentages are nice, but I wanted to see what exactly was causing the splits to be where they were, and, conversely, what cities and towns were in the sparesely populated areas.<br>
+                        I downloaded city data for Canada from <a>here</a> and data for the United States from <a>here.</a> I then loaded them both into a PostGIS database I created for this project, and wrote some SQL code to get the details I wanted. First, I had to sanitize my data:<br>
+                        <code>
+
+                        </code>
+
+                    </details>
+                </details>
+        </div> -->
+        <div class="row">
+                <details>
+                    <summary>Source Code</summary>
+                    The code I used to generate the splits can be found <a target="_blank" href="https://github.com/KiranMcculloch/Splitting-Differences">on my github.</a> You need to have a shapefile or geojson for each area you want to analyze, and a raster for the same area named rast_NAME.tif. An example would be two files called Pennsylvania.shp and rast_Pennsylvania.tif. This is so that the program knows which raster goes with which vector layer.
+                </details>
+        </div>
+    </div>
+</body>
