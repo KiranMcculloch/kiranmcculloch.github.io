@@ -117,6 +117,19 @@
             border: 0.5em solid antiquewhite;
             border-radius: 50px;
         }
+
+        a:link {
+        color: rgb(0, 201, 247);
+        }
+
+        a:visited {
+        color: rgb(124, 86, 169);
+        }
+
+        a:hover {
+        color: rgb(81, 204, 232);
+        text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -387,8 +400,11 @@ zstd                       1.5.7            h56299aa_0
                         </details>
                         <details>
                             <summary>Adding the Cities</summary>
-                            Not present on this static map for clutter reasons but present <a href="https://kiranmccullo.ch/subpages/splitting_difference/">on the interactive version</a>are the three largest cities in each half of each subdivision. I downloaded US City data from ESRI <a href="https://www.arcgis.com/home/item.html?id=d8e6e822e6b44d80b4d3b5fe7538576d">here</a> and Canadian City data from SimpleMaps <a href="https://simplemaps.com/data/canada-cities">here</a>. I then loaded both datasets into a PostGIS database I created for this project and wrote an SQL script to retrieve the cities I was looking for.
-                            First, I had to clean up the data a little:
+                            <div>
+                                <p>
+                                    Not present on this static map for clutter reasons but present <a href="https://kiranmccullo.ch/subpages/splitting_difference/">on the interactive version</a>are the three largest cities in each half of each subdivision. I downloaded US City data from ESRI <a href="https://www.arcgis.com/home/item.html?id=d8e6e822e6b44d80b4d3b5fe7538576d">here</a> and Canadian City data from SimpleMaps <a href="https://simplemaps.com/data/canada-cities">here</a>. I then loaded both datasets into a PostGIS database I created for this project and wrote an SQL script to retrieve the cities I was looking for.
+                                    <br><br>First, I had to clean up the data a little: 
+                                </p>
                             <pre>
                                 <code class="lang-sql">
 --add abbreviations
@@ -409,8 +425,9 @@ ALTER COLUMN population TYPE integer
 USING population::numeric::integer;
                                 </code>
                             </pre>
-
-                            Then, I added a column to tell me which side of the line each city was found on. Calculating this once and storing it is much easier that doing it on-the-fly every time, and it becomes very important later on. This was accomplished using a lateral join on the splits database to get the ids of every city that intersected that vector layer, and labelling both tohse and then all the others.
+                            <p>
+                                Then, I added a column to tell me which side of the line each city was found on. Calculating this once and storing it is much easier that doing it on-the-fly every time, and it becomes very important later on. This was accomplished using a lateral join on the splits database to get the ids of every city that intersected that vector layer, and labelling both tohse and then all the others.
+                            </p>
                             <pre>
                                 <code class="lang-sql">
 alter table can_cities add split smallint;
@@ -438,8 +455,9 @@ on largest_city.st = cp.abbreviation);
 update us_cities set split = 2 where split is null;
                                     </code>
                             </pre>
-
-                            Next, for aesthetic and logistical reasons, I removed every city within a certain raidus of a larger city - many areas were way too clustered, and seeing a bunch of suburbs of a city I already knew was the biggest didn't really tell me much about the sparse areas I was trying to analyze. Note that I only excluded cities in the same side as their larger neighbor, as twin cities on either side of the dividing line are both interesting and surprisingly common.
+                            <p>
+                                Next, for aesthetic and logistical reasons, I removed every city within a certain raidus of a larger city - many areas were way too clustered, and seeing a bunch of suburbs of a city I already knew was the biggest didn't really tell me much about the sparse areas I was trying to analyze. Note that I only excluded cities in the same side as their larger neighbor, as twin cities on either side of the dividing line are both interesting and surprisingly common.
+                            </p>
                             <pre>
                                 <code class="lang-sql">
 --remove small clusters
@@ -460,8 +478,9 @@ WHERE l.population > s.population and l.st = s.st and l.split = s.split     -- T
 AND s.id != l.id);
                                 </code>
                             </pre>
-
-                            Finally, I was able to go in and select the three biggest cities in each half of each subdivision. With the splits already labelled, this was fairly trivial. These queries were run in QGIS's database manager, and the outputs saved as GeoJSON for working iwth later in QGIS and Folium.
+                            <p>
+                                Finally, I was able to go in and select the three biggest cities in each half of each subdivision. With the splits already labelled, this was fairly trivial. These queries were run in QGIS's database manager, and the outputs saved as GeoJSON for working iwth later in QGIS and Folium.
+                            </p>
                             <pre>
                                 <code class="lang-sql">
 --canada - in split (1)
@@ -487,6 +506,7 @@ left join lateral(
 on largest_city.abbreviation = cp.abbreviation;
                                 </code>
                             </pre>
+                            </div>
                         </details>
                         <details>
                             <summary>Making it Interactive</summary>
@@ -533,7 +553,11 @@ can_cities_1_layer.add_to(cities_group)
         <div class="row">
                 <details class="top-details">
                     <summary>Source Code</summary>
-                    The code I used to generate the splits can be found <a target="_blank" href="https://github.com/KiranMcculloch/Splitting-Differences">on my github.</a> You need to have a shapefile or geojson for each area you want to analyze, and a raster for the same area named rast_NAME.tif. An example would be two files called Pennsylvania.shp and rast_Pennsylvania.tif. This is so that the program knows which raster goes with which vector layer.
+                    <div>
+                        <p>
+                            The code I used to generate the splits can be found <a target="_blank" href="https://github.com/KiranMcculloch/Splitting-Differences">on my github.</a> You need to have a shapefile or geojson for each area you want to analyze, and a raster for the same area named rast_NAME.tif. An example would be two files called Pennsylvania.shp and rast_Pennsylvania.tif. This is so that the program knows which raster goes with which vector layer.
+                        </p>
+                    </div>
                 </details>
         </div>
     </div>
