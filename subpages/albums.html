@@ -239,7 +239,11 @@
                 $(".list-row").dequeue();
             });
 
-            var isTouchscreen = isTouchDevice();
+            // var isTouchscreen = isTouchDevice();
+            var isTouchscreen = false;
+            //the touchscreen thing was well-intentioned but ultimately unnecessary for two reasons:
+            //1) touchscreen users will never see the tooltips anyways, so why bother enabling and disabling them at all
+            //2) a lot of laptops and increasingly even desktops are touchscreen for some unknown reason. I learned this when reasearching a new (linux) laptop; imagine my surprise seeing tons of these industry veterans listing a touchscreen as a pro rather than a con!
 
             //hover over credits button
             $("#top-left-logo").hover(function () {
