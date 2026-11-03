@@ -48,11 +48,11 @@
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-EPRQKNS8ZF"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-EPRQKNS8ZF');
+    gtag('config', 'G-EPRQKNS8ZF');
 </script>
 
 <script async data-id="101454739" src="//static.getclicky.com/js"></script>
@@ -64,13 +64,14 @@
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
-    var isTouchScreen  = (('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0));
 
- 
+
+    var isVertical = $(window).width() / $(window).height() > 1
+
 
     function isMobileBrowser() {
         let check = false;
-        (function(a){if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(a)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0,4))) check = true;})(navigator.userAgent||navigator.vendor||window.opera);
+        (function (a) { if (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(a) || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0, 4))) check = true; })(navigator.userAgent || navigator.vendor || window.opera);
         return check;
     };
 
@@ -98,7 +99,7 @@
             "made by a human"
         ];
 
-        if (isMobileBrowser()){
+        if (isMobileBrowser()) {
             splash_messages.push(
                 "looks way better on desktop",
                 "pull this up on your laptop instead",
@@ -106,11 +107,11 @@
                 "looks much nicer on a laptop",
                 "works on mobile, designed for desktop",
                 "try it on an actual computer"
-            )            
+            )
         }
 
-        splash_messages.push(`the odds of seeing this text are 1/${splash_messages.length+1}`)
-        return splash_messages[getRandomInt(1,splash_messages.length-1)];
+        splash_messages.push(`the odds of seeing this text are 1/${splash_messages.length + 1}`)
+        return splash_messages[getRandomInt(1, splash_messages.length - 1)];
     }
 
     //randomizes the letters in a string while keeping the first n letters the same
@@ -141,12 +142,12 @@
 
 
 
-    let browsertype=navigator.userAgent;
+    let browsertype = navigator.userAgent;
     // if(browsertype.includes("Safari")){
     //     alert("Hi! Looks like you're opening this website in Safari. Look, I developed this entire thing on Safari, so I get it, but there are a couple known bugs you should be aware of:\n\n1) CSS animations don't render in iFrames;\n2) background-images don't listen to image-rendering properties (so they may be rendered blurrily.)\n\nThese bugs are not present on Chrome or Firefox, so I'd recommend using one of those - but if you're like me and prefer Safari anyways, continue on, just keeping in mind you may not be getting the full experience. Thanks!");
     // }
     // if(browsertype.includes("Chrome")){
-        
+
     // }
 
     //draggable/resizable setup
@@ -202,19 +203,21 @@
 
     $(document).ready(
         function () {
-            if (isTouchScreen){
+            if (isMobileBrowser()) {
                 $('#about-icon').find("img").attr("src", "./img/about-icon.gif");
                 $('#education-icon').find("img").attr("src", "./img/education-icon.gif");
                 $('#experience-icon').find("img").attr("src", "./img/experience-icon.gif");
                 $('#projects-icon').find("img").attr("src", "./img/projects-icon.gif");
                 $('#music-icon').find("img").attr("src", "./img/music-icon.gif");
+                $('#splitting-differences-icon').find("img").attr("src", "./img/splitting-differences-icon.gif");
+                $('#stochastory-icon').find("img").attr("src", "./img/stochastory-icon.gif");
             }
 
             $('img').attr('draggable', false);
 
-            $("#splash-text").text(chooseRandomSplashText());    
+            $("#splash-text").text(chooseRandomSplashText());
             $("#main-title").text(chooseRandomWord(main_text, Math.floor(hacker_index / letter_times)));
-    
+
             const hacker_interval = setInterval(function () {
                 //chooses a random letter for every char in the target string letter_times(hacker_index+1) times before locking in the correct letter, where n is the index of the letter 
                 $("#main-title").text(chooseRandomWord(main_text, Math.floor(hacker_index / letter_times)));
@@ -243,17 +246,17 @@
             //milliseconds
             const winkTime = 500;
             //sets wink photo and starts timer
-            $("#kiran-photo").mousedown(function(){
+            $("#kiran-photo").mousedown(function () {
                 $(this).attr('src', './img/k-dog-wink.png');
                 startTime = new Date().getTime();
             });
-            $(document).mouseup(function(){
+            $(document).mouseup(function () {
                 //stops timer
                 endTime = new Date().getTime();
                 //check how much time is remaining out of the allotted time, rounding negatives (more than alloted time) to 0
-                timeRemaining = Math.max(0,(winkTime-(endTime - startTime))) || 0; 
+                timeRemaining = Math.max(0, (winkTime - (endTime - startTime))) || 0;
                 //shows wink for remainder of allotted time
-                setTimeout(function () {  $("#kiran-photo").attr("src", "./img/k-dog.png"); }, timeRemaining);  
+                setTimeout(function () { $("#kiran-photo").attr("src", "./img/k-dog.png"); }, timeRemaining);
             });
 
             //toggles popup windows from bottom menu, close button, or min button
@@ -291,14 +294,11 @@
             $("#experienceMax").click(function () {
                 window.location.href = "./subpages/experience.html";
             });
-            $("#projectsMax").click(function () {
-                window.location.href = "./subpages/projects.html";
-            });
             $("#musicMax").click(function () {
                 window.location.href = "./subpages/albums.html";
             });
 
-            if (isTouchScreen){
+            if (isMobileBrowser()) {
                 //opens pages fullscreen when shortcut icons double clicked
                 $('#about-icon').click(function () {
                     window.location.href = "./subpages/about.html";
@@ -310,11 +310,19 @@
                     window.location.href = "./subpages/experience.html";
                 });
                 $('#projects-icon').click(function () {
-                    window.open('https://github.com/KiranMcculloch', '_blank');
+                    toggleWindow("projects");
                 });
                 $('#music-icon').click(function () {
                     window.location.href = "./subpages/albums.html";
                 });
+                //project icons
+                $('#splitting-differences-icon').click(function () {
+                    window.location.href = "./projects/splitting_differences/index.html";
+                });
+                $('#stochastory-icon').click(function () {
+                    window.location.href = "./projects/stochastory/index.html";
+                });
+
             } else {
                 //adds border when icons single clicked
                 $('.icon-wrapper').click(function () {
@@ -339,10 +347,17 @@
                     window.location.href = "./subpages/experience.html";
                 });
                 $('#projects-icon').dblclick(function () {
-                    window.open('https://github.com/KiranMcculloch', '_blank');
+                    toggleWindow("projects");
                 });
                 $('#music-icon').dblclick(function () {
                     window.location.href = "./subpages/albums.html";
+                });
+                //project icons
+                $('#splitting-differences-icon').dblclick(function () {
+                    window.location.href = "./projects/splitting_differences/index.html";
+                });
+                $('#stochastory-icon').dblclick(function () {
+                    window.location.href = "./projects/stochastory/index.html";
                 });
 
                 //animates shortcut icons on hover
@@ -386,8 +401,24 @@
                         $(this).find("img").attr("src", "./img/music-icon.png");
                     }
                 );
+                //project icons
+                $("#splitting-differences-icon").hover(
+                    function () {
+                        $(this).find("img").attr("src", "./img/splitting-differences-icon.gif");
+                    },
+                    function () {
+                        $(this).find("img").attr("src", "./img/splitting-differences-icon.png");
+                    }
+                );
+                $("#stochastory-icon").hover(
+                    function () {
+                        $(this).find("img").attr("src", "./img/stochastory-icon.gif");
+                    },
+                    function () {
+                        $(this).find("img").attr("src", "./img/stochastory-icon.png");
+                    }
+                );
             }
-            
         }
     );
 </script>
@@ -409,43 +440,43 @@
             <p id="contactMenu">Contact</p>
             <div class="clock">00:00:00</div>
         </div>
-    
+
         <div class="shortcut-icons-wrapper">
             <div class="dummy-icon-wrapper"></div>
-    
+
             <div class="icon-wrapper" id="about-icon">
                 <img class="shortcut-icon" id="about-icon-img" src="./img/about-icon.png">
                 <p style="margin-top: 0;">About</p>
             </div>
-    
+
             <div class="icon-wrapper" id="education-icon">
                 <img class="shortcut-icon" id="education-icon-img" src="./img/education-icon.png">
                 <p style="margin-top: 0;">Education</p>
             </div>
-    
+
             <div class="dummy-icon-wrapper"></div>
-    
+
             <div class="dummy-icon-wrapper"></div>
-    
+
             <div class="icon-wrapper" id="experience-icon">
                 <img class="shortcut-icon" id="experience-icon-img" src="./img/experience-icon.png">
                 <p style="margin-top: 0;">Experience</p>
             </div>
-    
+
             <div class="icon-wrapper" id="projects-icon">
                 <img class="shortcut-icon" id="projects-icon-img" src="./img/projects-icon.png">
                 <p style="margin-top: 0;">Projects</p>
             </div>
-    
+
             <div class="icon-wrapper" id="music-icon">
                 <img class="shortcut-icon" id="music-icon-img" src="./img/music-icon.png">
                 <p style="margin-top: 0;">Music.tierlist</p>
             </div>
         </div>
-    
+
         <img id="kiran-photo" class="bounce" src="./img/k-dog.png">
-    
-    
+
+
         <div id="center-text">
             <p class="sub-heading">welcome to</p>
             <p id="main-title">
@@ -458,44 +489,44 @@
                     <p class="hidden-skills">Java, Python, PHP,<br>Swift, C, C++</p>
                 </div>
                 <div class="flex-break"></div>
-    
+
                 <div class="list-row">
                     <p class="center-list-item" id="list-item-2">Software Engineer</p>
                     <p class="hidden-skills">Azure, Jenkins,<br>Serenity</p>
                 </div>
                 <div class="flex-break"></div>
-    
+
                 <div class="list-row">
                     <p class="center-list-item" id="list-item-3">Graphic Designer</p>
                     <p class="hidden-skills">Adobe Photoshop,<br>Adobe Illustrator</p>
                 </div>
                 <div class="flex-break"></div>
-    
+
                 <div class="list-row">
                     <p class="center-list-item" id="list-item-4">Front-End Developer</p>
                     <p class="hidden-skills">HTML, CSS, Node.js,<br>React.js, JQuery</p>
                 </div>
                 <div class="flex-break"></div>
-    
+
                 <div class="list-row">
                     <p class="center-list-item" id="list-item-5">Video Editor</p>
                     <p class="hidden-skills">Adobe Premiere, Davinci<br>Resolve, Final Cut Pro</p>
                 </div>
                 <div class="flex-break"></div>
-    
+
                 <div class="list-row">
                     <p class="center-list-item" id="list-item-6">Computer Scientist</p>
                     <p class="hidden-skills">Visual Studio, XCode,<br>JetBrains, Excel</p>
                 </div>
                 <div class="flex-break"></div>
-    
+
                 <div class="list-row">
                     <div class="center-list-item" id="list-item-7">Click a tab at the bottom to learn more<br>or
                         double-click a shortcut on the right for fullscreen</div>
                 </div>
             </div>
         </div>
-    
+
         <div id="about-popup" class="popup-window draggable resizable row-container">
             <div class="popup-window-wrapper">
                 <div class="popup-menu-bar">
@@ -508,7 +539,7 @@
                 <iframe src="./subpages/about.html"></iframe>
             </div>
         </div>
-    
+
         <div id="education-popup" class="popup-window draggable resizable">
             <div class="popup-window-wrapper">
                 <div class="popup-menu-bar" style="background-color: dodgerblue;">
@@ -521,7 +552,7 @@
                 <iframe src="./subpages/education.html"></iframe>
             </div>
         </div>
-    
+
         <div id="experience-popup" class="popup-window draggable resizable">
             <div class="popup-window-wrapper">
                 <div class="popup-menu-bar" style="background-color: darkblue;">
@@ -534,7 +565,7 @@
                 <iframe src="./subpages/experience.html"></iframe>
             </div>
         </div>
-    
+
         <div id="projects-popup" class="popup-window draggable resizable">
             <div class="popup-window-wrapper">
                 <div class="popup-menu-bar" style="background-color: royalblue;">
@@ -544,10 +575,21 @@
                     <p class="popup-small-button" id="projectsMax"><b>&#9634;</b></p>
                     <p class="popup-small-button" id="projectsClose">x</p>
                 </div>
-                <iframe src="./subpages/projects.html"></iframe>
+                <div style="width: 100%; height: 100%; background-color: #cfd4e8; padding: 0.5vw;">
+                    <div id="projects-popup-div">
+                        <div class="icon-wrapper" id="splitting-differences-icon">
+                            <img class="shortcut-icon" src="./img/splitting-differences-icon.png">
+                            <p style="margin-top: 0;">Splitting Differences</p>
+                        </div>
+                        <div class="icon-wrapper" id="stochastory-icon">
+                            <img class="shortcut-icon" src="./img/stochastory-icon.png">
+                            <p style="margin-top: 0;">Stochastory</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    
+
         <div id="music-popup" class="popup-window draggable resizable">
             <div class="popup-window-wrapper">
                 <div class="popup-menu-bar" style="background-color: #77B6EA;">
@@ -560,7 +602,7 @@
                 <iframe src="https://lafayette-green.neocities.org/albums"></iframe>
             </div>
         </div>
-    
+
         <div id="credits-popup" class="popup-window draggable resizable">
             <div class="popup-window-wrapper">
                 <div class="popup-menu-bar" style="background-color: cyan;">
@@ -574,13 +616,17 @@
                     <p>+ Font from themesberg.com</p>
                     <p>+ Code for clock tweaked and followed closely from tutorial by Martynas Linkevicius</p>
                     <p>+ CRT-esque screendooring tweaked and followed closely from tutorial by Alec Lownes</p>
-                    <p>+ Wikipedia parody heavily modified from template provided by <a href="https://html5-templates.com"
-                            target="_self">html5-templates.com</a></p>
+                    <p>+ Wikipedia parody heavily modified from template provided by <a
+                            href="https://html5-templates.com" target="_self">html5-templates.com</a></p>
                     <p>+ Photo of Kiran on landing page taken by Deni Stoimenov</p>
-                    <p>+ All art, animations, and code not listed above were hand-made by Kiran McCulloch. <i>Absolutely no AI</i> was used by me at any point, in any way, for the simple reason that I consider its use not only active self-sabotage of my skills, but morally reprehensible.</p>
-                    <p>+ Tools and libraries that <i>were</i> used to make this website include HTML, CSS, Javascript, JQuery UI, Adobe Photoshop 2020, and
+                    <p>+ All art, animations, and code not listed above were hand-made by Kiran McCulloch. <i>Absolutely
+                            no AI</i> was used by me at any point, in any way, for the simple reason that I consider its
+                        use not only active self-sabotage of my skills, but morally reprehensible.</p>
+                    <p>+ Tools and libraries that <i>were</i> used to make this website include HTML, CSS, Javascript,
+                        JQuery UI, Adobe Photoshop 2020, and
                         Piskel.com</p>
-                    <p>+ My sincerest apologies to Microsoft, Wikipedia, Adobe, and Google for biting their aesthetics</p><br>
+                    <p>+ My sincerest apologies to Microsoft, Wikipedia, Adobe, and Google for biting their aesthetics
+                    </p><br>
                 </div>
             </div>
         </div>
@@ -593,13 +639,15 @@
                 <p class="popup-small-button" id="contactClose">x</p>
             </div>
             <div style="overflow-y: auto; padding-left: 5%; padding-right: 3%;">
-                <p>email: <a href="mailto:kiranmcculloch@gmail.com?subject=I%20Saw%20Your%20Website%20And%20I%20Absolutely%20Loved%20It">kiranmcculloch@gmail.com</a>  </p>
+                <p>email: <a
+                        href="mailto:kiranmcculloch@gmail.com?subject=I%20Saw%20Your%20Website%20And%20I%20Absolutely%20Loved%20It">kiranmcculloch@gmail.com</a>
+                </p>
                 <p>LinkedIn: <a href="https://www.linkedin.com/in/kiran-mcculloch/">Kiran McCulloch</a></p>
             </div>
         </div>
     </div>
 
-    
+
 </body>
 
 </html>
